@@ -146,7 +146,7 @@ body {
 }
 
 .header__sign-in-btn {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     color: var(--white-color);
     text-transform: uppercase;
     font-weight: 400;
