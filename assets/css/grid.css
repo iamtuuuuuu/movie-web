@@ -427,7 +427,14 @@
     }
 }
 
-@media (max-width: 739px) {
+
+@media (max-width: 509px) {
+    .wide {
+        width: 370px;
+    }
+}
+
+@media (min-width: 510px) and (max-width: 739px) {
     .wide {
         width: 500px;
     }
