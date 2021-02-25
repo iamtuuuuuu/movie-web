@@ -407,6 +407,7 @@ body {
 
 .card__content--s {
     margin-top: 20px;
+    margin-bottom: 30px;
 }
 
 .card__content--s .card__content-title {
