@@ -1,3 +1,16 @@
+@media (min-width: 1200px) {
+    .header__nav-item { 
+        margin: 0 45px 0 0;
+        width: auto;
+    }
+
+    .header__nav-link {
+        line-height: 90px;
+        display: block;
+        white-space: nowrap;
+    }
+}
+
 /* Mobile + Tablet */
 @media (max-width: 1023px) {
     
@@ -15,7 +28,7 @@
 
 /* Mobile */
 
-@media (max-width: 509px) {
+/* @media (max-width: 509px) {
 
     .hide-on-mobile {
         display: none;
@@ -46,21 +59,9 @@
         margin-top: -10px;
     }
 
-    /* .card__description p {    
-        --lineHeight: 2.5rem;
-        font-size: 1.6rem;
-        line-height: var(--lineHeight);
-        height: calc(var(--lineHeight)*2);
-        color: rgba(255,255,255,.7);
-        overflow: hidden;
-        display: block;
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 2;
-        text-overflow: ellipsis;
-        margin-bottom: 15px;
-    } */
-}
+    
+    
+} */
 
 @media (max-width: 739px) {
 
@@ -95,13 +96,33 @@
 
     }
 
+    .card__content-title-link {
+        font-size: 1.6rem;
+        text-transform: uppercase;
+    }
+
     .card__content-title-origin {
         margin-top: -10px;
     }
 
-   /*  */
-   .content {
-       /* margin: 0 4px; */
+    .mobile-full {
+        max-width: 100%;
+    }
+
+   .album {
+       padding: 30px 0;
+   }
+
+   .album__head {
+       margin-bottom: 10px;
+   }
+
+   .album__head-title--text {
+       font-size: 2.4rem;       
+   }
+
+   .album__head-title--icon {
+       font-size: 2.4rem;
    }
 
     

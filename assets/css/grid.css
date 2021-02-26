@@ -427,10 +427,15 @@
     }
 }
 
-
-@media (max-width: 509px) {
+@media (max-width: 409px) {
     .wide {
-        width: 370px;
+        width: 360px;
+    }
+}
+
+@media (min-width: 410px) and (max-width: 509px) {
+    .wide {
+        width: 390px;
     }
 }
 
