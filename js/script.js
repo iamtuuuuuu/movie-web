@@ -73,3 +73,38 @@ $(document).ready(function() {
       ]
     });
   });
+
+
+document.querySelector('.site-nav-action')
+.addEventListener('click', () => {
+  document.querySelector('.site-nav-action')
+  .classList.toggle('active');
+  document.querySelector('.dropdown')
+  .classList.toggle('active');
+})
+
+
+$(document).ready(function(){
+  $('.next').click(function(){
+    $('.film__pagination').find('.pageNumber.active').next()
+    .addClass('active')
+    $('.film__pagination').find('.pageNumber.active').prev()
+    .removeClass('active')
+  })
+
+  $('.pre').click(function(){
+    $('.film__pagination').find('.pageNumber.active').prev()
+    .addClass('active')
+    $('.film__pagination').find('.pageNumber.active').next()
+    .removeClass('active')
+  })
+
+  $('.pageNumber').click(function(){
+    $(this).addClass('active').siblings().removeClass('active')
+  })
+})
+
+
+// $('li').click(function(){
+//   $(this).addClass('active').siblings().removeClass('active')
+// })
