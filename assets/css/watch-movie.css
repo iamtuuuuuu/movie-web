@@ -41,11 +41,11 @@ svg {
 .option-container__header {
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 12px;
 }
 .option-container__title {
   flex-grow: 2;
   color: var(--white-color);
-  padding: 12px;
 }
 
 .fb-btn {
@@ -94,6 +94,8 @@ svg {
 .btn-episodes {
   height: 36px;
   min-width: 110px;
+}
+.btn-episodes ~ .btn-episodes {
   margin: 0 4px;
 }
 .option-container__subtitle-intro,
