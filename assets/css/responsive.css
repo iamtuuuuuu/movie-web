@@ -1,12 +1,15 @@
 @media (min-width: 1200px) {
-    .header__nav-item { 
-        margin: 0 45px 0 0;
-        width: auto;
-    }
+  .header__nav-item {
+    margin: 0 25px 0 0;
+    width: auto;
+  }
+  .header__nav-item:last-child {
+    margin: 0;
+  }
 
-    .header__nav-link {
-        line-height: 90px;
-        display: block;
-        white-space: nowrap;
-    }
+  .header__nav-link {
+    line-height: 90px;
+    display: block;
+    white-space: nowrap;
+  }
 }
