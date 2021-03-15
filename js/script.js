@@ -75,13 +75,13 @@ $(document).ready(function() {
   });
 
 
-document.querySelector('.site-nav-action')
-.addEventListener('click', () => {
-  document.querySelector('.site-nav-action')
-  .classList.toggle('active');
-  document.querySelector('.dropdown')
-  .classList.toggle('active');
-})
+// document.querySelector('.site-nav-action')
+// .addEventListener('click', () => {
+//   document.querySelector('.site-nav-action')
+//   .classList.toggle('active');
+//   document.querySelector('.dropdown')
+//   .classList.toggle('active');
+// })
 
 
 $(document).ready(function(){
