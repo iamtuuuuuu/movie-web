@@ -21,6 +21,7 @@ html {
 
 body {
     margin: 0;
+    padding: 0;
 }
 /* App */
 .app {
@@ -170,3 +171,275 @@ body {
     cursor: pointer;
 }
 
+/* Card-full */
+.card-full {
+    margin-bottom: 30px;
+}
+
+/* Phan ben trai */
+.card__cover {
+    position: relative;
+    text-decoration: none;
+    display: block;
+    /* border-radius: 7px; */
+    overflow: hidden;
+}
+
+.card__cover-img {
+    width: 100%;
+    vertical-align: middle;
+    border-style: none;
+    border-radius: 7px;
+
+}
+
+.card__play {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    width: 80px;
+    height: 80px;
+    border: 2px solid #fff;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    top: calc(50% - 12px);
+    left: calc(50% - 5px);
+    margin: -30px 0 0 -30px;
+    /* z-index: 3;     */
+    -webkit-transition: .4s ease;
+    -moz-transition: .4s ease;
+    transition: .4s ease;
+    opacity: 0;
+}
+
+.card__play-icon {
+    margin: 2px 0 0 3px;
+    font-size: 3.6rem;
+    color: #fff;
+}
+
+.movie_option {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ea9b06;
+    height: 18px;
+    width: 48px;
+    border-radius: 3px;
+    top: 5px;
+    left: 5px;
+}
+
+.movie_option__text {
+    display: inline-block;
+    font-size: 1.2rem;
+    font-style: normal;
+    padding: 2px 5px;
+    font-weight: 700;
+    line-height: 100%;
+    padding: 0;
+    color: #fff;
+}
+
+.runtime {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 5px;
+    right: 5px;    
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background: #ff55a5;
+    padding: 3px 5px;
+}
+
+.runtime__text {
+    font-size: 1.2rem;
+    color: #fff;
+    line-height: 100%;
+    font-weight: 700;
+}
+
+.card__cover:hover {
+    box-shadow: 0 0 20px 0 rgb(255, 88, 96, .5);
+}
+
+.card__cover:hover .card__play {
+    opacity: 1;
+}
+
+
+/* Phan ben phai */
+.card__content {
+    margin-left: 10px;
+}
+
+.card__content-title {
+    margin-top: -10px;
+    /* height: 38px; */
+}
+
+.card__content-title-link {
+    text-decoration: none;
+    font-size: 2.2rem;
+    font-weight: 400;
+    line-height: 2.8rem;
+    height: 2.8rem;
+    color: #fff;
+    margin: 8px 0;
+    overflow: hidden;
+    display: block;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    text-overflow: ellipsis;
+}
+
+.card__content-title-origin {
+    color: rgba(255,255,255,.5);
+    font-size: 1.4rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+}
+
+.card__category {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    height: 24px;
+    overflow: hidden;
+}
+
+.card__category-link {
+    position: relative;
+    text-decoration: none;
+    font-size: 1.4rem;
+    background-image: -webkit-linear-gradient(0deg,#ff55a5 0,#ff5860 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #ff5860;
+    margin-right: 7px;
+    opacity: .9;
+}
+
+.card__category-link::after {
+    content: ',';
+    position: absolute;
+    display: block;
+    left: 100%;
+    top: 0;
+    background-image: -webkit-linear-gradient(0deg,#ff55a5 0,#ff5860 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #ff5860;
+}
+
+.card__category-link:last-child {
+    overflow: hidden;
+}
+
+.card__country {
+
+}
+
+.card__country-link {
+    text-decoration: none;
+    margin: 5px 0;
+    display: block;
+    margin-right: 10px;
+    font-size: 1.4rem;
+    color: #ff5860;
+    opacity: .9;
+}
+
+.card__imdb {
+    height: 16px;
+    width: 55px;
+    margin-top: 15px;
+    color: #000;
+    background-image: -webkit-linear-gradient(90deg,#f5c518 50%,#b99100 100%);
+    background-image: linear-gradient(to bottom,#b99100 0,#f5c518 51%,#b99100 100%);
+    font-size: 12px;
+    font-weight: 700;
+    font-style: normal;
+    padding: 2px;
+    border-radius: 3px;
+    line-height: 100%;
+    -webkit-box-shadow: 0 0 20px 0 rgb(0 0 0 / 80%);
+    box-shadow: 0 0 20px 0 rgb(0 0 0 / 80%);
+    -webkit-border-radius: 3px;
+}
+
+.card__description {
+
+}
+
+.card__description p{
+    /* font-size: 1.6rem;
+    line-height: 2.5rem;
+    margin-bottom: 15px;
+    letter-spacing: .2px; */
+
+    --lineHeight: 2.5rem;
+    font-size: 1.6rem;
+    line-height: var(--lineHeight);
+    height: calc(var(--lineHeight)*5);
+    color: rgba(255,255,255,.7);
+    overflow: hidden;
+    display: block;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    text-overflow: ellipsis;
+    margin-bottom: 15px;
+}
+
+/* Card nho */
+
+.card__content--s {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.card__content--s .card__content-title {
+    text-transform: uppercase;
+    margin-bottom: 0;
+}
+
+.card__content--s .card__content-title-origin {
+    margin-top: -4px;
+}
+
+
+/*container vs row*/
+.container{
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+ 
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.col-06,.col-12{
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+} 
