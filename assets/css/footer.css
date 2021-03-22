@@ -108,12 +108,16 @@ li{
     margin-top: 15px;
 }
  
-.footer__app li{
+/* .footer__app li{
     margin-right: 30px; 
-}
+} */
  
 .justify-content-center{
     justify-content: center !important;
+}
+
+.justify-content-space-between{
+    justify-content: space-between !important;
 }
  
 .footer__app li img {
