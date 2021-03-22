@@ -10,3 +10,125 @@
         white-space: nowrap;
     }
 }
+
+/*  PC */
+@media (min-width: 1024px) and (max-width: 1239px) {
+    .slider {
+        position: relative;
+        margin-top: 68px;
+        height: 550px;
+    }
+}
+
+/* Mobile + Tablet */
+@media (max-width: 1023px) {
+    
+
+    .hide-on-mobile-tablet {
+        display: none;
+    }
+}
+
+/* Tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+    .slider {
+        position: relative;
+        margin-top: 68px;
+        height: 500px;
+    }
+
+    .slider__heading {
+        top: 10%;
+    }
+
+    .slider__movie {
+        top: 20%
+    }
+    
+}
+
+/* Mobile */
+
+@media (max-width: 739px) { /* Mobile chung */
+
+    
+    .hide-on-mobile {
+        display: none;
+    }
+
+    .hide-on-mobile {
+        display: none;
+    }
+
+    .card__category {
+        display: none; 
+    }
+
+    .card__country {
+        display: none; 
+    }
+
+    .card__imdb {
+        display: none; 
+    }
+
+    .card__description {
+        display: none; 
+    }
+
+    .card__content {
+        margin-left: 0;
+        margin-top: 20px;
+
+    }
+
+    .card__content-title-link {
+        font-size: 1.6rem;
+        text-transform: uppercase;
+    }
+
+    .card__content-title-origin {
+        margin-top: -10px;
+    }
+
+    .mobile-full {
+        max-width: 100%;
+    }
+
+   .album {
+       padding: 30px 0;
+   }
+
+   .album__head {
+       margin-bottom: 10px;
+   }
+
+   .album__head-title--text {
+       font-size: 2.4rem;       
+   }
+
+   .album__head-title--icon {
+       font-size: 2.4rem;
+   }
+
+   .slider-item {
+        overflow: hidden;
+        margin: 30px 10px;
+    }
+
+    .slider {
+        position: relative;
+        margin-top: 68px;
+        height: 450px;
+    }
+
+    .slider__heading {
+        top: 12%;
+    }
+
+    .slider__movie {
+        top: 20%
+    }
+
+    
+}

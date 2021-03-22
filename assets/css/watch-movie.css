@@ -1,0 +1,297 @@
+a {
+    color: #428bca;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+svg {
+    fill: #fff;
+    width: 1.5rem;
+}
+
+.section {
+    margin-top: 90px;
+    background-color: var(--back-ground-color);
+}
+
+.container {}
+
+.container__watch {}
+
+.container__player {}
+
+.container__player-video {
+    width: 100%;
+    height: 634px;
+}
+
+.container__player-video:focus {
+    outline: none;
+}
+
+.container__player-help {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 1.4rem;
+    color: var(--white-color);
+}
+
+.container__watch-option {
+    padding: 48px 24px;
+}
+
+.option-container {
+    flex-grow: 1;
+    margin: 0 60px;
+}
+
+.option-container__header {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+
+.option-container__title {
+    flex-grow: 2;
+    color: var(--white-color);
+}
+
+.fb-btn {
+    display: inline-block;
+    height: 36px;
+    min-width: 110px;
+    border-radius: 4px;
+    background-color: #3273dc;
+    text-align: center;
+}
+
+.fb-link {
+    line-height: 36px;
+    font-size: 1.8rem;
+    color: var(--white-color);
+}
+
+.fb-icon {
+    margin-right: 8px;
+}
+
+.option-container__title h1 {
+    font-size: 3rem;
+    line-height: 36px;
+}
+
+.option-container__title h2 {
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.option-container__elearning {
+    flex-grow: 1;
+    text-align: right;
+    padding: 12px;
+}
+
+.sub-toggle {
+    margin-top: 16px;
+}
+
+.sub-btn {
+    color: var(--white-color);
+    padding: 5px 12px;
+    font-size: 1.4rem;
+    height: 36px;
+}
+
+.back-toggle {
+    font-size: 1.6rem;
+    margin-top: 16px;
+}
+
+.btn-episodes {
+    height: 36px;
+    min-width: 110px;
+}
+
+.btn-episodes~.btn-episodes {
+    margin: 0 4px;
+}
+
+.option-container__subtitle-intro,
+.option-container__subtitle-custom {
+    font-size: 1.5rem;
+    color: var(--white-color);
+    line-height: 2.5rem;
+}
+
+.option-container__subtitle-selection {
+    display: flex;
+}
+
+.subtitle-list {
+    flex: 1;
+    padding: 12px;
+}
+
+.subtitle-list h4 {
+    font-size: 2.4rem;
+    color: var(--white-color);
+    font-weight: 400;
+}
+
+.media {
+    display: flex;
+    align-items: flex-start;
+}
+
+.sub-icon svg {
+    width: 1.8rem;
+}
+
+.media-left {
+    margin-right: 1rem;
+}
+
+.media-content {
+    flex: 1;
+    text-align: left;
+    font-size: 1.2rem;
+    color: var(--white-color);
+}
+
+.media-right {
+    display: flex;
+}
+
+.btn.small-btn {
+    min-width: 10px;
+    height: 27px;
+    border-radius: 2px;
+    padding: 3.5px 9px;
+}
+
+.btn.success-btn {
+    background-image: none;
+    background-color: #23d160;
+    border-color: transparent;
+    color: var(--white-color);
+}
+
+.like-container {
+    margin-left: 4px;
+}
+
+.like-container a {
+    padding: 0 4px;
+}
+
+.option-container__vipmode {
+    margin: 24px 0;
+    height: 124px;
+    background-color: #209cee;
+    color: var(--white-color);
+    padding: 20px 24px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.option-container__vipmode p {
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+.btn.warning-btn {
+    background-image: none;
+    background-color: #ffdd57;
+    border-color: transparent;
+}
+
+.option-container__vipmode a {
+    font-size: 2rem;
+    color: var(--black-color);
+    padding: 5px 12px;
+    font-weight: 500;
+}
+
+.option-container__comment {
+    color: var(--white-color);
+    margin-top: 16px;
+    font-size: 1.5rem;
+}
+
+.container__notification {
+    margin: 24px 84px;
+    padding: 20px 24px;
+    background-color: rgb(3, 55, 107);
+    border-radius: 4px;
+}
+
+.container__notification-heading {
+    font-size: 2.6rem;
+    text-align: center;
+    margin-top: 0;
+}
+
+.container__notification-heading svg {
+    width: 2.4rem;
+}
+
+.has-text-danger {
+    color: red;
+}
+
+.has-text-grey {
+    color: grey;
+}
+
+.container__notification p {
+    font-size: 1.5rem;
+    color: var(--white-color);
+    line-height: 2rem;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+.reference-list {
+    display: flex;
+    justify-content: center;
+    padding-left: 0;
+    margin-top: 0;
+}
+
+.reference-item {
+    list-style: none;
+    padding: 12px;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.reference-link {
+    display: inline-block;
+    background-color: var(--white-color);
+    padding: 5px;
+    border-radius: 5px;
+    color: #00f;
+    font-size: 1.6rem;
+    line-height: 1.5em;
+    font-weight: 500;
+}
+
+.reference-item svg {
+    width: 2.2rem;
+    padding-right: 4px;
+    margin-bottom: -4px;
+}
+
+.notification__footer {
+    text-align: center;
+    margin-top: 16px;
+}
+
+.get-news-btn {
+    color: var(--white-color);
+    font-size: 1.4rem;
+}
+
+body {
+    background-color: #2B2B31;
+}
