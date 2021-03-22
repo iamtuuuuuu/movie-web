@@ -259,9 +259,15 @@ ul.film__pagination li a{
     border-radius: 50%;
 }
 
-ul.film__pagination li.pageNumber:hover a,
+ul.film__pagination li.pageNumber:hover a
+{
+    background: #de506d;
+    opacity: .6;
+    color: #fff;
+}
+
 ul.film__pagination li.pageNumber.active a{
-    background: #333;
+    background: #de506d;
     color: #fff;
 }
 
