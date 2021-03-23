@@ -297,3 +297,17 @@ a.quick-eps {
     background-image: linear-gradient( 90deg, #ff55a5 0, #ff5860 100%);
     opacity: .199;
 }
+
+.video_trailer iframe {
+    padding: 0 !important;
+}
+
+.trailer {
+    margin-top: 80px;
+}
+
+.container {
+    position: relative;
+    z-index: 3;
+    padding-top: 90px;
+}
