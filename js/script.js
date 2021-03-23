@@ -73,3 +73,11 @@ $(document).ready(function() {
       ]
     });
   });
+
+
+// toggle btn search
+const searchIcon = document.querySelector('.header__search-btn-icon') 
+const formSearch = document.querySelector('.header__search-wrap') 
+searchIcon.addEventListener('click', function() {
+  formSearch.classList.toggle('hidden')
+}, false)
