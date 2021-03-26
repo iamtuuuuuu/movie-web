@@ -97,8 +97,8 @@
                         Báo lỗi
                       </a>
                     </li>
-                    <li class="toggle-light">
-                      <a href="">
+                    <li id="toggle-light">
+                      <a href="#">
                         <i class="fas fa-lightbulb"></i>
                         Tắt đèn
                       </a>
@@ -236,6 +236,7 @@
                     </div>
                   </div>
                 </div>
+                <div id="lightout" class=""></div>
               </div>
             </div>
           </div>
@@ -243,7 +244,7 @@
       </div>
     </section>
     <section class="comment-section">
-      <div class="body-container">
+      <div class="comment-section__container">
         <div class="grid wide">
           <div class="row">
             <div class="c-12">
@@ -815,5 +816,27 @@
         </div>
       </div>
     </footer>
+    <script>
+      var toggleLight = document.getElementById("toggle-light");
+      toggleLight.onclick = function () {
+        var light = document.getElementById("lightout");
+        var barPlayer = document.querySelector(".bar-player");
+        var containerPlayer = document.querySelector(".container__player");
+        var bulb = document.querySelector("#toggle-light a");
+        if (light.classList.contains("light")) {
+          containerPlayer.classList.remove("light");
+          barPlayer.classList.remove("light");
+          light.classList.remove("light");
+          bulb.innerHTML = ` <i class="fas fa-lightbulb"></i>
+                        Tắt đèn`;
+        } else {
+          containerPlayer.classList.add("light");
+          barPlayer.classList.add("light");
+          light.classList.add("light");
+          bulb.innerHTML = ` <i class="far fa-lightbulb"></i>
+                        Bật đèn`;
+        }
+      };
+    </script>
   </body>
 </html>

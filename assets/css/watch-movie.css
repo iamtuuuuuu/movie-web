@@ -1,3 +1,6 @@
+html {
+  scroll-behavior: smooth;
+}
 body {
   background-color: #2b2b31;
   height: 100%;
@@ -470,4 +473,21 @@ svg {
   font-size: 1.2rem;
   color: #fff;
   opacity: 0.6;
+}
+#lightout {
+  background-color: #000;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  opacity: 0.9;
+}
+#lightout.light {
+  position: fixed;
+}
+.bar-player.light,
+.container__player.light {
+  z-index: 5;
+  position: relative;
 }
