@@ -1,0 +1,601 @@
+﻿
+@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section class="section player-section">
+    <div class="section__background"></div>
+    <div class="body-container">
+        <div class="grid wide">
+            <div class="grid">
+                <div class="container__watch row">
+                    <div class="col c-12">
+                        <div class="container__player">
+                            <video class="container__player-video"
+                                   src="~/Content/assets/video/movie.mp4"
+                                   type="video/mp4"
+                                   controls></video>
+                        </div>
+                        <div class="player_message">
+                            Mẹo tìm kiếm phim trên Google: "Tên phim + galaphim"
+                            <br />
+                            <div class="message--warning">
+                                Hãy đăng nhập tài khoản để loại bỏ quảng cáo!!!
+                            </div>
+                        </div>
+                        <div class="bar-player">
+                            <ul class="bar-left">
+                                <li class="report">
+                                    <a href="#" class="report__link">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                        Báo lỗi
+                                    </a>
+                                </li>
+                                <li id="toggle-light">
+                                    <a href="#">
+                                        <i class="fas fa-lightbulb"></i>
+                                        Tắt đèn
+                                    </a>
+                                </li>
+                                <li class="close-qc">
+                                    <a href="">
+                                        <i class="fas fa-window-close"></i>
+                                        Tắt quảng cáo
+                                    </a>
+                                </li>
+                                <li class="embedded">
+                                    <a href="#" class="embedded-link">
+                                        <i class="fas fa-code"></i>
+                                        Embedded
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="film-title">
+                            <div class="film-title__left">
+                                <h2 class="player-title">
+                                    <i class="fas fa-play-circle"></i>
+                                    Wanda Và Vision (Phần 1) Tập 1 [Vietsub]
+                                </h2>
+                                <span class="player-sub-title">
+                                    WandaVision (Season 1) (2020)
+                                </span>
+                                <div class="social-media">
+                                    <a href="" class="social-media__like">
+                                        <i class="fas fa-thumbs-up"></i>
+                                        Thích
+                                    </a>
+                                    <a href="" class="social-media__share"> Chia sẻ </a>
+                                </div>
+                            </div>
+                            <div class="film-title__right">
+                                <div class="rating-content">
+                                    <div id="rating">
+                                        <ul class="rate-area">
+                                            <input type="radio"
+                                                   id="5-star"
+                                                   name="crating"
+                                                   value="5" />
+                                            <label for="5-star" title="Amazing">5 stars</label>
+                                            <input type="radio"
+                                                   id="4-star"
+                                                   name="crating"
+                                                   value="4" />
+                                            <label for="4-star" title="Good">4 stars</label>
+                                            <input type="radio"
+                                                   id="3-star"
+                                                   name="crating"
+                                                   value="3" />
+                                            <label for="3-star" title="Average">3 stars</label>
+                                            <input type="radio"
+                                                   id="2-star"
+                                                   name="crating"
+                                                   value="2" />
+                                            <label for="2-star" title="Not Good">2 stars</label>
+                                            <input type="radio"
+                                                   id="1-star"
+                                                   required=""
+                                                   name="crating"
+                                                   value="1"
+                                                   aria-required="true" />
+                                            <label for="1-star" title="Bad">1 star</label>
+                                        </ul>
+                                    </div>
+                                    <i id="score-rating">
+                                        ( <span id="rating_score">3.7</span><i class="fas fa-star star-icon"></i> /
+                                        <span id="total_rating">52</span> lượt )
+                                    </i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="film-episodes">
+                            <div class="server-name">
+                                <i class="fas fa-list"></i>
+                                Vietsub
+                            </div>
+                            <div class="list-episodes">
+                                <div class="list-episodes__title"></div>
+                                <div class="list-episodes__content">
+                                    <div class="grid">
+                                        <div class="row margin-0 episode_row">
+                                            <div class="episodes col c-2">
+                                                <a href="" class="episodes-link active">Tập 1</a>
+                                            </div>
+                                            <div class="episodes col c-2">
+                                                <a href="" class="episodes-link">Tập 1</a>
+                                            </div>
+                                            <div class="episodes col c-2">
+                                                <a href="" class="episodes-link">Tập 1</a>
+                                            </div>
+                                            <div class="episodes col c-2">
+                                                <a href="" class="episodes-link">Tập 1</a>
+                                            </div>
+                                            <div class="episodes col c-2">
+                                                <a href="" class="episodes-link">Tập 1</a>
+                                            </div>
+                                            <div class="episodes col c-2">
+                                                <a href="" class="episodes-link">Tập 1</a>
+                                            </div>
+                                            <div class="episodes col c-2">
+                                                <a href="" class="episodes-link">Tập 1</a>
+                                            </div>
+                                            <div class="episodes col c-2">
+                                                <a href="" class="episodes-link">Tập 1</a>
+                                            </div>
+                                            <div class="episodes col c-2">
+                                                <a href="" class="episodes-link">Tập 1</a>
+                                            </div>
+                                            <div class="episodes col c-2">
+                                                <a href="" class="episodes-link">Tập 1</a>
+                                            </div>
+                                            <div class="episodes col c-2">
+                                                <a href="" class="episodes-link">Tập 1</a>
+                                            </div>
+                                            <div class="episodes col c-2">
+                                                <a href="" class="episodes-link">Tập 1</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="lightout" class=""></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="comment-section">
+    <div class="comment-section__container">
+        <div class="grid wide">
+            <div class="row">
+                <div class="c-12">
+                    <ul class="breadcumb">
+                        <li class="breadcumb__item">
+                            <a href="#">Trang chủ <i class="fas fa-arrow-right"></i></a>
+                        </li>
+                        <li class="breadcumb__item">
+                            <a href="#">Phim bộ <i class="fas fa-arrow-right"></i></a>
+                        </li>
+                        <li class="breadcumb__item">
+                            <a href="#">
+                                WandaVision (Season 1) (2020)
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </li>
+                        <li class="breadcumb__item">
+                            <a href="#">Tập 1</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col c-12">
+                    <div class="row">
+                        <div class="col c-9">
+                            <h1 class="comment-section__title">
+                                <a href="">
+                                    Wanda Và Vision (Phần 1) - WandaVision (Season 1)
+                                </a>
+                            </h1>
+                            <div class="comment-section__subtitle">
+                                <h2>
+                                    Phim Wanda Và Vision (Phần 1) - WandaVision (Season 1)
+                                    (2020) [Vietsub]
+                                </h2>
+                                <p>
+                                    <strong>Wanda Và Vision (Phần 1)</strong> có tựa gốc là
+                                    <strong>WandaVision (Season 1)</strong> được phát hành vào
+                                    năm 2020 của đạo diễn <strong>Matt Shakman</strong>, Wanda
+                                    Và Vision (Phần 1) thuộc thể loại Hành Động Hài Hước Phiêu
+                                    Lưu Viễn Tưởng Tình Cảm Sitcom với sự tham gia của các
+                                    diễn viên <strong>Elizabeth Olsen</strong>,
+                                    <strong>Paul Bettany</strong>,
+                                    <strong>Kat Dennings</strong>,
+                                    <strong>Evan Peters</strong>,
+                                    <a href="#"
+                                       title="Wanda Và Vision (Phần 1) - WandaVision (Season 1)"><i>Xem thêm <i class="fas fa-arrow-right"></i></i></a><a href="#/download"
+                                                                                                                                                          title="Download Wanda Và Vision (Phần 1) - WandaVision (Season 1)"
+                                                                                                                                                          ref="nofollow">
+                                        <i>Download <i class="fas fa-arrow-right"></i></i>
+                                    </a>
+                                </p>
+                            </div>
+                            <div class="comment-section__content">
+                                <div id="fb-root"></div>
+                                <script async
+                                        defer
+                                        crossorigin="anonymous"
+                                        src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v10.0"
+                                        nonce="b1Jr6G1A"></script>
+                                <div class="fb-comments"
+                                     data-href="https://developers.facebook.com/docs/plugins/comments#configurator"
+                                     data-width="918"
+                                     style="background-color: white"
+                                     data-numposts="5"></div>
+                            </div>
+                        </div>
+                        <div class="col c-3">
+                            <div class="tab-title">
+                                <h2>Nổi bật</h2>
+                            </div>
+                            <div class="tab-content">
+                                <div class="row">
+                                    <div class="c-3">
+                                        <div class="card__cover">
+                                            <img src="~/Content/assets/img/watch-movie/dai-duong-minh-nguyet.small.webp"
+                                                 alt=""
+                                                 class="card__img" />
+                                            <a href="" class="card__play">
+                                                <i class="card__play-icon fas fa-play"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="c-9">
+                                        <div class="card__content">
+                                            <a href="">
+                                                <p class="movie-title">Đại Đường Minh Nguyệt</p>
+                                                <span class="original-title">Weaving a Tale of Love</span>
+                                                <div class="view-count">71.5K lượt xem</div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="c-3">
+                                        <div class="card__cover">
+                                            <img src="~/Content/assets/img/watch-movie/dai-duong-minh-nguyet.small.webp"
+                                                 alt=""
+                                                 class="card__img" />
+                                            <a href="" class="card__play">
+                                                <i class="card__play-icon fas fa-play"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="c-9">
+                                        <div class="card__content">
+                                            <a href="">
+                                                <p class="movie-title">Đại Đường Minh Nguyệt</p>
+                                                <span class="original-title">Weaving a Tale of Love</span>
+                                                <div class="view-count">71.5K lượt xem</div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="c-3">
+                                        <div class="card__cover">
+                                            <img src="~/Content/assets/img/watch-movie/dai-duong-minh-nguyet.small.webp"
+                                                 alt=""
+                                                 class="card__img" />
+                                            <a href="" class="card__play">
+                                                <i class="card__play-icon fas fa-play"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="c-9">
+                                        <div class="card__content">
+                                            <a href="">
+                                                <p class="movie-title">Đại Đường Minh Nguyệt</p>
+                                                <span class="original-title">Weaving a Tale of Love</span>
+                                                <div class="view-count">71.5K lượt xem</div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="c-3">
+                                        <div class="card__cover">
+                                            <img src="~/Content/assets/img/watch-movie/dai-duong-minh-nguyet.small.webp"
+                                                 alt=""
+                                                 class="card__img" />
+                                            <a href="" class="card__play">
+                                                <i class="card__play-icon fas fa-play"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="c-9">
+                                        <div class="card__content">
+                                            <a href="">
+                                                <p class="movie-title">Đại Đường Minh Nguyệt</p>
+                                                <span class="original-title">Weaving a Tale of Love</span>
+                                                <div class="view-count">71.5K lượt xem</div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="c-3">
+                                        <div class="card__cover">
+                                            <img src="~/Content/assets/img/watch-movie/dai-duong-minh-nguyet.small.webp"
+                                                 alt=""
+                                                 class="card__img" />
+                                            <a href="" class="card__play">
+                                                <i class="card__play-icon fas fa-play"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="c-9">
+                                        <div class="card__content">
+                                            <a href="">
+                                                <p class="movie-title">Đại Đường Minh Nguyệt</p>
+                                                <span class="original-title">Weaving a Tale of Love</span>
+                                                <div class="view-count">71.5K lượt xem</div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="c-3">
+                                        <div class="card__cover">
+                                            <img src="~/Content/assets/img/watch-movie/dai-duong-minh-nguyet.small.webp"
+                                                 alt=""
+                                                 class="card__img" />
+                                            <a href="" class="card__play">
+                                                <i class="card__play-icon fas fa-play"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="c-9">
+                                        <div class="card__content">
+                                            <a href="">
+                                                <p class="movie-title">Đại Đường Minh Nguyệt</p>
+                                                <span class="original-title">Weaving a Tale of Love</span>
+                                                <div class="view-count">71.5K lượt xem</div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="c-3">
+                                        <div class="card__cover">
+                                            <img src="~/Content/assets/img/watch-movie/dai-duong-minh-nguyet.small.webp"
+                                                 alt=""
+                                                 class="card__img" />
+                                            <a href="" class="card__play">
+                                                <i class="card__play-icon fas fa-play"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="c-9">
+                                        <div class="card__content">
+                                            <a href="">
+                                                <p class="movie-title">Đại Đường Minh Nguyệt</p>
+                                                <span class="original-title">Weaving a Tale of Love</span>
+                                                <div class="view-count">71.5K lượt xem</div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="c-3">
+                                        <div class="card__cover">
+                                            <img src="~/Content/assets/img/watch-movie/dai-duong-minh-nguyet.small.webp"
+                                                 alt=""
+                                                 class="card__img" />
+                                            <a href="" class="card__play">
+                                                <i class="card__play-icon fas fa-play"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="c-9">
+                                        <div class="card__content">
+                                            <a href="">
+                                                <p class="movie-title">Đại Đường Minh Nguyệt</p>
+                                                <span class="original-title">Weaving a Tale of Love</span>
+                                                <div class="view-count">71.5K lượt xem</div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="comment-form-section">
+    <div class="form__head">
+        <div class="grid wide">
+            <div class="row">
+                <div class="col c-12">
+                    <h3 class="form__title">Hãy đánh giá phim ở đây nhé !</h3>
+                    <ul class="form__navbar">
+                        <li class="form__navbar-item">
+                            <a href="" class="form__navbar-link active">Binh luan</a>
+                        </li>
+                        <li class="form__navbar-item">
+                            <a href="" class="form__navbar-link">Review</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form__body">
+        <div class="grid wide">
+            <div class="row">
+                <div class="col c-8">
+                    <div class="row">
+                        <div class="col c-12">
+                            <form action="#" id="comment-form" class="comment-form">
+                                <textarea name="content"
+                                          required=""
+                                          class="form__textarea"
+                                          placeholder="Để lại bình luận của bạn"></textarea>
+                                <button type="submit" class="btn submit-btn">Gửi</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col c-4">
+                    <div class="row">
+                        <div class="col c-12">
+                            <h3 class="suggestion-section__title">Có thể bạn thích...</h3>
+                        </div>
+                        <div class="col c-6">
+                            <div class="card">
+                                <div class="card__cover">
+                                    <img src="~/Content/assets/img/watch-movie/suggestion-section/xin-chao-toi-oi.small.webp"
+                                         alt="" />
+                                    <a href="" class="card__play card__play--">
+                                        <i class="card__play-icon fas fa-play"></i>
+                                    </a>
+                                </div>
+                                <div class="card__content">
+                                    <h5 class="card__title">
+                                        <a href=""
+                                           title="Xem phim Người Hùng Tia Chớp (Phần 7) - The Flash (Season 7)">Người Hùng Tia Chớp (Phần 7)</a>
+                                    </h5>
+
+                                    <span class="title_origin">The Flash (Season 7)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col c-6">
+                            <div class="card">
+                                <div class="card__cover">
+                                    <img src="~/Content/assets/img/watch-movie/suggestion-section/xin-chao-toi-oi.small.webp"
+                                         alt="" />
+                                    <a href="" class="card__play card__play--">
+                                        <i class="card__play-icon fas fa-play"></i>
+                                    </a>
+                                </div>
+                                <div class="card__content">
+                                    <h5 class="card__title">
+                                        <a href=""
+                                           title="Xem phim Người Hùng Tia Chớp (Phần 7) - The Flash (Season 7)">Người Hùng Tia Chớp (Phần 7)</a>
+                                    </h5>
+
+                                    <span class="title_origin">The Flash (Season 7)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col c-6">
+                            <div class="card">
+                                <div class="card__cover">
+                                    <img src="~/Content/assets/img/watch-movie/suggestion-section/xin-chao-toi-oi.small.webp"
+                                         alt="" />
+                                    <a href="" class="card__play card__play--">
+                                        <i class="card__play-icon fas fa-play"></i>
+                                    </a>
+                                </div>
+                                <div class="card__content">
+                                    <h5 class="card__title">
+                                        <a href=""
+                                           title="Xem phim Người Hùng Tia Chớp (Phần 7) - The Flash (Season 7)">Người Hùng Tia Chớp (Phần 7)</a>
+                                    </h5>
+
+                                    <span class="title_origin">The Flash (Season 7)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col c-6">
+                            <div class="card">
+                                <div class="card__cover">
+                                    <img src="~/Content/assets/img/watch-movie/suggestion-section/xin-chao-toi-oi.small.webp"
+                                         alt="" />
+                                    <a href="" class="card__play card__play--">
+                                        <i class="card__play-icon fas fa-play"></i>
+                                    </a>
+                                </div>
+                                <div class="card__content">
+                                    <h5 class="card__title">
+                                        <a href=""
+                                           title="Xem phim Người Hùng Tia Chớp (Phần 7) - The Flash (Season 7)">Người Hùng Tia Chớp (Phần 7)</a>
+                                    </h5>
+
+                                    <span class="title_origin">The Flash (Season 7)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col c-6">
+                            <div class="card">
+                                <div class="card__cover">
+                                    <img src="~/Content/assets/img/watch-movie/suggestion-section/xin-chao-toi-oi.small.webp"
+                                         alt="" />
+                                    <a href="" class="card__play card__play--">
+                                        <i class="card__play-icon fas fa-play"></i>
+                                    </a>
+                                </div>
+                                <div class="card__content">
+                                    <h5 class="card__title">
+                                        <a href=""
+                                           title="Xem phim Người Hùng Tia Chớp (Phần 7) - The Flash (Season 7)">Người Hùng Tia Chớp (Phần 7)</a>
+                                    </h5>
+
+                                    <span class="title_origin">The Flash (Season 7)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col c-6">
+                            <div class="card">
+                                <div class="card__cover">
+                                    <img src="~/Content/assets/img/watch-movie/suggestion-section/xin-chao-toi-oi.small.webp"
+                                         alt="" />
+                                    <a href="" class="card__play card__play--">
+                                        <i class="card__play-icon fas fa-play"></i>
+                                    </a>
+                                </div>
+                                <div class="card__content">
+                                    <h5 class="card__title">
+                                        <a href=""
+                                           title="Xem phim Người Hùng Tia Chớp (Phần 7) - The Flash (Season 7)">Người Hùng Tia Chớp (Phần 7)</a>
+                                    </h5>
+
+                                    <span class="title_origin">The Flash (Season 7)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col c-12"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+      var toggleLight = document.getElementById("toggle-light");
+      toggleLight.onclick = function () {
+        var light = document.getElementById("lightout");
+        var barPlayer = document.querySelector(".bar-player");
+        var containerPlayer = document.querySelector(".container__player");
+        var bulb = document.querySelector("#toggle-light a");
+        if (light.classList.contains("light")) {
+          containerPlayer.classList.remove("light");
+          barPlayer.classList.remove("light");
+          light.classList.remove("light");
+          bulb.innerHTML = ` <i class="fas fa-lightbulb"></i>
+                        Tắt đèn`;
+        } else {
+          containerPlayer.classList.add("light");
+          barPlayer.classList.add("light");
+          light.classList.add("light");
+          bulb.innerHTML = ` <i class="far fa-lightbulb"></i>
+                        Bật đèn`;
+        }
+      };
+</script>

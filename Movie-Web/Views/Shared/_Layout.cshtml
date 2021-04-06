@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie-web</title>
+    <link rel="stylesheet" href="~/Content/assets/css/lightslider.css" />
+    <link rel="stylesheet" href="~/Content/assets/css/base.css" />
+    <link rel="stylesheet" href="~/Content/assets/css/main.css" />
+    <link rel="stylesheet" href="~/Content/assets/css/grid.css" />
+    <link rel="stylesheet" href="~/Content/assets/css/watch-movie.css" />
+    <link rel="stylesheet" href="~/Content/assets/css/footer.css" />
+    <link rel="stylesheet" href="~/Content/assets/css/details.css">
+    <link rel="stylesheet" href="~/Content/assets/css/comment.css">
+    <link rel="stylesheet" href="~/Content/assets/css/style.css">
+    <link rel="stylesheet" href="~/Content/assets/css/album_films.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&display=swap"
+          rel="stylesheet" />
+    <link rel="stylesheet"
+          href="~/Content/assets/css/fontawesome-free-5.15.1/css/all.min.css" />
+</head>
+<body>
+    <div class="app">
+        <header class="header">
+            <nav class="header__content">
+                <a href="#" class="header__logo">
+                    <img class="header__logo-img"
+                         src="~/Content/assets/img/logo.png"
+                         alt="Movie Web" />
+                </a>
+                <ul class="header__nav-list">
+                    <li class="header__nav-item">
+                        <a class="header__nav-link" href="#">Phim mới</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="#" class="header__nav-link">Phim bộ</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="#" class="header__nav-link">Phim lẻ</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="#" class="header__nav-link">Phim chiếu rạp</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="#" class="header__nav-link">Thể loại</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="#" class="header__nav-link">Quốc gia</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="#" class="header__nav-link">Sắp chiếu</a>
+                    </li>
+                </ul>
+
+                <div class="header__auth">
+                    <button class="header__search-btn" type="button">
+                        <i class="header__search-btn-icon fas fa-search"></i>
+                    </button>
+
+                    <button class="header__notify-btn" type="button">
+                        <i class="header__notify-icon fas fa-bell"></i>
+                    </button>
+                    <a href="./signin.html">
+                        <button class="btn header__sign-in-btn">Đăng nhập</button>
+                    </a>
+                </div>
+            </nav>
+        </header>
+        @RenderBody()
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-06 fl_50">
+                        <h6 class="footer__title">Contact</h6>
+                        <ul class="footer__list">
+                            <li>
+                                <a href="#">Góp ý: abc@gmail.com</a>
+                            </li>
+                            <li>
+                                <a href="#">Quảng cáo: xyz@gmail.com </a>
+                            </li>
+                        </ul>
+                        <ul class="footer__social">
+                            <li class="facebook">
+                                <a href="#">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                            </li>
+                            <li class="instagram">
+                                <a href="#">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </li>
+                            <li class="twitter">
+                                <a href="#">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li class="youtube">
+                                <a href="#">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="row col-06 fl_50 col_fl">
+                        <h6 class="footer__title">Download Our App</h6>
+                        <ul class="footer__app justify-content-center">
+                            <li>
+                                <a href="#">
+                                    <img src="~/Content/assets/img/our_app/App_Store_Badge.svg"
+                                         alt="abcxyz" />
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="~/Content/assets/img/our_app/google-play-badge.svg"
+                                         alt="asdas" />
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-06 fl_50">
+                        <div class="footer__copyright">
+                            <small>
+                                © 2016
+                                <a href="#" title="Phim Mới"><strong>XemPhimPlus</strong></a>. Create by <strong>ABC Team</strong>
+                            </small>
+                            <ul>
+                                <li>
+                                    <a href="https://x...content-available-to-author-only...s.net/p/gop-y.html"><strong>Góp ý</strong></a>
+                                </li>
+                                <li>
+                                    <a href="https://x...content-available-to-author-only...s.net/p/privacy.html"><strong>Chính sách</strong></a>
+                                </li>
+                                <li>
+                                    <a href="https://x...content-available-to-author-only...s.net/p/terms.html"><strong>Điều khoản</strong></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- <script src="./js/jquery.js"></script>
+    <script src="./js/lightslider.js"></script>
+    <script src="./js/script.js"></script> -->
+</body>
+</html>

@@ -1,0 +1,493 @@
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: #2b2b31;
+  height: 100%;
+}
+
+svg {
+  fill: #fff;
+  width: 1.5rem;
+}
+/* .body::before {
+  content: "";
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  background-color: rgba(43, 43, 49, 0.75);
+  opacity: 0;
+  transition: 0.4 ease;
+} */
+.margin-0 {
+  margin: 0 !important;
+}
+.section {
+  position: relative;
+}
+.player-section {
+  margin-top: 90px;
+  padding-top: 50px;
+  padding-bottom: 70px;
+}
+.section::before {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 400px;
+  z-index: 2;
+  background: linear-gradient(to bottom, rgba(43, 43, 49, 0) 0, #2b2b31 100%);
+}
+.section__background {
+  background: url(../img/watch-movie/wanda-va-vision.small.webp) center center /
+    cover no-repeat;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 400px;
+  height: 400px;
+  opacity: 0.3;
+}
+.body-container {
+  position: relative;
+  z-index: 3;
+}
+
+.container {
+}
+
+.container__watch {
+}
+
+.container__player {
+}
+
+.container__player-video {
+  width: 100%;
+  height: 556px;
+}
+
+.container__player-video:focus {
+  outline: none;
+}
+.player_message {
+  font-size: 1.4rem;
+  padding: 10px;
+  color: #fff;
+  text-align: center;
+  background-color: #a11544;
+}
+.message--warning {
+  color: #ffff00;
+  margin-top: 4px;
+}
+.bar-player {
+  display: flex;
+}
+.bar-left {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.bar-left li {
+  display: inline-block;
+  font-weight: 700;
+  color: #fff;
+  background: rgb(0 0 0/0.5);
+  opacity: 0.7;
+  border-radius: 4px;
+  box-shadow: 0 0 20px 0 rgb(0 0 0 / 30%);
+  padding: 4px 7px;
+  margin-right: 2px;
+}
+.bar-left li a {
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+.report a {
+  color: #fff000 !important;
+}
+.film-title {
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+.film-title__left {
+  color: rgb(255 255 255/80%);
+}
+.player-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+.player-title i {
+  color: red;
+}
+.player-sub-title {
+  font-size: 1.6rem;
+}
+.social-media {
+  margin-top: 8px;
+}
+.social-media a {
+  color: #fff;
+  display: inline-block;
+  background-color: #1877f2;
+  padding: 2px 4px;
+  border-radius: 2px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-right: 4px;
+}
+
+.rate-area {
+  float: left;
+  border-style: none;
+}
+
+.rate-area:not(:checked) > input {
+  position: absolute;
+  top: -9999px;
+  clip: rect(0, 0, 0, 0);
+}
+
+.rate-area:not(:checked) > label {
+  float: right;
+  width: 0.8em;
+  overflow: hidden;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 40px;
+  line-height: 32px;
+  color: lightgrey;
+  margin-bottom: 10px !important;
+}
+
+.rate-area:not(:checked) > label:before {
+  content: "★";
+}
+
+.rate-area > input:checked ~ label {
+  color: #ffff00;
+  text-shadow: none;
+}
+
+.rate-area:not(:checked) > label:hover,
+.rate-area:not(:checked) > label:hover ~ label {
+  color: #ffff00;
+}
+
+.rate-area > input:checked + label:hover,
+.rate-area > input:checked + label:hover ~ label,
+.rate-area > input:checked ~ label:hover,
+.rate-area > input:checked ~ label:hover ~ label,
+.rate-area > label:hover ~ input:checked ~ label {
+  color: #ffff00;
+  text-shadow: none;
+}
+
+.rate-area > label:active {
+  position: relative;
+  top: 0px;
+  left: 0px;
+}
+#score-rating {
+  color: #fff;
+  font-size: 1.6rem;
+}
+.star-icon {
+  color: #ffff00;
+  margin: 0 4px;
+}
+
+.film-episodes {
+  margin-top: 32px;
+}
+.server-name {
+  position: relative;
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 500;
+  letter-spacing: 0.7;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  background-color: #27272c;
+  padding: 10px 20px;
+  font-size: 1.4rem;
+}
+.server-name::after {
+  content: "";
+  border-style: solid;
+  border-width: 36px 0 0 30px;
+  border-color: transparent transparent transparent #27272c;
+  position: absolute;
+  right: -30px;
+  bottom: 0;
+  z-index: 2;
+}
+.list-episodes {
+  background-color: #27272c;
+  padding: 20px 20px 10px;
+}
+
+.episodes {
+  margin: 4px 0;
+}
+.episodes-link {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 700;
+  background-color: var(--primary-color);
+  border-radius: 4px;
+  text-align: center;
+  display: inline-block;
+  min-width: 191px;
+  line-height: 31px;
+  opacity: 0.8;
+}
+.comment-section {
+  background-color: #28282d;
+  padding: 70px 0;
+}
+.episodes-link.active {
+  background-color: #da1a26;
+}
+.breadcumb {
+  display: flex;
+}
+.breadcumb__item {
+  position: relative;
+}
+.breadcumb__item i {
+  margin: 0 12px;
+}
+
+.breadcumb__item a {
+  text-decoration: none;
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 500;
+}
+.comment-section__title a {
+  color: #fff;
+  font-size: 3.6rem;
+  font-weight: 300;
+  text-decoration: none;
+}
+.comment-section__subtitle {
+  margin-top: 64px;
+  color: #fff;
+  font-size: 1.6rem;
+}
+.comment-section__subtitle p {
+  line-height: 2.6rem;
+}
+.comment-section__subtitle a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+.comment-section__subtitle a:hover {
+  color: #1877f2;
+  transition: 0.4s ease;
+}
+.tab-content {
+  height: 650px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: block;
+}
+.tab-content .row {
+  background: rgb(0 0 0/0.2);
+  margin-bottom: 2px;
+  border-radius: 7px;
+}
+.tab-title {
+  font-size: 1.6rem;
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
+  margin-bottom: 8px;
+}
+.tab-title h2 {
+  margin: 0 0 8px 0;
+}
+.card__cover {
+}
+.card__img {
+  width: 100%;
+}
+.card__play {
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  left: 50%;
+  transform: translate(30%, 30%);
+}
+.card__play-icon {
+  font-size: 1.6rem;
+}
+.movie-title {
+  margin: 0 0 5px 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 2.4rem;
+}
+.original-title {
+  color: rgba(255, 255, 255, 0.5);
+  white-space: nowrap;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+.view-count {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  margin-top: 8px;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 10px;
+}
+
+/* comment form sectoon */
+
+.comment-form-section {
+  margin-bottom: 30px;
+}
+.form__head {
+  background-color: #28282d;
+  box-shadow: 0 5px 25px 0 rgb(0 0 0 / 30%);
+  position: relative;
+}
+.form__head::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 2px;
+  display: block;
+  background-image: linear-gradient(90deg, #ff55a5 0, #ff5860 100%);
+  box-shadow: 0 0 20px 0 rgb(255 88 96 / 50%);
+}
+.form__title {
+  font-size: 3.6rem;
+  color: #fff;
+  font-weight: 300;
+}
+.form__navbar {
+  display: flex;
+}
+.form__navbar-item {
+  margin-right: 30px;
+}
+.form__navbar-item:last-child {
+  margin-right: 0;
+}
+.form__navbar-link {
+  text-decoration: none;
+  font-size: 1.8rem;
+  color: #fff;
+  display: inline-block;
+  min-height: 36px;
+  opacity: 0.5;
+}
+.form__navbar-link.active {
+  border-bottom: 2px solid var(--primary-color);
+  opacity: 1;
+}
+.comment-form {
+  background-color: #28282d;
+  padding: 20px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+.form__textarea {
+  border: none;
+  height: 150px;
+  position: relative;
+  font-size: 1.5rem;
+  width: 100%;
+  color: #fff;
+  padding: 15px 20px;
+  background-color: #2b2b31;
+  resize: none;
+  letter-spacing: 0.2px;
+  outline: none;
+  margin-bottom: 30px;
+}
+
+.submit-btn {
+  font-size: 1.5rem;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+.suggestion-section__title {
+  font-size: 2.6rem;
+  font-weight: 400;
+  color: #fff;
+}
+.card {
+  margin: 16px 0;
+}
+.card__cover img {
+  width: 100%;
+  border-radius: 8px;
+}
+.card__play--suggested {
+  width: 60px;
+  height: 60px;
+  transform: translate(0, 0);
+}
+.card__title a {
+  font-size: 1.5rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 400;
+}
+.title_origin {
+  display: block;
+  font-size: 1.2rem;
+  color: #fff;
+  opacity: 0.6;
+}
+#lightout {
+  background-color: #000;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  opacity: 0.9;
+}
+#lightout.light {
+  position: fixed;
+}
+.bar-player.light,
+.container__player.light {
+  z-index: 5;
+  position: relative;
+}

@@ -1,0 +1,414 @@
+﻿
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- Phim bo Han Quoc -->
+<div class="section section__first bg_film">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section__wrap">
+                    <h1 class="section__title">Phim bộ Hàn Quốc</h1>
+                    <ul class="section__breadcrumb">
+                        <li class="section__breadcrumb__item">
+                            <a href="#">
+                                Trang chủ
+                            </a>
+                        </li>
+                        <li class="section__breadcrumb__items section__breadcrumb__item__active">
+                            Phim Bộ Hàn Quốc
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="filter">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="list__movie__filter" style="margin-bottom: 10px;">
+                    <div class="list__movie__filter__main">
+                        <form action="" id="form__filter" class="form__inline">
+                            <div class="filter__content">
+                                <div class="list__movie__filter__item">
+                                    <label for="filter__category">Thể loại</label>
+                                    <select id="filter__category" name="category" class="form__control">
+                                        <option value="">Tất cả</option>
+                                        <option data-slug="phim-hanh-dong" value="1">Phim hành động</option>
+                                        <option data-slug="phim-vien-tuong" value="7">Phim viễn tưởng</option>
+                                        <option data-slug="phim-chien-tranh" value="8">Phim chiến tranh</option>
+                                        <option data-slug="phim-hinh-su" value="9">Phim hình sự</option>
+                                        <option data-slug="phim-phieu-luu" value="10">Phim phiêu lưu</option>
+                                        <option data-slug="phim-hai-huoc" value="6">Phim hài hước</option>
+                                        <option data-slug="phim-vo-thuat" value="2">Phim võ thuật</option>
+                                        <option data-slug="phim-kinh-di" value="5">Phim kinh dị</option>
+                                        <option data-slug="phim-hoi-hop-gay-can" value="18">Phim hồi hộp-Gây cấn</option>
+                                        <option data-slug="phim-bi-an-sieu-nhien" value="20">Phim Bí ẩn-Siêu nhiên</option>
+                                        <option data-slug="phim-co-trang" value="15">Phim cổ trang</option>
+                                        <option data-slug="phim-than-thoai" value="16">Phim thần thoại</option>
+                                        <option data-slug="phim-tam-ly" value="11">Phim tâm lý</option>
+                                        <option data-slug="phim-tai-lieu" value="12">Phim tài liệu</option>
+                                        <option data-slug="phim-tinh-cam-lang-man" value="17">Phim tình cảm-Lãng mạn</option>
+                                        <option data-slug="phim-chinh-kich-drama" value="19">Phim chính kịch - Drama</option>
+                                        <option data-slug="phim-the-thao-am-nhac" value="13">Phim Thể thao-Âm nhạc</option>
+                                        <option data-slug="phim-gia-dinh" value="14">Phim gia đình</option>
+                                        <option data-slug="phim-hoat-hinh" value="4">Phim hoạt hình</option>
+                                    </select>
+                                </div>
+                                <div class="list__movie__filter__item">
+                                    <label for="filter__country">Quốc gia</label>
+                                    <select class="form__control" id="filter__country" name="country">
+                                        <option value="">Tất cả</option>
+                                        <option value="vn">Việt Nam</option>
+                                        <option value="cn">Trung Quốc</option>
+                                        <option value="us">Mỹ</option>
+                                        <option value="kr">Hàn Quốc</option>
+                                        <option value="jp">Nhật Bản</option>
+                                        <option value="hk">Hồng Kông</option>
+                                        <option value="in">Ấn Độ</option>
+                                        <option value="th">Thái Lan</option>
+                                        <option value="fr">Pháp</option>
+                                        <option value="tw">Đài Loan</option>
+                                        <option value="au">Úc</option>
+                                        <option value="uk">Anh</option>
+                                        <option value="ca">Canada</option>
+                                    </select>
+                                </div>
+                                <div class="list__movie__filter__item">
+                                    <label for="filter__eptype">Hình thức</label>
+                                    <select class="form__control" id="filter__eptype" name="eptype">
+                                        <option value="">Tất cả</option>
+                                        <option value="single" selected="">Phim lẻ</option>
+                                        <option value="serial">phim bộ</option>
+                                        <option value="theater">Phim chiếu rạp</option>
+                                        <option value="classic">Phim kinh điển</option>
+                                    </select>
+                                </div>
+                                <div class="list__movie__filter__item">
+                                    <label for="filter__year">Năm phát hành</label>
+                                    <select id="filter__year" name="year" class="form__control">
+                                        <option value="">Tất cả</option>
+                                        <option value="2021">2021</option>
+                                        <option value="2020">2020</option>
+                                        <option value="2019">2019</option>
+                                        <option value="2018">2018</option>
+                                        <option value="2017">2017</option>
+                                        <option value="-2017">Trước 2017</option>
+                                    </select>
+                                </div>
+                                <button class="filter__btn filter__btn__right" type="submit">Lọc</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="content">
+
+
+    <div class="content__body">
+        <div class="grid wide">
+            <div class="row">
+                <div class="col l-6 m-12 c-6">
+                    <div class="card-full">
+                        <div class="grid">
+                            <div class="row sm-gutter">
+                                <div class="col l-4 m-4 c-12">
+                                    <div class="card__cover" href="#">
+                                        <img class="card__cover-img" src="~/Content/assets/img/phimmoinhat/thanh-phong-lang-nguyet-hoa-chinh-khai.medium.webp" alt="" />
+                                        <a href="#" class="card__play">
+                                            <i class="card__play-icon fas fa-play"></i>
+                                        </a>
+                                        <div class="movie_option">
+                                            <span class="movie_option__text">FullHD</span>
+                                        </div>
+                                        <div class="runtime">
+                                            <span class="runtime__text">24 Tập</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col l-8 m-8">
+                                    <div class="card__content">
+                                        <h5 class="card__content-title">
+                                            <a href="#" class="card__content-title-link" title="Thanh Phong Lãng Nguyệt Hoa Chính Khai">Thanh Phong Lãng Nguyệt Hoa Chính Khai</a>
+                                        </h5>
+                                        <span class="card__content-title-origin">The Flowers Are Blooming</span>
+                                        <div class="card__category">
+                                            <a href="#" class="card__category-link">Tình Cảm</a>
+                                            <a href="#" class="card__category-link">Cổ Trang</a>
+                                        </div>
+                                        <span class="card__country">
+                                            <a href="#" class="card__country-link">Phim Trung Quốc</a>
+                                        </span>
+                                        <div class="card__imdb"><span>IMDb 7.1</span></div>
+                                        <div class="card__description">
+                                            <p>
+                                                Thanh Phong Lãng Nguyệt Hoa Chính Khai là bộ phim này kể về câu chuyện của sáu thanh thiếu niên với tính cách khác nhau tụ tập lại với nhau cho những lý tưởng của riêng mình và xoắn có kinh nghiệm và...
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col l-6 m-12 c-6">
+                    <div class="card-full">
+                        <div class="grid">
+                            <div class="row sm-gutter">
+                                <div class="col l-4 m-4 c-12">
+                                    <div class="card__cover" href="#">
+                                        <img class="card__cover-img" src="~/Content/assets/img/phimmoinhat/sang-tao-doanh-mua-2.medium.webp" alt="" />
+                                        <a href="#" class="card__play">
+                                            <i class="card__play-icon fas fa-play"></i>
+                                        </a>
+                                        <div class="movie_option">
+                                            <span class="movie_option__text">FullHD</span>
+                                        </div>
+                                        <div class="runtime">
+                                            <span class="runtime__text">2 Tập</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col l-8 m-8">
+                                    <div class="card__content">
+                                        <h5 class="card__content-title">
+                                            <a href="#" class="card__content-title-link" title="Sáng Tạo Doanh (Mùa 2)">
+                                                Sáng Tạo Doanh
+                                                (Mùa 2)
+                                            </a>
+                                        </h5>
+                                        <span class="card__content-title-origin">Produce Camp 2</span>
+                                        <div class="card__category">
+                                            <a href="#" class="card__category-link">TV Show</a>
+                                        </div>
+                                        <span class="card__country">
+                                            <a href="#" class="card__country-link">Phim Trung Quốc</a>
+                                        </span>
+                                        <div class="card__imdb"><span>IMDb 7.8</span></div>
+                                        <div class="card__description">
+                                            <p>
+                                                "Sáng Tạo Doanh 2021" là chương trình thanh niên giao lưu văn hóa quốc tế ghi lại sự trưởng thành của nhóm nhạc nam do Tencent sản xuất. Đây là nơi để các thanh niên trẻ có thể thể hiện khả năng biểu...
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col l-6 m-12 c-6">
+                    <div class="card-full">
+                        <div class="grid">
+                            <div class="row sm-gutter">
+                                <div class="col l-4 m-4 c-12">
+                                    <div class="card__cover" href="#">
+                                        <img class="card__cover-img" src="~/Content/assets/img/phimmoinhat/cam-tam-tua-ngoc.medium.webp" alt="" />
+                                        <a href="#" class="card__play">
+                                            <i class="card__play-icon fas fa-play"></i>
+                                        </a>
+                                        <div class="movie_option">
+                                            <span class="movie_option__text">FullHD</span>
+                                        </div>
+                                        <div class="runtime">
+                                            <span class="runtime__text">50 Tập</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col l-8 m-8">
+                                    <div class="card__content">
+                                        <h5 class="card__content-title">
+                                            <a href="#" class="card__content-title-link" title="Cẩm Tâm Tựa Ngọc">Cẩm Tâm Tựa Ngọc</a>
+                                        </h5>
+                                        <span class="card__content-title-origin">Brocade Heart Like Jade</span>
+                                        <div class="card__category">
+                                            <a href="#" class="card__category-link">Lịch Sử</a>
+                                            <a href="#" class="card__category-link">Tình Cảm</a>
+                                            <a href="#" class="card__category-link">Cổ Trang</a>
+                                        </div>
+                                        <span class="card__country">
+                                            <a href="#" class="card__country-link">Phim Trung Quốc</a>
+                                        </span>
+                                        <div class="card__imdb"><span>IMDb 8.1</span></div>
+                                        <div class="card__description">
+                                            <p>
+                                                Cẩm Tâm Tựa Ngọc là một bộ phim Cổ Trang - Tình Cảm, được chuyển thể từ tiểu thuyết "The Concubine Raiders" của tác giả Xianzhi, kể về câu chuyện tình yêu của Yongping Hou tướng quân Xu Lingyi và ngườ...
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col l-6 m-12 c-6">
+                    <div class="card-full">
+                        <div class="grid">
+                            <div class="row sm-gutter">
+                                <div class="col l-4 m-4 c-12">
+                                    <div class="card__cover" href="#">
+                                        <img class="card__cover-img" src="~/Content/assets/img/phimmoinhat/oan-gia-dau-yeu.medium.webp" alt="" />
+                                        <a href="#" class="card__play">
+                                            <i class="card__play-icon fas fa-play"></i>
+                                        </a>
+                                        <div class="movie_option">
+                                            <span class="movie_option__text">FullHD</span>
+                                        </div>
+                                        <div class="runtime">
+                                            <span class="runtime__text">15 Tập</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col l-8 m-8">
+                                    <div class="card__content">
+                                        <h5 class="card__content-title">
+                                            <a href="#" class="card__content-title-link" title="Oan Gia Dấu Yêu">Oan Gia Dấu Yêu</a>
+                                        </h5>
+                                        <span class="card__content-title-origin">Ku Kaen San Rak</span>
+                                        <div class="card__category">
+                                            <a href="#" class="card__category-link">Tình Cảm</a>
+                                            <a href="#" class="card__category-link">Hài Hước</a>
+                                        </div>
+                                        <span class="card__country">
+                                            <a href="#" class="card__country-link">Phim Trung Quốc</a>
+                                        </span>
+                                        <div class="card__imdb"><span>IMDb 7.2</span></div>
+                                        <div class="card__description">
+                                            <p>
+                                                Oan Gia Dấu là bộ phim truyền hình Tình Cảm xoay quanh Songkran là một ông trùm bất động sản, một người lăng nhăng hoàn toàn với một người con trai tên là Pe. Nhưng anh ấy không bắt đầu như thế này, m...
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col l-6 m-12 c-6">
+                    <div class="card-full">
+                        <div class="grid">
+                            <div class="row sm-gutter">
+                                <div class="col l-4 m-4 c-12">
+                                    <div class="card__cover" href="#">
+                                        <img class="card__cover-img" src="~/Content/assets/img/phimmoinhat/canh-bao-tinh-yeu-phan-2.medium.webp" alt="" />
+                                        <a href="#" class="card__play">
+                                            <i class="card__play-icon fas fa-play"></i>
+                                        </a>
+                                        <div class="movie_option">
+                                            <span class="movie_option__text">FullHD</span>
+                                        </div>
+                                        <div class="runtime">
+                                            <span class="runtime__text">10 Tập</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col l-8 m-8">
+                                    <div class="card__content">
+                                        <h5 class="card__content-title">
+                                            <a href="#" class="card__content-title-link" title="Cảnh Báo Tình Yêu (Phần 2)">
+                                                Cảnh Báo Tình
+                                                Yêu (Phần 2)
+                                            </a>
+                                        </h5>
+                                        <span class="card__content-title-origin">Love Alarm Season 2</span>
+                                        <div class="card__category">
+                                            <a href="#" class="card__category-link">Kịch Tính</a>
+                                            <a href="#" class="card__category-link">Hài Hước</a>
+                                            <a href="#" class="card__category-link">Tình Cảm</a>
+                                        </div>
+                                        <span class="card__country">
+                                            <a href="#" class="card__country-link">Phim Trung Quốc</a>
+                                        </span>
+                                        <div class="card__imdb"><span>IMDb 7.8</span></div>
+                                        <div class="card__description">
+                                            <p>
+                                                Cảnh Báo Tình Yêu (Phần 2) - Love Alarm Season 2 nhận được nhiều sự ủng hộ của người xem sau khi phát sóng xong mùa 1. Phần 1 vẫn là nỗi nhức nhối trong lòng người xem vì câu hỏi liệu Jo Jo thực sự yê...
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col l-6 m-12 c-6">
+                    <div class="card-full">
+                        <div class="grid">
+                            <div class="row sm-gutter">
+                                <div class="col l-4 m-4 c-12">
+                                    <div class="card__cover" href="#">
+                                        <img class="card__cover-img" src="~/Content/assets/img/phimmoinhat/canh-bao-tinh-yeu.medium.webp" alt="" />
+                                        <a href="#" class="card__play">
+                                            <i class="card__play-icon fas fa-play"></i>
+                                        </a>
+                                        <div class="movie_option">
+                                            <span class="movie_option__text">FullHD</span>
+                                        </div>
+                                        <div class="runtime">
+                                            <span class="runtime__text">8 Tập</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col l-8 m-8">
+                                    <div class="card__content">
+                                        <h5 class="card__content-title">
+                                            <a href="#" class="card__content-title-link" title="Cảnh Báo Tình Yêu">Cảnh Báo Tình Yêu</a>
+                                        </h5>
+                                        <span class="card__content-title-origin">Love Alarm</span>
+                                        <div class="card__category">
+                                            <a href="#" class="card__category-link">Hài Hước</a>
+                                            <a href="#" class="card__category-link">Tình Cảm</a>
+                                        </div>
+                                        <span class="card__country">
+                                            <a href="#" class="card__country-link">Phim Trung Quốc</a>
+                                        </span>
+                                        <div class="card__imdb"><span>IMDb 7.8</span></div>
+                                        <div class="card__description">
+                                            <p>
+                                                Cảnh Báo Tình Yêu - Love Alarm là câu chuyện kể về một xã hội nơi tồn tại một ứng dụng cho phép người dùng biết khi ai đó trong vòng 10 mét có tình cảm với họ. Mặc dù một ứng dụng như vậy được xã hội...
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="center__film">
+                    <ul class="film__pagination">
+                        <li>
+                            <a href="#" class="pre">
+                                < Prev
+                            </a>
+                        </li>
+                        <li class="pageNumber active"><a href="#">1</a></li>
+                        <li class="pageNumber"><a href="#">2</a></li>
+                        <li class="pageNumber"><a href="#">3</a></li>
+                        <li class="pageNumber"><a href="#">4</a></li>
+                        <li class="pageNumber"><a href="#">5</a></li>
+                        <li class="pageNumber"><a href="#">6</a></li>
+                        <li><a href="#" class="next">Next ></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
