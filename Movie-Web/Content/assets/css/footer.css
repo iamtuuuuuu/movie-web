@@ -44,13 +44,13 @@
 }
 
 .footer__title {
+    display: flex;
     color: #fff;
     font-size: 3rem;
     font-weight: 500;
     letter-spacing: .4px;
     margin-top: 15px;
     margin-bottom: 30px;
-    display: flex;
     justify-content: center;
     align-items: center;
     margin-left: 96px;
