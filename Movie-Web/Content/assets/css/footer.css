@@ -48,9 +48,12 @@
     font-size: 3rem;
     font-weight: 500;
     letter-spacing: .4px;
-    margin-bottom: 10px;
     margin-top: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 96px;
 }
 
 .footer__list {
@@ -120,7 +123,7 @@ li {
 
 .footer__app {
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
     align-items: center;
     margin-bottom: 15px;
     margin-top: 15px;
@@ -182,4 +185,9 @@ li {
 .footer__copyright ul a:hover,
 .footer__copyright small a:hover {
     color: #ff55a5;
+}
+
+.f_end {
+    display: flex;
+    justify-content: flex-end;
 }
