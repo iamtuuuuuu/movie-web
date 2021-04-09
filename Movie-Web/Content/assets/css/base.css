@@ -304,6 +304,12 @@ body {
     color: #fff;
 }
 
+.card__play-icon--small {
+    margin: 2px 0 0 3px;
+    font-size: 2.4rem;
+    color: #fff;
+}
+
 .movie_option {
     position: absolute;
     display: flex;

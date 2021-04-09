@@ -333,7 +333,7 @@ svg {
   left: 50%;
   transform: translate(30%, 30%);
 }
-.card__play-icon {
+.card__play-icon--small {
   font-size: 1.6rem;
 }
 .movie-title {
