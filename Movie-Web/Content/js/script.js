@@ -39,7 +39,7 @@ $(document).ready(function() {
       slidesToShow: 5,
       slidesToScroll: 1,
       loop: true,
-      autoplay: false,
+      autoplay: true,
       autoplaySpeed: 2000,
       nextArrow: $(".next"),
       prevArrow: $(".prev"),
@@ -108,3 +108,11 @@ $(document).ready(function(){
 // $('li').click(function(){
 //   $(this).addClass('active').siblings().removeClass('active')
 // })
+
+// toggle btn search
+const searchIcon = document.querySelector('.header__search-btn-icon')
+const formSearch = document.querySelector('.header__search-wrap')
+searchIcon.addEventListener('click', function () {
+    // formSearch.classList.add('hidden')
+    formSearch.classList.toggle('hidden')
+}, false)

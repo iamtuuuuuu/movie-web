@@ -326,7 +326,7 @@ svg {
 .card__img {
   width: 100%;
 }
-.card__play {
+.card__play-- {
   width: 40px;
   height: 40px;
   top: 50%;
