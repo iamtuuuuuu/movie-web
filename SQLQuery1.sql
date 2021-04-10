@@ -18,11 +18,13 @@ create table Film(
 	linkImgAvt varchar(500),
 	linkImgDes varchar(500),
 	linkBgImage varchar(500),
-	linkFilm varchar(500),
 	linkTrailer varchar(500),
 	desText varchar(500),
 	contentText varchar(2000),
 	releaseFilm datetime,
+	statusText nvarchar(500),
+	releasedEpisodes int,
+	totalEpisodes int,
 	imdb float,
 	quality nvarchar(100),
 	star varchar(10),
@@ -34,11 +36,10 @@ create table Film(
 	createBy nvarchar(100)
 )
 
-create table FilmStatus(
-	filmID char(10) references Film(filmID),
-	statusText nvarchar(500),
-	releasedEpisodes int,
-	totalEpisodes int
+create table FilmEpisode(
+	filmID char(10) references Film(filmID),	
+	Episode int,
+	linkEpisode varchar(500)
 )
 
 create table Feedback (
