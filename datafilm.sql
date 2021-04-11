@@ -276,7 +276,7 @@ insert into FilmEpisode values ('FE0008','F0005',
 		4,
 		'https://scontent-frt3-1.xx.fbcdn.net/v/t66.36240-6/10000000_295907745308136_3436091957629814697_n.mp4?_nc_cat=109&ccb=1-3&_nc_sid=985c63&efg=eyJ2ZW5jb2RlX3RhZyI6Im9lcF9oZCJ9&_nc_ohc=g4ezZ8ibrS0AX91iK4B&_nc_ht=scontent-frt3-1.xx&oh=084399a6c48a88997a6a969e9717017a&oe=60883AB1')
 
-		insert into FilmEpisode values ('FE0006','F0005',
+		insert into FilmEpisode values ('FE0009','F0005',
 		5,
 		'https://scontent-frt3-2.xx.fbcdn.net/v/t66.36240-6/10000000_3205875392972343_7449868695557130406_n.mp4?_nc_cat=103&ccb=1-3&_nc_sid=985c63&efg=eyJ2ZW5jb2RlX3RhZyI6Im9lcF9oZCJ9&_nc_ohc=orDf-6ftdwMAX9Ys8yI&_nc_ht=scontent-frt3-2.xx&oh=b0153db2d7a30b914151e354c7ad2c8c&oe=60882B0B')
 
@@ -628,7 +628,7 @@ values ('FE0026',
 insert into Feedback 
 values 
 (
-	'FB0001',
+	'FB0000',
 	'F0001',
 	'ACC001',
 	'chupamimonhanhooooooooooo',
@@ -638,6 +638,7 @@ values
 insert into Feedback 
 values 
 (
+'FB0001',
 	'F0001',
 	'ACC001',
 	'yamateeeeeeeeeeeeeeeeeeeeeeee',
@@ -757,6 +758,7 @@ values
 insert into Feedback 
 values 
 (
+'FB0013',
 	'F0004',
 	'ACC001',
 	'chat',
@@ -766,7 +768,7 @@ values
 insert into Feedback 
 values 
 (
-'FB0013',
+'FB0014',
 	'F0009',
 	'ACC003',
 	'cka cha',
@@ -776,7 +778,7 @@ values
 insert into Feedback 
 values 
 (
-'FB0014',
+'FB0015',
 	'F0013',
 	'ACC003',
 	'lolaaaaaaaaaaa',
