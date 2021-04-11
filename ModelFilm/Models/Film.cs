@@ -1,4 +1,4 @@
-namespace Movie_Web.Models
+namespace ModelFilm.Models
 {
     using System;
     using System.Collections.Generic;

@@ -4,6 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
 <div class="app__container">
     <div class="slider">
 
@@ -12,268 +13,34 @@
             <i class="prev fas fa-arrow-left"></i>
             <i class="next fas fa-arrow-right"></i>
             <div class="movie-wrapper">
-                <div class="card">
-                    <div class="card__cover" href="#">
-                        <img class="card__cover-img"
-                             src="~/Content/assets/img/phimmoinhat/wanda-va-vision.medium.webp"
-                             alt="" />
-                        <a href="#" class="card__play">
-                            <i class="card__play-icon fas fa-play"></i>
-                        </a>
-                        <div class="movie_option">
-                            <span class="movie_option__text">FullHD</span>
-                        </div>
-                        <div class="runtime">
-                            <span class="runtime__text">7/9 Tập</span>
-                        </div>
-                    </div>
-
-                    <div class="card__content--s">
-                        <h5 class="card__content-title">
-                            <a href="#"
-                               class="card__content-title-link"
-                               title="Xem phim Wanda Và Vision (Phần 1) - WandaVision (Season 1)">Wanda Và Vision (Phần 1)</a>
-                        </h5>
-                        <span class="card__content-title-origin">WandaVision (Season 1)</span>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card__cover" href="#">
-                        <img class="card__cover-img"
-                             src="~/Content/assets/img/slide/song-don-trang-len.medium.webp"
-                             alt="" />
-                        <a href="#" class="card__play">
-                            <i class="card__play-icon fas fa-play"></i>
-                        </a>
-                        <div class="movie_option">
-                            <span class="movie_option__text">FullHD</span>
-                        </div>
-                        <div class="runtime">
-                            <span class="runtime__text">20 Tập</span>
-                        </div>
-                    </div>
-
-                    <div class="card__content--s">
-                        <h5 class="card__content-title">
-                            <a href="#"
-                               class="card__content-title-link"
-                               title="Xem phim Sông Đón Trăng Lên - River Where The Moon Rises">Sông Đón Trăng Lên</a>
-                        </h5>
-                        <span class="card__content-title-origin">River Where The Moon Rises</span>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card__cover" href="#">
-                        <img class="card__cover-img"
-                             src="~/Content/assets/img/slide/than-ai-chi-ai-mat-that-vay-ca-loi.medium.webp"
-                             alt="" />
-                        <a href="#" class="card__play">
-                            <i class="card__play-icon fas fa-play"></i>
-                        </a>
-                        <div class="movie_option">
-                            <span class="movie_option__text">FullHD</span>
-                        </div>
-                        <div class="runtime">
-                            <span class="runtime__text">27/39 Tập</span>
-                        </div>
-                    </div>
-
-                    <div class="card__content--s">
-                        <h5 class="card__content-title">
-                            <a href="#"
-                               class="card__content-title-link"
-                               title="Xem phim Thân Ái Chí Ái - Cá Mực Hầm Mật (Phần 2) - AppleDog's Time">
-                                Xem phim Thân Ái Chí Ái - Cá Mực Hầm Mật (Phần 2) -
-                                AppleDog's Time
+                @foreach (var itemFilm in ViewBag.listfilmSlide)
+                {
+                    <div class="card">
+                        <div class="card__cover">
+                            <img class="card__cover-img"
+                                 src="@itemFilm.linkImgAvt"
+                                 alt="" />
+                            <a href="/DetailFilm/Detail/@itemFilm.filmID" class="card__play">
+                                <i class="card__play-icon fas fa-play"></i>
                             </a>
-                        </h5>
-                        <span class="card__content-title-origin">AppleDog's Time</span>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card__cover" href="#">
-                        <img class="card__cover-img"
-                             src="~/Content/assets/img/slide/con-tau-chien-thang.medium.webp"
-                             alt="" />
-                        <a href="#" class="card__play">
-                            <i class="card__play-icon fas fa-play"></i>
-                        </a>
-                        <div class="movie_option">
-                            <span class="movie_option__text">FullHD</span>
+                            <div class="movie_option">
+                                <span class="movie_option__text">@itemFilm.quality</span>
+                            </div>
+                            <div class="runtime">
+                                <span class="runtime__text">@itemFilm.releasedEpisodes/@itemFilm.totalEpisodes Tập</span>
+                            </div>
                         </div>
-                        <div class="runtime">
-                            <span class="runtime__text">136 Phút</span>
+
+                        <div class="card__content--s">
+                            <h5 class="card__content-title">
+                                <a href="/DetailFilm/Detail/@itemFilm.filmID"
+                                   class="card__content-title-link"
+                                   title="">@itemFilm.nameFilm</a>
+                            </h5>
+                            <span class="card__content-title-origin"></span>
                         </div>
                     </div>
-
-                    <div class="card__content--s">
-                        <h5 class="card__content-title">
-                            <a href="#"
-                               class="card__content-title-link"
-                               title="Xem phim Con Tàu Chiến Thắng - Space Sweepers">Con Tàu Chiến Thắng</a>
-                        </h5>
-                        <span class="card__content-title-origin">Space Sweepers</span>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card__cover" href="#">
-                        <img class="card__cover-img"
-                             src="~/Content/assets/img/slide/xin-chao-toi-oi.medium.webp"
-                             alt="" />
-                        <a href="#" class="card__play">
-                            <i class="card__play-icon fas fa-play"></i>
-                        </a>
-                        <div class="movie_option">
-                            <span class="movie_option__text">FullHD</span>
-                        </div>
-                        <div class="runtime">
-                            <span class="runtime__text">3/32 Tập</span>
-                        </div>
-                    </div>
-
-                    <div class="card__content--s">
-                        <h5 class="card__content-title">
-                            <a href="#"
-                               class="card__content-title-link"
-                               title="Xem phim Xin Chào, Tôi Ơi! - Hello, Me!">Xin Chào, Tôi Ơi!</a>
-                        </h5>
-                        <span class="card__content-title-origin">Hello, Me!</span>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card__cover" href="#">
-                        <img class="card__cover-img"
-                             src="~/Content/assets/img/slide/dai-duong-minh-nguyet.medium.webp"
-                             alt="" />
-                        <a href="#" class="card__play">
-                            <i class="card__play-icon fas fa-play"></i>
-                        </a>
-                        <div class="movie_option">
-                            <span class="movie_option__text">FullHD</span>
-                        </div>
-                        <div class="runtime">
-                            <span class="runtime__text">37/39 Tập</span>
-                        </div>
-                    </div>
-
-                    <div class="card__content--s">
-                        <h5 class="card__content-title">
-                            <a href="#"
-                               class="card__content-title-link"
-                               title="Xem phim Đại Đường Minh Nguyệt - Weaving a Tale of Love">Đại Đường Minh Nguyệt</a>
-                        </h5>
-                        <span class="card__content-title-origin">Weaving a Tale of Love</span>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card__cover" href="#">
-                        <img class="card__cover-img"
-                             src="~/Content/assets/img/slide/vincenzo.medium.webp"
-                             alt="" />
-                        <a href="#" class="card__play">
-                            <i class="card__play-icon fas fa-play"></i>
-                        </a>
-                        <div class="movie_option">
-                            <span class="movie_option__text">FullHD</span>
-                        </div>
-                        <div class="runtime">
-                            <span class="runtime__text">2/16 Tập</span>
-                        </div>
-                    </div>
-
-                    <div class="card__content--s">
-                        <h5 class="card__content-title">
-                            <a href="#"
-                               class="card__content-title-link"
-                               title="Xem phim Vincenzo - Vincenzo">Vincenzo</a>
-                        </h5>
-                        <span class="card__content-title-origin">Vincenzo</span>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card__cover" href="#">
-                        <img class="card__cover-img"
-                             src="~/Content/assets/img/slide/penthouse-cuoc-chien-thuong-luu-2.medium.webp"
-                             alt="" />
-                        <a href="#" class="card__play">
-                            <i class="card__play-icon fas fa-play"></i>
-                        </a>
-                        <div class="movie_option">
-                            <span class="movie_option__text">FullHD</span>
-                        </div>
-                        <div class="runtime">
-                            <span class="runtime__text">3/12 Tập</span>
-                        </div>
-                    </div>
-
-                    <div class="card__content--s">
-                        <h5 class="card__content-title">
-                            <a href="#"
-                               class="card__content-title-link"
-                               title="Xem phim Penthouse 2: Cuộc Chiến Thượng Lưu (Phần 2) - The Penthouse 2: War In Life">Penthouse 2: Cuộc Chiến Thượng Lưu (Phần 2)</a>
-                        </h5>
-                        <span class="card__content-title-origin">The Penthouse 2: War In Life</span>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card__cover" href="#">
-                        <img class="card__cover-img"
-                             src="~/Content/assets/img/slide/sisyphus-than-thoai.medium.webp"
-                             alt="" />
-                        <a href="#" class="card__play">
-                            <i class="card__play-icon fas fa-play"></i>
-                        </a>
-                        <div class="movie_option">
-                            <span class="movie_option__text">FullHD</span>
-                        </div>
-                        <div class="runtime">
-                            <span class="runtime__text">3/16 Tập</span>
-                        </div>
-                    </div>
-
-                    <div class="card__content--s">
-                        <h5 class="card__content-title">
-                            <a href="#"
-                               class="card__content-title-link"
-                               title="Xem phim Sisyphus: Thần thoại - Sisyphus: The Myth">Sisyphus: Thần thoại</a>
-                        </h5>
-                        <span class="card__content-title-origin">Sisyphus: The Myth</span>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card__cover" href="#">
-                        <img class="card__cover-img"
-                             src="~/Content/assets/img/slide/su-khoi-dau.medium.webp"
-                             alt="" />
-                        <a href="#" class="card__play">
-                            <i class="card__play-icon fas fa-play"></i>
-                        </a>
-                        <div class="movie_option">
-                            <span class="movie_option__text">FullHD</span>
-                        </div>
-                        <div class="runtime">
-                            <span class="runtime__text">8/12 Tập</span>
-                        </div>
-                    </div>
-
-                    <div class="card__content--s">
-                        <h5 class="card__content-title">
-                            <a href="#"
-                               class="card__content-title-link"
-                               title="Xem phim LUCA: Sự Khởi Đầu - LUCA: The Beginning">LUCA: Sự Khởi Đầu</a>
-                        </h5>
-                        <span class="card__content-title-origin">LUCA: The Beginning</span>
-                    </div>
-                </div>
+                }
             </div>
         </div>
     </div>
@@ -293,23 +60,25 @@
         <div class="content__body">
             <div class="grid wide">
                 <div class="row">
+                    @foreach (var itemFilm in ViewBag.listfilmSlide)
+                    {
                     <div class="col l-6 m-12 c-6">
                         <div class="card-full">
                             <div class="grid">
                                 <div class="row sm-gutter">
                                     <div class="col l-4 m-4 c-12">
-                                        <div class="card__cover" href="#">
+                                        <div class="card__cover" >
                                             <img class="card__cover-img"
-                                                 src="~/Content/assets/img/phimmoinhat/thanh-phong-lang-nguyet-hoa-chinh-khai.medium.webp"
+                                                 src="@itemFilm.linkImgAvt"
                                                  alt="" />
-                                            <a href="#" class="card__play">
+                                            <a href="/DetailFilm/Detail/@itemFilm.filmID" class="card__play">
                                                 <i class="card__play-icon fas fa-play"></i>
                                             </a>
                                             <div class="movie_option">
-                                                <span class="movie_option__text">FullHD</span>
+                                                <span class="movie_option__text">@itemFilm.quality</span>
                                             </div>
                                             <div class="runtime">
-                                                <span class="runtime__text">24 Tập</span>
+                                                <span class="runtime__text">@itemFilm.releasedEpisodes/@itemFilm.totalEpisodes Tập</span>
                                             </div>
                                         </div>
                                     </div>
@@ -317,26 +86,21 @@
                                     <div class="col l-8 m-8">
                                         <div class="card__content">
                                             <h5 class="card__content-title">
-                                                <a href="#"
+                                                <a href="/DetailFilm/Detail/@itemFilm.filmID"
                                                    class="card__content-title-link"
-                                                   title="Thanh Phong Lãng Nguyệt Hoa Chính Khai">Thanh Phong Lãng Nguyệt Hoa Chính Khai</a>
+                                                   title="@itemFilm.nameFilm">@itemFilm.nameFilm</a>
                                             </h5>
-                                            <span class="card__content-title-origin">The Flowers Are Blooming</span>
+                                            <span class="card__content-title-origin">@itemFilm.nameEngFilm</span>
                                             <div class="card__category">
-                                                <a href="#" class="card__category-link">Tình Cảm</a>
-                                                <a href="#" class="card__category-link">Cổ Trang</a>
+                                                <span class="card__category-link">@itemFilm.genre</span>
                                             </div>
                                             <span class="card__country">
-                                                <a href="#" class="card__country-link">Phim Trung Quốc</a>
+                                                <a href="#" class="card__country-link">@itemFilm.nation</a>
                                             </span>
-                                            <div class="card__imdb"><span>IMDb 7.1</span></div>
+                                            <div class="card__imdb"><span>IMDb @itemFilm.imdb</span></div>
                                             <div class="card__description">
                                                 <p>
-                                                    Thanh Phong Lãng Nguyệt Hoa Chính Khai là bộ
-                                                    phim này kể về câu chuyện của sáu thanh thiếu
-                                                    niên với tính cách khác nhau tụ tập lại với nhau
-                                                    cho những lý tưởng của riêng mình và xoắn có
-                                                    kinh nghiệm và...
+                                                    @itemFilm.desText
                                                 </p>
                                             </div>
                                         </div>
@@ -345,272 +109,8 @@
                             </div>
                         </div>
                     </div>
+                    }
 
-                    <div class="col l-6 m-12 c-6">
-                        <div class="card-full">
-                            <div class="grid">
-                                <div class="row sm-gutter">
-                                    <div class="col l-4 m-4 c-12">
-                                        <div class="card__cover" href="#">
-                                            <img class="card__cover-img"
-                                                 src="~/Content/assets/img/phimmoinhat/sang-tao-doanh-mua-2.medium.webp"
-                                                 alt="" />
-                                            <a href="#" class="card__play">
-                                                <i class="card__play-icon fas fa-play"></i>
-                                            </a>
-                                            <div class="movie_option">
-                                                <span class="movie_option__text">FullHD</span>
-                                            </div>
-                                            <div class="runtime">
-                                                <span class="runtime__text">2 Tập</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col l-8 m-8">
-                                        <div class="card__content">
-                                            <h5 class="card__content-title">
-                                                <a href="#"
-                                                   class="card__content-title-link"
-                                                   title="Sáng Tạo Doanh (Mùa 2)">Sáng Tạo Doanh (Mùa 2)</a>
-                                            </h5>
-                                            <span class="card__content-title-origin">Produce Camp 2</span>
-                                            <div class="card__category">
-                                                <a href="#" class="card__category-link">TV Show</a>
-                                            </div>
-                                            <span class="card__country">
-                                                <a href="#" class="card__country-link">Phim Trung Quốc</a>
-                                            </span>
-                                            <div class="card__imdb"><span>IMDb 7.8</span></div>
-                                            <div class="card__description">
-                                                <p>
-                                                    "Sáng Tạo Doanh 2021" là chương trình thanh niên
-                                                    giao lưu văn hóa quốc tế ghi lại sự trưởng thành
-                                                    của nhóm nhạc nam do Tencent sản xuất. Đây là
-                                                    nơi để các thanh niên trẻ có thể thể hiện khả
-                                                    năng biểu...
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col l-6 m-12 c-6">
-                        <div class="card-full">
-                            <div class="grid">
-                                <div class="row sm-gutter">
-                                    <div class="col l-4 m-4 c-12">
-                                        <div class="card__cover" href="#">
-                                            <img class="card__cover-img"
-                                                 src="~/Content/assets/img/phimmoinhat/cam-tam-tua-ngoc.medium.webp"
-                                                 alt="" />
-                                            <a href="#" class="card__play">
-                                                <i class="card__play-icon fas fa-play"></i>
-                                            </a>
-                                            <div class="movie_option">
-                                                <span class="movie_option__text">FullHD</span>
-                                            </div>
-                                            <div class="runtime">
-                                                <span class="runtime__text">50 Tập</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col l-8 m-8">
-                                        <div class="card__content">
-                                            <h5 class="card__content-title">
-                                                <a href="#"
-                                                   class="card__content-title-link"
-                                                   title="Cẩm Tâm Tựa Ngọc">Cẩm Tâm Tựa Ngọc</a>
-                                            </h5>
-                                            <span class="card__content-title-origin">Brocade Heart Like Jade</span>
-                                            <div class="card__category">
-                                                <a href="#" class="card__category-link">Lịch Sử</a>
-                                                <a href="#" class="card__category-link">Tình Cảm</a>
-                                                <a href="#" class="card__category-link">Cổ Trang</a>
-                                            </div>
-                                            <span class="card__country">
-                                                <a href="#" class="card__country-link">Phim Trung Quốc</a>
-                                            </span>
-                                            <div class="card__imdb"><span>IMDb 8.1</span></div>
-                                            <div class="card__description">
-                                                <p>
-                                                    Cẩm Tâm Tựa Ngọc là một bộ phim Cổ Trang - Tình
-                                                    Cảm, được chuyển thể từ tiểu thuyết "The
-                                                    Concubine Raiders" của tác giả Xianzhi, kể về
-                                                    câu chuyện tình yêu của Yongping Hou tướng quân
-                                                    Xu Lingyi và ngườ...
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col l-6 m-12 c-6">
-                        <div class="card-full">
-                            <div class="grid">
-                                <div class="row sm-gutter">
-                                    <div class="col l-4 m-4 c-12">
-                                        <div class="card__cover" href="#">
-                                            <img class="card__cover-img"
-                                                 src="~/Content/assets/img/phimmoinhat/oan-gia-dau-yeu.medium.webp"
-                                                 alt="" />
-                                            <a href="#" class="card__play">
-                                                <i class="card__play-icon fas fa-play"></i>
-                                            </a>
-                                            <div class="movie_option">
-                                                <span class="movie_option__text">FullHD</span>
-                                            </div>
-                                            <div class="runtime">
-                                                <span class="runtime__text">15 Tập</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col l-8 m-8">
-                                        <div class="card__content">
-                                            <h5 class="card__content-title">
-                                                <a href="#"
-                                                   class="card__content-title-link"
-                                                   title="Oan Gia Dấu Yêu">Oan Gia Dấu Yêu</a>
-                                            </h5>
-                                            <span class="card__content-title-origin">Ku Kaen San Rak</span>
-                                            <div class="card__category">
-                                                <a href="#" class="card__category-link">Tình Cảm</a>
-                                                <a href="#" class="card__category-link">Hài Hước</a>
-                                            </div>
-                                            <span class="card__country">
-                                                <a href="#" class="card__country-link">Phim Trung Quốc</a>
-                                            </span>
-                                            <div class="card__imdb"><span>IMDb 7.2</span></div>
-                                            <div class="card__description">
-                                                <p>
-                                                    Oan Gia Dấu là bộ phim truyền hình Tình Cảm xoay
-                                                    quanh Songkran là một ông trùm bất động sản, một
-                                                    người lăng nhăng hoàn toàn với một người con
-                                                    trai tên là Pe. Nhưng anh ấy không bắt đầu như
-                                                    thế này, m...
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col l-6 m-12 c-6">
-                        <div class="card-full">
-                            <div class="grid">
-                                <div class="row sm-gutter">
-                                    <div class="col l-4 m-4 c-12">
-                                        <div class="card__cover" href="#">
-                                            <img class="card__cover-img"
-                                                 src="~/Content/assets/img/phimmoinhat/canh-bao-tinh-yeu-phan-2.medium.webp"
-                                                 alt="" />
-                                            <a href="#" class="card__play">
-                                                <i class="card__play-icon fas fa-play"></i>
-                                            </a>
-                                            <div class="movie_option">
-                                                <span class="movie_option__text">FullHD</span>
-                                            </div>
-                                            <div class="runtime">
-                                                <span class="runtime__text">10 Tập</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col l-8 m-8">
-                                        <div class="card__content">
-                                            <h5 class="card__content-title">
-                                                <a href="#"
-                                                   class="card__content-title-link"
-                                                   title="Cảnh Báo Tình Yêu (Phần 2)">Cảnh Báo Tình Yêu (Phần 2)</a>
-                                            </h5>
-                                            <span class="card__content-title-origin">Love Alarm Season 2</span>
-                                            <div class="card__category">
-                                                <a href="#" class="card__category-link">Kịch Tính</a>
-                                                <a href="#" class="card__category-link">Hài Hước</a>
-                                                <a href="#" class="card__category-link">Tình Cảm</a>
-                                            </div>
-                                            <span class="card__country">
-                                                <a href="#" class="card__country-link">Phim Trung Quốc</a>
-                                            </span>
-                                            <div class="card__imdb"><span>IMDb 7.8</span></div>
-                                            <div class="card__description">
-                                                <p>
-                                                    Cảnh Báo Tình Yêu (Phần 2) - Love Alarm Season 2
-                                                    nhận được nhiều sự ủng hộ của người xem sau khi
-                                                    phát sóng xong mùa 1. Phần 1 vẫn là nỗi nhức
-                                                    nhối trong lòng người xem vì câu hỏi liệu Jo Jo
-                                                    thực sự yê...
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col l-6 m-12 c-6">
-                        <div class="card-full">
-                            <div class="grid">
-                                <div class="row sm-gutter">
-                                    <div class="col l-4 m-4 c-12">
-                                        <div class="card__cover" href="#">
-                                            <img class="card__cover-img"
-                                                 src="~/Content/assets/img/phimmoinhat/canh-bao-tinh-yeu.medium.webp"
-                                                 alt="" />
-                                            <a href="#" class="card__play">
-                                                <i class="card__play-icon fas fa-play"></i>
-                                            </a>
-                                            <div class="movie_option">
-                                                <span class="movie_option__text">FullHD</span>
-                                            </div>
-                                            <div class="runtime">
-                                                <span class="runtime__text">8 Tập</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col l-8 m-8">
-                                        <div class="card__content">
-                                            <h5 class="card__content-title">
-                                                <a href="#"
-                                                   class="card__content-title-link"
-                                                   title="Cảnh Báo Tình Yêu">Cảnh Báo Tình Yêu</a>
-                                            </h5>
-                                            <span class="card__content-title-origin">Love Alarm</span>
-                                            <div class="card__category">
-                                                <a href="#" class="card__category-link">Hài Hước</a>
-                                                <a href="#" class="card__category-link">Tình Cảm</a>
-                                            </div>
-                                            <span class="card__country">
-                                                <a href="#" class="card__country-link">Phim Trung Quốc</a>
-                                            </span>
-                                            <div class="card__imdb"><span>IMDb 7.8</span></div>
-                                            <div class="card__description">
-                                                <p>
-                                                    Cảnh Báo Tình Yêu - Love Alarm là câu chuyện kể
-                                                    về một xã hội nơi tồn tại một ứng dụng cho phép
-                                                    người dùng biết khi ai đó trong vòng 10 mét có
-                                                    tình cảm với họ. Mặc dù một ứng dụng như vậy
-                                                    được xã hội...
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

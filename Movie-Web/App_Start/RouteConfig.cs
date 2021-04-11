@@ -18,6 +18,12 @@ namespace Movie_Web
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+            routes.MapRoute(
+                name: "DetailFilm",
+                url: "{controller}/{action}/{name}",
+                defaults: new { controller = "DetailFilm", action = "Detail", name = UrlParameter.Optional }
+            );
+          
         }
     }
 }
