@@ -19,8 +19,8 @@ create table Film(
 	linkImgDes varchar(500),
 	linkBgImage varchar(500),
 	linkTrailer varchar(500),
-	desText varchar(500),
-	contentText varchar(2000),
+	desText nvarchar(500),
+	contentText nvarchar(2000),
 	releaseFilm datetime,
 	statusText nvarchar(500),
 	releasedEpisodes int,
@@ -35,14 +35,14 @@ create table Film(
 	createDate datetime,
 	createBy nvarchar(100)
 )
-DROP table FilmEpisode
+--DROP table Film
 create table FilmEpisode(
 	filmEpID char(10) primary key,
 	filmID char(10) references Film(filmID),	
 	Episode int,
 	linkEpisode varchar(500)
 )
-DROP table Feedback
+--DROP table Feedback
 create table Feedback (
 	feedbackID char(10) primary key,
 	filmID char(10) references Film(filmID),
@@ -52,7 +52,10 @@ create table Feedback (
 )
 
 
-
+delete  from film
+select * from film
+delete  from Feedback
+delete  from FilmEpisode
 -----------------------------------------------------------------
 use [movie-web]
 
@@ -116,9 +119,7 @@ values ('F0001',
 		null,		
 		'https://www.youtube.com/watch?v=Oj63U2RyVvE',
 		N'Một tai nạn tàu vũ trụ xảy ra, cướp đi sinh mạng người chỉ huy. Konstantin - người phi công còn lại may mắn sống sót nhưng trong cơ thể anh có loài quái vật ngoài hành tinh đang kí sinh. Chúng phát triển mạnh mẽ, khống chế thể xác lẫn tinh thần của vật chủ. Tatyana, một nữ khoa học, nhà vật lý học tài năng được giao nhiệm vụ tách con quái vật đó ra khỏi cơ thể Konstantin. Nhưng càng đi sâu nghiên cứu, cô lại từng bước vén lên bức màn bí mật, khám phá ra nhiều âm mưu đáng sợ đằng sau sự việc này.',
-		N'Quái vật săn đêm - Sputnik là bộ phim kinh dị thuộc thể loại khoa học viễn tưởng của Nga được phát hành năm 2020 do đạo diễn Egor Abramenko chịu trách nhiệm chỉ đạo, đây cũng là bộ phim đầu tay của ông. Tác phẩm có sự tham gia của diễn viên Oksana Akinshina trong vai một bác sĩ trẻ được quân đội tuyển dụng để đánh giá một phi hành gia sống sót sau một vụ tai nạn không gian bí ẩn và trở về Trái Đất với một sinh vật nguy hiểm sống bên trong anh ta. Bộ phim còn có sự tham gia của Pyotr Fyodorov và Fyodor Bondarchuk.
-
-Sputik dự kiến sẽ có buổi ra mắt thế giới tại Liên hoan phim Tribeca vào tháng 4 năm 2020 trước khi bị hoãn lại vì dịch bệnh. Phim được phát hành theo yêu cầu tại Nga vào ngày 23 tháng 4 năm 2020 và nhận được nhiều đánh giá tích cực từ các nhà phê bình.',
+		N'Quái vật săn đêm - Sputnik là bộ phim kinh dị thuộc thể loại khoa học viễn tưởng của Nga được phát hành năm 2020 do đạo diễn Egor Abramenko chịu trách nhiệm chỉ đạo, đây cũng là bộ phim đầu tay của ông. Tác phẩm có sự tham gia của diễn viên Oksana Akinshina trong vai một bác sĩ trẻ được quân đội tuyển dụng để đánh giá một phi hành gia sống sót sau một vụ tai nạn không gian bí ẩn và trở về Trái Đất với một sinh vật nguy hiểm sống bên trong anh ta. Bộ phim còn có sự tham gia của Pyotr Fyodorov và Fyodor Bondarchuk.Sputik dự kiến sẽ có buổi ra mắt thế giới tại Liên hoan phim Tribeca vào tháng 4 năm 2020 trước khi bị hoãn lại vì dịch bệnh. Phim được phát hành theo yêu cầu tại Nga vào ngày 23 tháng 4 năm 2020 và nhận được nhiều đánh giá tích cực từ các nhà phê bình.',
 		8/4/2021,
 		N'Đã phát hành',
 		1,
