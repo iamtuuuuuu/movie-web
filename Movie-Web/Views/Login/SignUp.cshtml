@@ -22,7 +22,7 @@
 </head>
 
 <body style="background-color: #2b2b31;">
-    @using (Html.BeginForm("Login", "SignUp", FormMethod.Post))
+    @using (Html.BeginForm("SignUp", "Login", FormMethod.Post))
     {
         @Html.AntiForgeryToken()
         @Html.ValidationSummary(true, null, new { @class = "text-danger" })

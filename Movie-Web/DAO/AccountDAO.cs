@@ -18,17 +18,10 @@ namespace Movie_Web.DAO
         {
             return db.Accounts.FirstOrDefault(x => x.accountID == id);
         }
-        public bool Login(string email, string password)
+        public String Login(string email, string password)
         {
-            var result = db.Accounts.Count(x => x.email == email && x.passwordAcc == password);
-            if (result > 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            var result = db.Accounts.FirstOrDefault(x => x.email == email && x.passwordAcc == password);
+            return result.accountID;
         }
         public int Insert(Account acc)
         {

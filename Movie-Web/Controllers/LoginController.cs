@@ -24,11 +24,13 @@ namespace Movie_Web.Controllers
             {
                 var accountDao = new AccountDAO();
                 var result = accountDao.Login(model.Email, Encryptor.MD5Hash(model.Password));
-                if (result)
+
+                if (result.Length != 0)
                 {
-                    
+                    Account account = accountDao.GetAccountByID(result);
+
                     // return admin
-                    
+                    //if (account.roleAcc)
                     return RedirectToAction("Index", "Home");
                 }
                 else
