@@ -2,6 +2,7 @@
 using Movie_Web.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 
@@ -23,13 +24,18 @@ namespace Movie_Web.DAO
             var result = db.Accounts.FirstOrDefault(x => x.email == email && x.passwordAcc == password);
             return result.accountID;
         }
-        public int Insert(Account acc)
+        public void Insert(string email, string userName, string password)
         {
-            var passHash = Encryptor.MD5Hash(acc.passwordAcc);
-            acc.passwordAcc = passHash;
-            db.Accounts.Add(acc);
-            db.SaveChanges();
-            return 1;
+            
+            object[]  param= 
+                {
+                new SqlParameter("@email", email),
+                new SqlParameter("@userName", userName),
+                new SqlParameter("@password", password)
+
+            };
+            db.Database.ExecuteSqlCommand("exec InsertAccount @email, @userName, @password", param);
+            
         }
 
     }

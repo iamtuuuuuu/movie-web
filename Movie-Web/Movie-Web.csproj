@@ -142,6 +142,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Common\Encryptor.cs" />
+    <Compile Include="Common\SessionHelper.cs" />
+    <Compile Include="Common\UserSession.cs" />
     <Compile Include="Controllers\DetailFilmController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />

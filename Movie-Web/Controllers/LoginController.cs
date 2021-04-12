@@ -28,10 +28,13 @@ namespace Movie_Web.Controllers
                 if (result.Length != 0)
                 {
                     Account account = accountDao.GetAccountByID(result);
-
+                    var userSession = new UserSession();
+                    userSession.AccountID = account.accountID;
+                    userSession.UserName = account.username;
+                    Session.Add("USER_SESSION", userSession);
                     // return admin
                     //if (account.roleAcc)
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Home", account);
                 }
                 else
                 {
@@ -55,7 +58,7 @@ namespace Movie_Web.Controllers
         //[HttpPost]
         //[ValidateAntiForgeryToken]
 
-        public ActionResult SignUp(Account acc)
+        public ActionResult SignUp(LoginModel model)
         {
             //if (ModelState.IsValid)
             //{
@@ -73,7 +76,7 @@ namespace Movie_Web.Controllers
             //}
             //return View();
             var accountDao = new AccountDAO();
-            accountDao.Insert(acc);
+            accountDao.Insert(model.Email,model.UserName,Encryptor.MD5Hash(model.Password));
             return RedirectToAction("Login","Login");
         }
 

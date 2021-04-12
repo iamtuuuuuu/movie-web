@@ -775,3 +775,14 @@ values
 	8/11/2020
 )
 
+create sequence accountSeq
+	start with 1000 --bat dau tu 1000
+	increment by 1; --moi lan tang 1 don vi
+go
+create proc InsertAccount @email varchar(200), @userName nvarchar(200), @password varchar(200)
+as
+begin
+	insert into Account(accountID,email, username,passwordAcc) values('ACC' + cast(next value for sinhvienSeq as char(10)),@email,@userName, @password)
+end
+
+ 
