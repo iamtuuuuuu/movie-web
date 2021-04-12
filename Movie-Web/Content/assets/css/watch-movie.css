@@ -201,6 +201,60 @@ svg {
   top: 0px;
   left: 0px;
 }
+
+
+
+.rate-area_detail {
+    float: left;
+    border-style: none;
+}
+
+    .rate-area_detail:not(:checked) > input {
+        position: absolute;
+        top: -9999px;
+        clip: rect(0, 0, 0, 0);
+    }
+
+    .rate-area_detail:not(:checked) > label {
+        float: right;
+        width: 0.8em;
+        overflow: hidden;
+        white-space: nowrap;
+        cursor: pointer;
+        font-size: 20px;
+        line-height: 16px;
+        color: lightgrey;
+        margin-bottom: 10px !important;
+    }
+
+        .rate-area_detail:not(:checked) > label:before {
+            content: "★";
+        }
+
+    .rate-area_detail > input:checked ~ label {
+        color: #ffff00;
+        text-shadow: none;
+    }
+
+    .rate-area_detail:not(:checked) > label:hover,
+    .rate-area_detail:not(:checked) > label:hover ~ label {
+        color: #ffff00;
+    }
+
+    .rate-area_detail > input:checked + label:hover,
+    .rate-area_detail > input:checked + label:hover ~ label,
+    .rate-area_detail > input:checked ~ label:hover,
+    .rate-area_detail > input:checked ~ label:hover ~ label,
+    .rate-area_detail > label:hover ~ input:checked ~ label {
+        color: #ffff00;
+        text-shadow: none;
+    }
+
+    .rate-area_detail > label:active {
+        position: relative;
+        top: 0px;
+        left: 0px;
+    }
 #score-rating {
   color: #fff;
   font-size: 1.6rem;

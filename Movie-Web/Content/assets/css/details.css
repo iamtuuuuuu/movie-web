@@ -553,3 +553,10 @@ img {
 .section {
     padding: 60px 0;
 }
+
+.rate_wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}

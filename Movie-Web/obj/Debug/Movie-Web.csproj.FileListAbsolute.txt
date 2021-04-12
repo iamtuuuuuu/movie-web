@@ -427,3 +427,7 @@ E:\0 Donet Web\web_btl\movie-web\Movie-Web\obj\Debug\Movie-Web.csproj.CoreCompil
 E:\0 Donet Web\web_btl\movie-web\Movie-Web\obj\Debug\Movie-Web.csproj.CopyComplete
 E:\0 Donet Web\web_btl\movie-web\Movie-Web\obj\Debug\Movie-Web.dll
 E:\0 Donet Web\web_btl\movie-web\Movie-Web\obj\Debug\Movie-Web.pdb
+C:\Users\HP\Desktop\GIT\movie-web\Movie-Web\bin\EntityFramework.dll
+C:\Users\HP\Desktop\GIT\movie-web\Movie-Web\bin\EntityFramework.SqlServer.dll
+C:\Users\HP\Desktop\GIT\movie-web\Movie-Web\bin\EntityFramework.xml
+C:\Users\HP\Desktop\GIT\movie-web\Movie-Web\bin\EntityFramework.SqlServer.xml
