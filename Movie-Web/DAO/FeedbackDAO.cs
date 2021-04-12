@@ -21,11 +21,11 @@ namespace Movie_Web.DAO
             ).ToList();
         }
 
-        public List<Feedback> listAccountFB(string id)
+       /* public List<Feedback> listAccountFB(string id)
         {
 
             return dbFilmContext.Database.ExecuteSqlCommand("selectFBACOfFilm @id",id);
 
-        }
+        }*/
     }
 }

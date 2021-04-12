@@ -12,7 +12,7 @@ namespace Movie_Web.Controllers
         public ActionResult Detail(string id)
         {
 
-            var filmDao = new FilmDAO();
+            /*var filmDao = new FilmDAO();
             var feedbackDao = new FeedbackDAO();
             var accountDAO = new AccountDAO();
             var filmModel = filmDao.getFilmByID(id);
@@ -22,7 +22,7 @@ namespace Movie_Web.Controllers
 
             ViewBag.filmDetail = filmModel;
             ViewBag.filmFeedBack = feedBackListModel;
-            ViewBag.account = accountDAO.GetAccountByID(feedBackModel)    
+            ViewBag.account = accountDAO.GetAccountByID(feedBackModel);*/
             return View();
         }
 

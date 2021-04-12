@@ -26,9 +26,10 @@ namespace Movie_Web.Models
 
         public bool? roleAcc { get; set; }
 
+        [Required]
         [StringLength(100)]
         public string username { get; set; }
-
+        [Required]
         [StringLength(100)]
         public string avartar { get; set; }
 
