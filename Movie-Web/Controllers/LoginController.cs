@@ -28,14 +28,16 @@ namespace Movie_Web.Controllers
                 {
                     
                     // return admin
-
-                    return RedirectToAction("About", "Home");
+                    
+                    return RedirectToAction("Index", "Home");
                 }
                 else
                 {
                     /* if (accountDao.GetAccountByID(model).roleAcc == true)*/
                     //return index
-                    ModelState.AddModelError("", "Wrong password or Username");
+                    ViewBag.errorMessage = "Wrong password or Email";
+                    ModelState.AddModelError("", "Wrong password or Email");
+                    
                     /* else
                          return RedirectToAction("Detail", "Home");*/
                 }
@@ -48,26 +50,29 @@ namespace Movie_Web.Controllers
         {
             return View();
         }
-        [HttpPost]
-        [ValidateAntiForgeryToken]
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
 
         public ActionResult SignUp(Account acc)
         {
-            if (ModelState.IsValid)
-            {
-                var accountDao = new AccountDAO();
-                accountDao.Insert(acc);
-                return Redirect("/Login/Login");
-                //return RedirectToRoute("Login");
-                //return RedirectToAction("Login");
-            }
-            else
-            {
-                ViewBag.error = "Email already exists";
-                return View();
+            //if (ModelState.IsValid)
+            //{
+            //    var accountDao = new AccountDAO();
+            //    accountDao.Insert(acc);
+            //    //return Redirect("/Login/Login");
+            //    //return RedirectToRoute("Login");
+            //    return RedirectToAction("Login");
+            //}
+            //else
+            //{
+            //    ViewBag.error = "Email already exists";
+            //    return View();
 
-            }
-            return View();
+            //}
+            //return View();
+            var accountDao = new AccountDAO();
+            accountDao.Insert(acc);
+            return RedirectToAction("Login","Login");
         }
 
         public ActionResult Logout()

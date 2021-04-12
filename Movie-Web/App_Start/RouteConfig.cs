@@ -23,11 +23,11 @@ namespace Movie_Web
                 url: "{controller}/{action}/{name}",
                 defaults: new { controller = "DetailFilm", action = "Detail", name = UrlParameter.Optional }
             );
-            routes.MapRoute(
-                name: "Login",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Login", action = "Login", id = UrlParameter.Optional }
-            );
+            //routes.MapRoute(
+            //    name: "Login",
+            //    url: "{controller}/{action}",
+            //    defaults: new { controller = "Login", action = "Login" }
+            //);
         }
     }
 }
