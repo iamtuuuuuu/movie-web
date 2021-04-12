@@ -129,10 +129,16 @@
                                 <div class="list-episodes__content">
                                     <div class="grid">
                                         <div class="row margin-0 episode_row">
-                                            <div class="episodes col c-2">
-                                                <a href="" class="episodes-link active">Tập 1</a>
-                                            </div>
+                                            @for(int index = 1; index <= @ViewBag.filmDetail.releasedEpisodes; index++)
+                                            {
+                                                <div class="episodes col c-2">
+                                                    <a href="/Watch/Watch/@ViewBag.filmDetail.filmID.Trim()/@index.ToString()" class="episodes-link" >
+                                                        Tập @index.ToString()
+                                                    </a>
+                                                </div>
+                                            }
                                             
+
                                         </div>
                                     </div>
                                 </div>
@@ -587,6 +593,15 @@
           bulb.innerHTML = ` <i class="far fa-lightbulb"></i>
                         Bật đèn`;
         }
-      };
+    };
+
+    const ep = 'Tập ' + @ViewBag.filmDetail.Episode;
+
+    for (const a of document.querySelectorAll("a")) {
+        let text = a.textContent.trim()
+        if (text === ep ){
+            a.classList.add("active")
+        }
+    }
 </script>
 
