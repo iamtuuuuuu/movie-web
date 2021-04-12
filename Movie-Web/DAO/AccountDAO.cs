@@ -32,7 +32,8 @@ namespace Movie_Web.DAO
         }
         public int Insert(Account acc)
         {
-            acc.passwordAcc = Encryptor.MD5Hash(acc.passwordAcc);
+            var passHash = Encryptor.MD5Hash(acc.passwordAcc);
+            acc.passwordAcc = passHash;
             db.Accounts.Add(acc);
             db.SaveChanges();
             return 1;

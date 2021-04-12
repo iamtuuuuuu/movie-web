@@ -1,7 +1,7 @@
 ﻿@{
     Layout = null;
 }
-
+@model Movie_Web.Models.LoginModel
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,58 +22,45 @@
 </head>
 
 <body style="background-color: #2b2b31;">
-    <form action=""></form>
-    <div class="body_signin">
-        <div class="container_signin">
-            <div class="img_signin">
-                <a class="img_signin" href="#">
-                    <img id="logo" src="~/Content/assets/img/logo.png" alt="#">
-                </a>
+    @using (Html.BeginForm("Login", "SignUp", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, null, new { @class = "text-danger" })
+        <div class="body_signin">
+            <div class="container_signin">
+                <div class="img_signin">
+                    <a class="img_signin" href="#">
+                        <img id="logo" src="~/Content/assets/img/logo.png" alt="#">
+                    </a>
 
-            </div>
-            <div class="input_signin_group">
-                <input type="text" class="sign_input" name="email" placeholder="Email hoặc tên đăng nhập">
-            </div>
-
-            <div class="input_signin_group">
-                <input type="password" class="sign_input" name="password" placeholder="Mật khẩu">
-            </div>
-
-            <div class="input_signin_group">
-                <input type="password" class="sign_input" name="password" placeholder="Nhập lại mật khẩu">
-            </div>
-            <div class="input_signin_group ">
-                <div class="sign_group_checkbox">
-                    <input id="remember" name="remember" type="checkbox" checked="checked">
-                    <label for="remember">Tôi đồng ý với điều khoản dịch vụ</label>
                 </div>
-            </div>
-            <!-- <div class="signin_with">
-                <a href="" class="facebook">Đăng nhập với
-                        <img src="~/Content/assets/img/facebook-logo.png" alt="" class="icon_lg">
-                </a>
-            </div>
-            <div class="signin_with">
-                <a href="" class="google">Đăng nhập với
-                        <img src="~/Content/assets/img/google-plus.png" alt="" class="icon_lg">
+                <div class="input_signin_group">
+                    @Html.TextBoxFor(model => model.UserName, new { @class = "sign_input", @placeholder = "VD: username", @autofocus = "autofocus" })
 
-                </a>
-            </div> -->
-            <div style="margin-top: 100px;">
-                <button class="sign_btn" type="submit">Đăng nhập</button>
-            </div>
-            <!-- <div class="sign_text">
-                Bạn chưa có tài khoản
-                <span><a href="#">Đăng ký!</a></span>
+                </div>
+                <div class="input_signin_group">
+                    @Html.TextBoxFor(model => model.Email, new { @class = "sign_input", @placeholder = "VD: email@domain.com", @autofocus = "autofocus" })
+                </div>
 
-            </div> -->
+                <div class="input_signin_group">
+                    @Html.TextBoxFor(model => model.Password, new { @class = "sign_input", @placeholder = "Nhập mật khẩu", @type = "password" })
+                </div>
+                <div style="margin-top: 100px;">
+                    <button class="sign_btn" type="submit">Đăng kí</button>
+                </div>
+                <div class="sign_text">
+                    Bạn đã có tài khoản
+                    <span><a href="/Login/Login">Đăng nhập!</a></span>
 
-            <div class="sign_text">
-                <span><a href="#">Trở về</a></span>
+                </div>
+
+                @*<div class="sign_text">
+                        <span><a href="#">Trở về</a></span>
+                    </div>*@
             </div>
+
         </div>
-
-    </div>
+    }
 </body>
 
 </html>

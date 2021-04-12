@@ -28,6 +28,7 @@ namespace Movie_Web.Controllers
                 {
                     
                     // return admin
+
                     return RedirectToAction("About", "Home");
                 }
                 else
@@ -41,13 +42,39 @@ namespace Movie_Web.Controllers
             }
             return View();
         }
+        // Get SignUp
+        [HttpGet]
+        public ActionResult SignUp()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
 
         public ActionResult SignUp(Account acc)
         {
-            var accountDao = new AccountDAO();
-            accountDao.Insert(acc);
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                var accountDao = new AccountDAO();
+                accountDao.Insert(acc);
+                return Redirect("/Login/Login");
+                //return RedirectToRoute("Login");
+                //return RedirectToAction("Login");
+            }
+            else
+            {
+                ViewBag.error = "Email already exists";
+                return View();
+
+            }
+            return View();
         }
-        
+
+        public ActionResult Logout()
+        {
+            Session.Clear();
+            return Redirect("/Home/Index");
+        }
+
     }
 }
