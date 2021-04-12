@@ -40,13 +40,9 @@
                                             <center><img src="@ViewBag.filmDetail.linkImgAvt" class="card__cover-img" alt="@ViewBag.filmDetail.nameFilm" style=""></center>
                                             <ul class="movie_option">
                                                 <li class="quality">@ViewBag.filmDetail.quality</li>
-                                            </ul><a href="/Watch/@ViewBag.filmDetail.nameFilm" class="card__play" title="@ViewBag.filmDetail.nameFilm"><i class="card__play-icon fas fa-play"></i></a>
+                                            </ul><a href="/Watch/Watch/@ViewBag.filmDetail.filmID.Trim()/1" class="card__play" title="@ViewBag.filmDetail.nameFilm"><i class="card__play-icon fas fa-play"></i></a>
                                             <div class="watch-eps">
-                                                @*<a href="https://galaphim.net/bua-chu/download" title="Download phim @ViewBag.filmDetail.nameFilm" class="btn-info-download">
-                                                        <i class="fas fa-cloud-download-alt"></i>
-                                                        Download
-                                                    </a>*@
-                                                <a class="watch-movie" href="/Watch/@ViewBag.filmDetail.nameFilm" title="@ViewBag.filmDetail.nameFilm">
+                                                <a class="watch-movie" href="/Watch/Watch/@ViewBag.filmDetail.filmID.Trim()/1" title="@ViewBag.filmDetail.nameFilm">
                                                     <i class=" fas fa-video"></i>
                                                     Xem phim
                                                 </a>
@@ -209,7 +205,7 @@
 
                                             <div class="comment-content">
                                                 <div class="comments__list" id="comment-content">
-                                                    @foreach (var item in ViewBag.filmFeedBack)
+                                                    @foreach (var item in ViewBag.FeedBackOfAcc)
                                                     {
                                                         <div class="comment" id="comment-32512">
                                                             <div class="comments__item">

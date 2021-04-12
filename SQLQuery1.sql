@@ -796,3 +796,26 @@ select * from getFeedBackAndAccountOfFilm(@id)
 end
 
 exec selectFBACOfFilm 'F0002'
+
+go
+create function getEpisodeFilm(
+	@idfilm char(10),
+	@Episode int
+)
+returns table
+as
+return 
+select fi.filmID, fi.nameFilm, fi.nameEngFilm,
+	fi.contentText, fi.linkBgImage, fi.releasedEpisodes, fi.totalEpisodes,
+	fe.Episode, fe.linkEpisode
+from Film fi, FilmEpisode fe
+where fi.filmID = @idfilm and fi.filmID = fe.filmID and fe.Episode = @Episode
+
+go
+create procedure selectEpisodeFilm (@id char(10), @Episode int)
+as
+begin
+select * from getEpisodeFilm(@id, @Episode)
+end
+
+exec selectEpisodeFilm 'F0005', 1

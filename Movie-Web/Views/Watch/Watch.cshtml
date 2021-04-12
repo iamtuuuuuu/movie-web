@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewBag.Title = "About";
+    ViewBag.Title = "Watch";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <section class="section player-section">
@@ -12,12 +12,12 @@
                     <div class="col c-12">
                         <div class="container__player">
                             <video class="container__player-video"
-                                   src="~/Content/assets/video/movie.mp4"
+                                   src="@ViewBag.filmDetail.linkEpisode"
                                    type="video/mp4"
                                    controls></video>
                         </div>
                         <div class="player_message">
-                            Mẹo tìm kiếm phim trên Google: "Tên phim + galaphim"
+                            Mẹo tìm kiếm phim trên Google: "Tên phim + movieweb"
                             <br />
                             <div class="message--warning">
                                 Hãy đăng nhập tài khoản để loại bỏ quảng cáo!!!
@@ -55,10 +55,21 @@
                             <div class="film-title__left">
                                 <h2 class="player-title">
                                     <i class="fas fa-play-circle"></i>
-                                    Wanda Và Vision (Phần 1) Tập 1 [Vietsub]
+                                    @ViewBag.filmDetail.nameFilm  
+
+                                    @if (@ViewBag.filmDetail.totalEpisodes == 1)
+                                    {
+                                        <span></span>
+                                    }
+                                    else
+                                    {
+                                        <span>
+                                            Tập @ViewBag.filmDetail.Episode
+                                        </span>
+                                    } [Vietsub]
                                 </h2>
                                 <span class="player-sub-title">
-                                    WandaVision (Season 1) (2020)
+                                    @ViewBag.filmDetail.nameEngFilm
                                 </span>
                                 <div class="social-media">
                                     <a href="" class="social-media__like">
@@ -121,39 +132,7 @@
                                             <div class="episodes col c-2">
                                                 <a href="" class="episodes-link active">Tập 1</a>
                                             </div>
-                                            <div class="episodes col c-2">
-                                                <a href="" class="episodes-link">Tập 1</a>
-                                            </div>
-                                            <div class="episodes col c-2">
-                                                <a href="" class="episodes-link">Tập 1</a>
-                                            </div>
-                                            <div class="episodes col c-2">
-                                                <a href="" class="episodes-link">Tập 1</a>
-                                            </div>
-                                            <div class="episodes col c-2">
-                                                <a href="" class="episodes-link">Tập 1</a>
-                                            </div>
-                                            <div class="episodes col c-2">
-                                                <a href="" class="episodes-link">Tập 1</a>
-                                            </div>
-                                            <div class="episodes col c-2">
-                                                <a href="" class="episodes-link">Tập 1</a>
-                                            </div>
-                                            <div class="episodes col c-2">
-                                                <a href="" class="episodes-link">Tập 1</a>
-                                            </div>
-                                            <div class="episodes col c-2">
-                                                <a href="" class="episodes-link">Tập 1</a>
-                                            </div>
-                                            <div class="episodes col c-2">
-                                                <a href="" class="episodes-link">Tập 1</a>
-                                            </div>
-                                            <div class="episodes col c-2">
-                                                <a href="" class="episodes-link">Tập 1</a>
-                                            </div>
-                                            <div class="episodes col c-2">
-                                                <a href="" class="episodes-link">Tập 1</a>
-                                            </div>
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -176,16 +155,40 @@
                             <a href="#">Trang chủ <i class="fas fa-arrow-right"></i></a>
                         </li>
                         <li class="breadcumb__item">
-                            <a href="#">Phim bộ <i class="fas fa-arrow-right"></i></a>
-                        </li>
+                            <a href="#">
+                                @if (@ViewBag.filmDetail.totalEpisodes == 1)
+                                {
+                                    <span>Phim lẻ</span>
+                                }
+                                else
+                                {
+                                    <span>
+                                        Phim bộ
+                                    </span>
+                                } <i class="fas fa-arrow-right"></i>
+                            </a>
+                           
+</li>
                         <li class="breadcumb__item">
                             <a href="#">
-                                WandaVision (Season 1) (2020)
-                                <i class="fas fa-arrow-right"></i>
+                                @ViewBag.filmDetail.nameFilm
+                                
                             </a>
                         </li>
                         <li class="breadcumb__item">
-                            <a href="#">Tập 1</a>
+                            <a href="#">
+                                @if (@ViewBag.filmDetail.totalEpisodes == 1)
+                                {
+                                    <span></span>
+                                }
+                                else
+                                {
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span>
+                                        Tập @ViewBag.filmDetail.Episode
+                                    </span>
+                                }
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -194,33 +197,32 @@
                         <div class="col c-9">
                             <h1 class="comment-section__title">
                                 <a href="">
-                                    Wanda Và Vision (Phần 1) - WandaVision (Season 1)
+                                    <br />
+                                    @ViewBag.filmDetail.nameFilm <br /><br />
+                                    @ViewBag.filmDetail.nameEngFilm
                                 </a>
                             </h1>
                             <div class="comment-section__subtitle">
                                 <h2>
-                                    Phim Wanda Và Vision (Phần 1) - WandaVision (Season 1)
-                                    (2020) [Vietsub]
+                                    @ViewBag.filmDetail.nameFilm - @ViewBag.filmDetail.nameEngFilm
                                 </h2>
                                 <p>
-                                    <strong>Wanda Và Vision (Phần 1)</strong> có tựa gốc là
-                                    <strong>WandaVision (Season 1)</strong> được phát hành vào
-                                    năm 2020 của đạo diễn <strong>Matt Shakman</strong>, Wanda
-                                    Và Vision (Phần 1) thuộc thể loại Hành Động Hài Hước Phiêu
-                                    Lưu Viễn Tưởng Tình Cảm Sitcom với sự tham gia của các
-                                    diễn viên <strong>Elizabeth Olsen</strong>,
-                                    <strong>Paul Bettany</strong>,
-                                    <strong>Kat Dennings</strong>,
-                                    <strong>Evan Peters</strong>,
-                                    <a href="#"
-                                       title="Wanda Và Vision (Phần 1) - WandaVision (Season 1)"><i>Xem thêm <i class="fas fa-arrow-right"></i></i></a><a href="#/download"
-                                                                                                                                                          title="Download Wanda Và Vision (Phần 1) - WandaVision (Season 1)"
-                                                                                                                                                          ref="nofollow">
-                                        <i>Download <i class="fas fa-arrow-right"></i></i>
-                                    </a>
+                                    @ViewBag.filmDetail.contentText
                                 </p>
                             </div>
-                            
+                            <div class="comment-section__content">
+                                <div id="fb-root"></div>
+                                <script async
+                                        defer
+                                        crossorigin="anonymous"
+                                        src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v10.0"
+                                        nonce="b1Jr6G1A"></script>
+                                <div class="fb-comments"
+                                     data-href="https://developers.facebook.com/docs/plugins/comments#configurator"
+                                     data-width="918"
+                                     style="background-color: white"
+                                     data-numposts="5"></div>
+                            </div>
                         </div>
                         <div class="col c-3">
                             <div class="tab-title">
@@ -587,3 +589,4 @@
         }
       };
 </script>
+

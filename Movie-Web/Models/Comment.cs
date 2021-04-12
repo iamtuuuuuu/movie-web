@@ -10,6 +10,6 @@ namespace Movie_Web.Models
         public string username { get; set; }
         public string avartar { get; set; }
         public string cmt { get; set; }
-        public DateTime sentDate { get; set; }
+        public string sentDate { get; set; }
     }
 }

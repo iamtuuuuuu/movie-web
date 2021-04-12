@@ -6,6 +6,7 @@ using System.Configuration;
 using Movie_Web.Models;
 using System.Data.SqlClient;
 using System.Data;
+using System.Globalization;
 
 namespace Movie_Web.DAO
 {
@@ -43,9 +44,11 @@ namespace Movie_Web.DAO
                     cmt.username = rdr["username"].ToString();
                     cmt.avartar = rdr["avartar"].ToString();
                     cmt.cmt = rdr["cmt"].ToString();
-                    Console.WriteLine(rdr["sentDate"].ToString());
+                    cmt.sentDate = rdr["sentDate"].ToString();
 
-                    cmt.sentDate = DateTime.ParseExact(rdr["sentDate"].ToString(), "yyyy-MM-dd HH:mm:ss,fff", System.Globalization.CultureInfo.InvariantCulture);
+                    //string dateSent = rdr["sentDate"].ToString();
+                    //Console.WriteLine(dateSent);
+                    //cmt.sentDate = DateTime.ParseExact(dateSent, "yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture);
 
                     commentList.Add(cmt);
                 }
