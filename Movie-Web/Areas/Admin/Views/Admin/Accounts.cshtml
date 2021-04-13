@@ -1,6 +1,8 @@
 ﻿
 @{
     ViewBag.Title = "Accounts";
+    var jss = new System.Web.Script.Serialization.JavaScriptSerializer();
+    var usernameInfor = jss.Serialize(ViewBag.listUsername);
     Layout = "~/Areas/Admin/Views/Shared/Layout.cshtml";
 }
 
@@ -24,24 +26,18 @@
                     <tr>
                         <th>ID</th>
                         <th>Email</th>
-                        <th>Password</th>
-                        <th>Username</th>
-                        <th>Role</th>
-                        <th>Avatar</th>
-                        <th>createDate</th>
-                        <th>createBy</th>
+                        <th>Tên người dùng</th>
+                        <th>Ngày tạo</th>
+                        <th>Người tạo</th>
                     </tr>
                 </thead>
                 <tfoot>
                     <tr>
                         <th>ID</th>
                         <th>Email</th>
-                        <th>Password</th>
-                        <th>Username</th>
-                        <th>Role</th>
-                        <th>Avatar</th>
-                        <th>createDate</th>
-                        <th>createBy</th>
+                        <th>Tên người dùng</th>
+                        <th>Ngày tạo</th>
+                        <th>Người tạo</th>
                     </tr>
                 </tfoot>
                 <tbody>
@@ -50,13 +46,7 @@
                     <tr>
                         <th>@account.accountID</th>
                         <th>@account.email</th>
-                        <th>@account.passwordAcc</th>
                         <th>@account.username</th>
-                        <th>User</th>
-                        @*if (@account.roleAcc == true){
-            <th>User</th>
-        }*@
-                        <th>@account.avartar</th>
                         <th>@account.createDate</th>
                         <th>@account.createBy</th>
                     </tr>
@@ -66,6 +56,3 @@
         </div>
     </div>
 </div>
-
-
-

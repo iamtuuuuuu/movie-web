@@ -17,18 +17,26 @@ namespace Movie_Web.Areas.Admin.Controllers
         public ActionResult Accounts()
         {
             var accountDao = new AccountDAO();
-            ViewBag.listAcc = accountDao.listAccountDescendingbyID();
-
+            var lstAcc = accountDao.listAccountDescendingbyID();
+            ViewBag.listAcc = lstAcc;
+            List<string> listAccUsername = new List<string>();
+            foreach( var acc in lstAcc)
+            {
+                listAccUsername.Add(acc.username);
+            }
+            ViewBag.listUsername = listAccUsername;
             return View();
         }
 
         public ActionResult Films()
         {
+            var filmDao = new FilmDAO();
+            ViewBag.listFilm = filmDao.listAllAdmin();
             return View();
         }
 
         public ActionResult Summary()
-        {
+        {   
             return View();
         }
     }

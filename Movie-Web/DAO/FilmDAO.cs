@@ -17,6 +17,10 @@ namespace Movie_Web.DAO
         public List<Film> listAll(){
             return dbFilmContext.Films.ToList();
         }
+        public List<Film> listAllAdmin()
+        {
+            return dbFilmContext.Films.OrderByDescending(x=> x.createDate).ToList();
+        }
 
         public List<Film> listFilmSlideDescendingbyCreateDate(int numberOfrecords)
         {
