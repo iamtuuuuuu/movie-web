@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Configuration;
 using Movie_Web.Models;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace Movie_Web.DAO
 {
@@ -21,11 +24,36 @@ namespace Movie_Web.DAO
             ).ToList();
         }
 
-       /* public List<Feedback> listAccountFB(string id)
+        public List<Comment> listAccountFB(string id)
         {
 
-            return dbFilmContext.Database.ExecuteSqlCommand("selectFBACOfFilm @id",id);
+            List<Comment> commentList = new List<Comment>();
+            string CS = ConfigurationManager.ConnectionStrings["ModelFilm"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(CS))
+            {
+                SqlCommand cmd = new SqlCommand("exec selectFBACOfFilm \'" + id + "\'", con);
+                cmd.CommandType = CommandType.Text;
+                con.Open();
 
-        }*/
+                SqlDataReader rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    var cmt = new Comment();
+
+                    cmt.username = rdr["username"].ToString();
+                    cmt.avartar = rdr["avartar"].ToString();
+                    cmt.cmt = rdr["cmt"].ToString();
+                    cmt.sentDate = rdr["sentDate"].ToString();
+
+                    //string dateSent = rdr["sentDate"].ToString();
+                    //Console.WriteLine(dateSent);
+                    //cmt.sentDate = DateTime.ParseExact(dateSent, "yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture);
+
+                    commentList.Add(cmt);
+                }
+            }
+            Console.WriteLine(commentList);
+            return commentList;
+        }
     }
 }

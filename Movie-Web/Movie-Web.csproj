@@ -147,6 +147,7 @@
     <Compile Include="Controllers\DetailFilmController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\WatchController.cs" />
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\FeedbackDAO.cs" />
     <Compile Include="DAO\FilmDAO.cs" />
@@ -155,6 +156,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Account.cs" />
+    <Compile Include="Models\Comment.cs" />
+    <Compile Include="Models\EpisodeFilmCreateByProc.cs" />
     <Compile Include="Models\Feedback.cs" />
     <Compile Include="Models\Film.cs" />
     <Compile Include="Models\FilmEpisode.cs" />
@@ -1997,6 +2000,7 @@
     <Content Include="Views\Login\SignUp.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Watch\Watch.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
