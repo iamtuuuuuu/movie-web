@@ -117,11 +117,13 @@
                                 {
                                     <div class="row no-gutters">
                                         <div class="col l-4">
-                                            <div class="card__cover"><img src="@itemFilm.linkImgAvt" class="lazy" alt="@itemFilm.nameFilm - @itemFilm.nameEngFilm" style=""><a href="#" class="card__play card__play--small" title="Ở Rể"><i class="fas fa-play"></i></a></div>
+                                            <div class="card__cover"><img src="@itemFilm.linkImgAvt" class="lazy" alt="@itemFilm.nameFilm - @itemFilm.nameEngFilm" style="">
+                                            <a href="/DetailFilm/Detail/@itemFilm.filmID" class="card__play card__play--small" title="Ở Rể">
+                                                <i class="fas fa-play"></i></a></div>
                                         </div>
                                         <div class="col l-8">
                                             <div class="card__content">
-                                                <a href="/Watch/@ViewBag.filmDetail.nameFilm" title="@itemFilm.nameFilm">
+                                                <a href="/DetailFilm/Detail/@ViewBag.filmDetail.filmID" title="@itemFilm.nameFilm">
                                                     <p class="movie_title">@itemFilm.nameFilm</p><span class="original_title">@itemFilm.nameEngFilm</span>
                                                     <div class="popup"><i class="imdb">IMDb @itemFilm.imdb</i></div>
                                                 </a>

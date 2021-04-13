@@ -942,7 +942,7 @@ values
 go
 
 use [movie-web]
-
+go
 create function getFeedBackAndAccountOfFilm(
 	@idfilm char(10)
 )
@@ -952,7 +952,7 @@ return
 select acc.username,acc.avartar,fb.cmt,fb.sentDate
 from Account as acc, Feedback fb
 where fb.accountID = acc.accountID and fb.filmID = @idfilm
-
+go
 create procedure selectFBACOfFilm @id char(10)
 as
 begin

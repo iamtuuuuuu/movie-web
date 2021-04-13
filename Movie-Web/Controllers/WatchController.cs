@@ -12,14 +12,17 @@ namespace Movie_Web.Controllers
         // GET: Watch
         public ActionResult Watch(string idFilm, int Episode)
         {
-
+            var filmDao = new FilmDAO();
             var FilmEpDAO = new FilmEpisodeDAO();
 
             var filmModel = FilmEpDAO.getEpisode(idFilm, Episode);
             Console.WriteLine(filmModel);
 
+            int numrecords = 10;
+            ViewBag.listfilmDescendingbyCreateDate = filmDao.listFilmSlideDescendingbyCreateDate(numrecords);
             ViewBag.filmDetail = filmModel;
             return View();
         }
+        
     }
 }

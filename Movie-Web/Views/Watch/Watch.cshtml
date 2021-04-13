@@ -14,7 +14,7 @@
                             <video class="container__player-video"
                                    src="@ViewBag.filmDetail.linkEpisode"
                                    type="video/mp4"
-                                   controls></video>
+                                   controls autoplay></video>
                         </div>
                         <div class="player_message">
                             Mẹo tìm kiếm phim trên Google: "Tên phim + movieweb"
@@ -235,174 +235,30 @@
                                 <h2>Nổi bật</h2>
                             </div>
                             <div class="tab-content">
-                                <div class="row">
-                                    <div class="c-3">
-                                        <div class="card__cover">
-                                            <img src="~/Content/assets/img/watch-movie/dai-duong-minh-nguyet.small.webp"
-                                                 alt=""
-                                                 class="card__img" />
-                                            <a href="" class="card__play card__play--">
-                                                <i class="card__play-icon card__play-icon--small fas fa-play"></i>
-                                            </a>
+                                @foreach (var itemFilm in ViewBag.listfilmDescendingbyCreateDate)
+                                {
+                                    <div class="row">
+                                        <div class="c-3">
+                                            <div class="card__cover">
+                                                <img src="@itemFilm.linkImgAvt"
+                                                     alt="@itemFilm.nameFilm - @itemFilm.nameEngFilm"
+                                                     class="card__img" />
+                                                <a href="/DetailFilm/Detail/@itemFilm.filmID" class="card__play card__play--">
+                                                    <i class="card__play-icon card__play-icon--small fas fa-play"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="c-9">
+                                            <div class="card__content">
+                                                <a href="/DetailFilm/Detail/@ViewBag.filmDetail.filmID" title="@itemFilm.nameFilm">
+                                                    <p class="movie-title">@itemFilm.nameFilm</p>
+                                                    <span class="original-title">@itemFilm.nameEngFilm</span>
+                                                    <div class="view-count">IMDb @itemFilm.imdb</div>
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="c-9">
-                                        <div class="card__content">
-                                            <a href="">
-                                                <p class="movie-title">Đại Đường Minh Nguyệt</p>
-                                                <span class="original-title">Weaving a Tale of Love</span>
-                                                <div class="view-count">71.5K lượt xem</div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="c-3">
-                                        <div class="card__cover">
-                                            <img src="~/Content/assets/img/watch-movie/dai-duong-minh-nguyet.small.webp"
-                                                 alt=""
-                                                 class="card__img" />
-                                            <a href="" class="card__play card__play--">
-                                                <i class="card__play-icon card__play-icon--small fas fa-play"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="c-9">
-                                        <div class="card__content">
-                                            <a href="">
-                                                <p class="movie-title">Đại Đường Minh Nguyệt</p>
-                                                <span class="original-title">Weaving a Tale of Love</span>
-                                                <div class="view-count">71.5K lượt xem</div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="c-3">
-                                        <div class="card__cover">
-                                            <img src="~/Content/assets/img/watch-movie/dai-duong-minh-nguyet.small.webp"
-                                                 alt=""
-                                                 class="card__img" />
-                                            <a href="" class="card__play card__play--">
-                                                <i class="card__play-icon card__play-icon--small fas fa-play"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="c-9">
-                                        <div class="card__content">
-                                            <a href="">
-                                                <p class="movie-title">Đại Đường Minh Nguyệt</p>
-                                                <span class="original-title">Weaving a Tale of Love</span>
-                                                <div class="view-count">71.5K lượt xem</div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="c-3">
-                                        <div class="card__cover">
-                                            <img src="~/Content/assets/img/watch-movie/dai-duong-minh-nguyet.small.webp"
-                                                 alt=""
-                                                 class="card__img" />
-                                            <a href="" class="card__play card__play--">
-                                                <i class="card__play-icon card__play-icon--small fas fa-play"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="c-9">
-                                        <div class="card__content">
-                                            <a href="">
-                                                <p class="movie-title">Đại Đường Minh Nguyệt</p>
-                                                <span class="original-title">Weaving a Tale of Love</span>
-                                                <div class="view-count">71.5K lượt xem</div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="c-3">
-                                        <div class="card__cover">
-                                            <img src="~/Content/assets/img/watch-movie/dai-duong-minh-nguyet.small.webp"
-                                                 alt=""
-                                                 class="card__img" />
-                                            <a href="" class="card__play card__play--">
-                                                <i class="card__play-icon card__play-icon--small fas fa-play"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="c-9">
-                                        <div class="card__content">
-                                            <a href="">
-                                                <p class="movie-title">Đại Đường Minh Nguyệt</p>
-                                                <span class="original-title">Weaving a Tale of Love</span>
-                                                <div class="view-count">71.5K lượt xem</div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="c-3">
-                                        <div class="card__cover">
-                                            <img src="~/Content/assets/img/watch-movie/dai-duong-minh-nguyet.small.webp"
-                                                 alt=""
-                                                 class="card__img" />
-                                            <a href="" class="card__play card__play--">
-                                                <i class="card__play-icon card__play-icon--small fas fa-play"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="c-9">
-                                        <div class="card__content">
-                                            <a href="">
-                                                <p class="movie-title">Đại Đường Minh Nguyệt</p>
-                                                <span class="original-title">Weaving a Tale of Love</span>
-                                                <div class="view-count">71.5K lượt xem</div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="c-3">
-                                        <div class="card__cover">
-                                            <img src="~/Content/assets/img/watch-movie/dai-duong-minh-nguyet.small.webp"
-                                                 alt=""
-                                                 class="card__img" />
-                                            <a href="" class="card__play card__play--">
-                                                <i class="card__play-icon card__play-icon--small fas fa-play"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="c-9">
-                                        <div class="card__content">
-                                            <a href="">
-                                                <p class="movie-title">Đại Đường Minh Nguyệt</p>
-                                                <span class="original-title">Weaving a Tale of Love</span>
-                                                <div class="view-count">71.5K lượt xem</div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="c-3">
-                                        <div class="card__cover">
-                                            <img src="~/Content/assets/img/watch-movie/dai-duong-minh-nguyet.small.webp"
-                                                 alt=""
-                                                 class="card__img" />
-                                            <a href="" class="card__play card__play--">
-                                                <i class="card__play-icon card__play-icon--small fas fa-play"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="c-9">
-                                        <div class="card__content">
-                                            <a href="">
-                                                <p class="movie-title">Đại Đường Minh Nguyệt</p>
-                                                <span class="original-title">Weaving a Tale of Love</span>
-                                                <div class="view-count">71.5K lượt xem</div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
+                                }
                             </div>
                         </div>
                     </div>
@@ -451,120 +307,28 @@
                         <div class="col c-12">
                             <h3 class="suggestion-section__title">Có thể bạn thích...</h3>
                         </div>
-                        <div class="col c-6">
-                            <div class="card">
-                                <div class="card__cover">
-                                    <img src="~/Content/assets/img/watch-movie/suggestion-section/xin-chao-toi-oi.small.webp"
-                                         alt="" />
-                                    <a href="" class="card__play card__play--">
-                                        <i class="card__play-icon card__play-icon--small fas fa-play"></i>
-                                    </a>
-                                </div>
-                                <div class="card__content">
-                                    <h5 class="card__title">
-                                        <a href=""
-                                           title="Xem phim Người Hùng Tia Chớp (Phần 7) - The Flash (Season 7)">Người Hùng Tia Chớp (Phần 7)</a>
-                                    </h5>
+                        @foreach (var itemFilm in ViewBag.listfilmDescendingbyCreateDate)
+                        {
+                            <div class="col c-6">
+                                <div class="card">
+                                    <div class="card__cover">
+                                        <img src="@itemFilm.linkImgAvt"
+                                             alt="@itemFilm.nameFilm - @itemFilm.nameEngFilm" />
+                                        <a href="/DetailFilm/Detail/@itemFilm.filmID" class="card__play card__play--">
+                                            <i class="card__play-icon card__play-icon--small fas fa-play"></i>
+                                        </a>
+                                    </div>
+                                    <div class="card__content">
+                                        <h5 class="card__title">
+                                            <a href="/DetailFilm/Detail/@ViewBag.filmDetail.filmID"
+                                               title="@itemFilm.nameFilm">@itemFilm.nameFilm</a>
+                                        </h5>
 
-                                    <span class="title_origin">The Flash (Season 7)</span>
+                                        <span class="title_origin">@itemFilm.nameEngFilm</span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col c-6">
-                            <div class="card">
-                                <div class="card__cover">
-                                    <img src="~/Content/assets/img/watch-movie/suggestion-section/xin-chao-toi-oi.small.webp"
-                                         alt="" />
-                                    <a href="" class="card__play card__play--">
-                                        <i class="card__play-icon card__play-icon--small fas fa-play"></i>
-                                    </a>
-                                </div>
-                                <div class="card__content">
-                                    <h5 class="card__title">
-                                        <a href=""
-                                           title="Xem phim Người Hùng Tia Chớp (Phần 7) - The Flash (Season 7)">Người Hùng Tia Chớp (Phần 7)</a>
-                                    </h5>
-
-                                    <span class="title_origin">The Flash (Season 7)</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col c-6">
-                            <div class="card">
-                                <div class="card__cover">
-                                    <img src="~/Content/assets/img/watch-movie/suggestion-section/xin-chao-toi-oi.small.webp"
-                                         alt="" />
-                                    <a href="" class="card__play card__play--">
-                                        <i class="card__play-icon card__play-icon--small fas fa-play"></i>
-                                    </a>
-                                </div>
-                                <div class="card__content">
-                                    <h5 class="card__title">
-                                        <a href=""
-                                           title="Xem phim Người Hùng Tia Chớp (Phần 7) - The Flash (Season 7)">Người Hùng Tia Chớp (Phần 7)</a>
-                                    </h5>
-
-                                    <span class="title_origin">The Flash (Season 7)</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col c-6">
-                            <div class="card">
-                                <div class="card__cover">
-                                    <img src="~/Content/assets/img/watch-movie/suggestion-section/xin-chao-toi-oi.small.webp"
-                                         alt="" />
-                                    <a href="" class="card__play card__play--">
-                                        <i class="card__play-icon card__play-icon--small fas fa-play"></i>
-                                    </a>
-                                </div>
-                                <div class="card__content">
-                                    <h5 class="card__title">
-                                        <a href=""
-                                           title="Xem phim Người Hùng Tia Chớp (Phần 7) - The Flash (Season 7)">Người Hùng Tia Chớp (Phần 7)</a>
-                                    </h5>
-
-                                    <span class="title_origin">The Flash (Season 7)</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col c-6">
-                            <div class="card">
-                                <div class="card__cover">
-                                    <img src="~/Content/assets/img/watch-movie/suggestion-section/xin-chao-toi-oi.small.webp"
-                                         alt="" />
-                                    <a href="" class="card__play card__play--">
-                                        <i class="card__play-icon card__play-icon--small fas fa-play"></i>
-                                    </a>
-                                </div>
-                                <div class="card__content">
-                                    <h5 class="card__title">
-                                        <a href=""
-                                           title="Xem phim Người Hùng Tia Chớp (Phần 7) - The Flash (Season 7)">Người Hùng Tia Chớp (Phần 7)</a>
-                                    </h5>
-
-                                    <span class="title_origin">The Flash (Season 7)</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col c-6">
-                            <div class="card">
-                                <div class="card__cover">
-                                    <img src="~/Content/assets/img/watch-movie/suggestion-section/xin-chao-toi-oi.small.webp"
-                                         alt="" />
-                                    <a href="" class="card__play card__play--">
-                                        <i class="card__play-icon card__play-icon--small fas fa-play"></i>
-                                    </a>
-                                </div>
-                                <div class="card__content">
-                                    <h5 class="card__title">
-                                        <a href=""
-                                           title="Xem phim Người Hùng Tia Chớp (Phần 7) - The Flash (Season 7)">Người Hùng Tia Chớp (Phần 7)</a>
-                                    </h5>
-
-                                    <span class="title_origin">The Flash (Season 7)</span>
-                                </div>
-                            </div>
-                        </div>
+                        }
                     </div>
                 </div>
                 <div class="col c-12"></div>
