@@ -8,6 +8,12 @@ namespace Movie_Web.Models
 {
     public class LoginModel
     {
+        public LoginModel()
+        {
+            UserName = "";
+            Email = "";
+            Password = "";
+        }
         
         public string UserName { set; get; }
         [Required(ErrorMessage = "Please enter email")]

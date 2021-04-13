@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
@@ -20,6 +23,7 @@
 </head>
 <body>
     <div class="app">
+        @*@Html.Partial("Header", (string)ViewBag.acc.username)*@
         <header class="header">
             <nav class="header__content">
                 <a href="#" class="header__logo">
@@ -59,10 +63,13 @@
                     <button class="header__notify-btn" type="button">
                         <i class="header__notify-icon fas fa-bell"></i>
                     </button>
+                        <a href="/Login/Login" id="login_btn">
+                            <button class="btn header__sign-in-btn">Đăng nhập</button>
+                        </a>
 
-                    <a href="/Login/Login">
-                        <button class="btn header__sign-in-btn">Đăng nhập</button>
-                    </a>
+
+
+
                 </div>
             </nav>
             <form class="header__search-wrap hidden">
@@ -157,6 +164,9 @@
             </div>
         </footer>
     </div>
+
+    
+
 
     <!-- JQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

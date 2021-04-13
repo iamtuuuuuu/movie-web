@@ -22,6 +22,11 @@ namespace Movie_Web.DAO
         public String Login(string email, string password)
         {
             var result = db.Accounts.FirstOrDefault(x => x.email == email && x.passwordAcc == password);
+            Console.WriteLine(result);
+            if (result == null)
+            {
+                return "";
+            }
             return result.accountID;
         }
         public void Insert(string email, string userName, string password)

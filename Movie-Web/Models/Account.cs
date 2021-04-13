@@ -9,11 +9,14 @@ namespace Movie_Web.Models
     [Table("Account")]
     public partial class Account
     {
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Account()
         {
+            username = "";
             Feedbacks = new HashSet<Feedback>();
         }
+
 
         [StringLength(10)]
         public string accountID { get; set; }

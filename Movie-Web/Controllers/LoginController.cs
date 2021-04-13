@@ -34,7 +34,8 @@ namespace Movie_Web.Controllers
                     Session.Add("USER_SESSION", userSession);
                     // return admin
                     //if (account.roleAcc)
-                    return RedirectToAction("Index", "Home", account);
+                    ViewBag.acc = account;
+                    return RedirectToAction("Index", "Home");
                 }
                 else
                 {

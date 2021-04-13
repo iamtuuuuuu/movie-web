@@ -1,0 +1,132 @@
+﻿@model String
+<header class="header">
+    <nav class="header__content">
+        <a href="#" class="header__logo">
+            <img class="header__logo-img"
+                 src="~/Content/assets/img/logo.png"
+                 alt="Movie Web" />
+        </a>
+        <ul class="header__nav-list">
+            <li class="header__nav-item">
+                <a class="header__nav-link" href="#">Phim mới</a>
+            </li>
+            <li class="header__nav-item">
+                <a href="#" class="header__nav-link">Phim bộ</a>
+            </li>
+            <li class="header__nav-item">
+                <a href="#" class="header__nav-link">Phim lẻ</a>
+            </li>
+            <li class="header__nav-item">
+                <a href="#" class="header__nav-link">Phim chiếu rạp</a>
+            </li>
+            <li class="header__nav-item">
+                <a href="#" class="header__nav-link">Thể loại</a>
+            </li>
+            <li class="header__nav-item">
+                <a href="#" class="header__nav-link">Quốc gia</a>
+            </li>
+            <li class="header__nav-item">
+                <a href="#" class="header__nav-link">Sắp chiếu</a>
+            </li>
+        </ul>
+
+        <div class="header__auth">
+            <button class="header__search-btn" type="button">
+                <i class="header__search-btn-icon fas fa-search"></i>
+            </button>
+
+            <button class="header__notify-btn" type="button">
+                <i class="header__notify-icon fas fa-bell"></i>
+            </button>
+            @if (@Model.Length == 0)
+            {
+                <a href="/Login/Login" id="login_btn">
+                    <button class="btn header__sign-in-btn">Đăng nhập</button>
+                </a>
+            }
+            else
+            {
+                <ul class="navbar-nav mr-auto me-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            @Model
+                        </a>
+                        <button type="button" class="btn btn-primary dropdown-menu" data-toggle="modal" data-target="#logout-modal">
+                            Logout
+                        </button>
+                    </li>
+                </ul>
+            }
+
+
+        </div>
+    </nav>
+    <form class="header__search-wrap hidden">
+        <div class="grid wide ">
+            <div class="row">
+                <div class="col l-12">
+                    <div class="header__search-content">
+                        <input type="text" name="key" placeholder="Tìm kiếm phim theo tên, diễn viên, đạo diễn, thể loại, ...">
+                        <button class="btn btn-search " type="submit">Tìm kiếm</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</header>
+
+
+<div class="modal fade" id="logout-modal" tabindex="-1" role="dialog" aria-labelledby="logout-modalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Đăng xuất</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Bạn có muốn đăng xuất không?
+            </div>
+            <div class="modal-footer">
+                <button id="btn-logout-modal" type="button" class="btn btn-danger">Logout</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<form method="post" name="logout-form">
+</form>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="https://c...content-available-to-author-only...r.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+<script src="https://c...content-available-to-author-only...r.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+<script>
+    var user = @ViewBag.acc.username;
+    console.log("userr: " + user);
+    //if (user) {
+    //    document.getElementById("login_btn").style.display = "none";
+    //    //const pr = document.getElementsByClassName('header__auth');
+        //pr.innerHTML = `<ul class="navbar-nav mr-auto">
+        //<li class="nav-item dropdown">
+        //    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        //        ${user.username}
+        //    </a>
+        //    <button type="button" class="btn btn-primary dropdown-menu" data-toggle="modal" data-target="#logout-modal">
+        //        Logout
+        //    </button>
+        //</li>
+        //</ul>`;
+    //} else {
+    //    document.getElementById("login_btn").style.display = "block";
+    //}
+    document.addEventListener('DOMContentLoaded', function () {
+        var logoutForm = document.forms['logout-form'];
+        var btnLogout = document.getElementById('btn-logout-modal');
+        $('#logout-modal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget);
+        });
+        btnLogout.onclick = function () {
+            logoutForm.action = '/Login/Logout' ;
+            logoutForm.submit();
+        }
+    })
+</script>
