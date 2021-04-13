@@ -31,7 +31,14 @@ namespace Movie_Web.Controllers
 
                     // return admin
                     //if (account.roleAcc)
-                    return RedirectToAction("Index", "Home");
+                    if (account.roleAcc == false)
+                    {
+                        return RedirectToAction("Index", "Admin", "Admin");
+                    }
+                    else
+                    {
+                        return RedirectToAction("Index", "Home");
+                    }   
                 }
                 else
                 {
