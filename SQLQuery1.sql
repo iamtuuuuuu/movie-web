@@ -216,19 +216,16 @@ end
 
 
 
-delete  from film
-select * from film
-delete  from Feedback
-delete  from FilmEpisode
+
 -----------------------------------------------------------------
-use [movie-web]
+
 
 
 insert into Account
 values (
 	'ACC001',
 	'tungngngn@gmail.com',
-	'admin',
+	'21232f297a57a5a743894a0e4a801fc3',
 	1,
 	'admin',
 	null,
@@ -240,7 +237,7 @@ insert into Account
 values (
 	'ACC002',
 	'kienloaa@gmail.com',
-	'adminkien',
+	'febed9e8e8c6cf5ec7c00a1eb5ebe6c6',
 	1,
 	'adminkien',
 	null,
@@ -252,7 +249,7 @@ insert into Account
 values (
 	'ACC003',
 	'hungloaaa@gmail.com',
-	'adminhung',
+	'2a31237fcf2a69e82918f0f91999dd29',
 	1,
 	'adminhung',
 	null,
@@ -264,14 +261,13 @@ insert into Account
 values (
 	'ACC004',
 	'tuloaaa@gmail.com',
-	'admintu',
+	'ba990e75b54b0849f9c6931462cae6b0',
 	1,
 	'admintu',
 	null,
 	'8/4/2021',
 	'admintu'
 )
-
 
 -----------------------------------------------------------------
 insert into Film
@@ -958,7 +954,7 @@ as
 begin
 select * from getFeedBackAndAccountOfFilm(@id)
 end
-
+go
 exec selectFBACOfFilm 'F0002'
 
 go
@@ -981,5 +977,5 @@ as
 begin
 select * from getEpisodeFilm(@id, @Episode)
 end
-
+go
 exec selectEpisodeFilm 'F0005', 1
