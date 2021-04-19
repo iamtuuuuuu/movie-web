@@ -16,17 +16,32 @@
 
     <div class="card-body">
         <div class="table-responsive">
-            <div style="display:flex;justify-content:flex-end;">
-                <button type="button" class="btn btn-primary mr-1">Thêm phim</button>
-                <button type="button" class="btn btn-danger ml-1">Xóa phim đã chọn</button>
+            <div class="d-flex justify-content-end mb-3">
+                <button type="button" class="btn btn-primary" style="height:40px;margin-top:25px;margin-right:15px;">Thêm phim</button>
+                <div class="mt-4 d-flex">
+                    <div class="form-check" style="margin-top:10px;">
+                        <input class="form-check-input" type="checkbox" value="" id="checkbox-all">
+                        <label class="form-check-label" for="checkbox-all">
+                            Selected All
+                        </label>
+                    </div>
+
+                    <select class="form-select-sm ml-2 mr-2" aria-label="Default select example">
+                        <option selected>--- Chọn hành động ---</option>
+                        <option value="delete">Xóa</option>
+                    </select>
+
+                    <button class="btn btn-primary disabled ">
+                        Thực hiện
+                    </button>
+                </div>
             </div>
 
             <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
-                        <th>
-                            ID
-                        </th>
+                        <th>#</th>
+                        <th>ID</th>
                         <th>Tên</th>
                         <th>Mô tả phim</th>
                         <th>Nội dung phim</th>
@@ -43,6 +58,7 @@
                 </thead>
                 <tfoot>
                     <tr>
+                        <th>#</th>
                         <th>ID</th>
                         <th>Tên</th>
                         <th>Mô tả phim</th>
@@ -62,12 +78,13 @@
                     @foreach (var film in ViewBag.listFilm)
                     {
                         <tr>
+
                             <td>
-
-                                @film.filmID<div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="filmIds[]" value="@film.filmID">
+                                </div>
                             </td>
+                            <td>@film.filmID</td>
                             <td>@film.nameFilm</td>
                             <td class="des-text"><p>@film.desText</p></td>
                             <td class="content-text"><p>@film.contentText</p></td>
@@ -100,4 +117,69 @@
         </div>
     </div>
 </div>
+@*<script src="~/Scripts/jquery-3.4.1.min.js"></script>*@''
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var checkboxAll = document.querySelector('#checkbox-all');
+        console.log(checkboxAll);
+        var filmItemCheckbox = document.querySelectorAll('input[name="filmIds"]')
+         var SelectItem = ('select[name="dataTable_length"]');
 
+
+        //var checkboxAll = $('#checkbox-all');
+        //console.log(checkboxAll)
+        //var filmItemCheckbox = $('input[name="filmIds"]')
+        //var SelectItem = $('select[name="dataTable_length"]');
+        //console.log(SelectItem);
+        //item.change(function () {
+        //    //$(this).find(':selected').val;
+        //    console.log('Hello');
+        //})
+        //// check box all click
+        ////checkboxAll.on('change', function () {
+        ////    var isCheckedAll = $(this).prop('checked');
+        ////    console.log('Hello')
+        ////})
+        //checkboxAll.change(function () {
+        //    var isCheckedAll = $(this).prop('checked');
+        //    if (isCheckedAll) {
+
+        //    }
+        //    console.log(filmItemCheckbox);
+        //})
+    });
+</script>
+}
+
+
+
+@*
+    <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var checkboxAll = $('#checkbox-all');
+                console.log(checkboxAll)
+                var filmItemCheckbox = $('input[name="filmIds"]')
+                var SelectItem = $('select[name="dataTable_length"]');
+                console.log(SelectItem);
+                item.change(function () {
+                    //$(this).find(':selected').val;
+                    console.log('Hello');
+                })
+                // check box all click
+                //checkboxAll.on('change', function () {
+                //    var isCheckedAll = $(this).prop('checked');
+                //    console.log('Hello')
+                //})
+                checkboxAll.change(function () {
+                    var isCheckedAll = $(this).prop('checked');
+                    if (isCheckedAll) {
+
+                    }
+                    console.log(filmItemCheckbox);
+                })
+            });
+        });
+
+
+
+    </script>*@
