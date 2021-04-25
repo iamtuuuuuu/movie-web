@@ -16,23 +16,23 @@ namespace Movie_Web
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "TuHome", action = "Index", id = UrlParameter.Optional }
             );
             routes.MapRoute(
-                name: "DetailFilm",
+                name: "TuDetailFilm",
                 url: "{controller}/{action}/{name}",
-                defaults: new { controller = "DetailFilm", action = "Detail", name = UrlParameter.Optional }
+                defaults: new { controller = "TuDetailFilm", action = "Detail", name = UrlParameter.Optional }
             );
             routes.MapRoute(
                 name: "Watch",
                 url: "{controller}/{action}/{idFilm}/{Episode}",
                 defaults: new { controller = "Watch", action = "Watch", idFilm = UrlParameter.Optional, Episode = UrlParameter.Optional }
             );
-            //routes.MapRoute(
-            //    name: "Login",
-            //    url: "{controller}/{action}",
-            //    defaults: new { controller = "Login", action = "Login" }
-            //);
+            routes.MapRoute(
+                name: "Loc",
+                url: "{controller}/{action}/{slug}",
+                defaults: new { controller = "Loc", action = "Index", slug = UrlParameter.Optional }
+            );
         }
     }
 }

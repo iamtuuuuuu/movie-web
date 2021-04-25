@@ -108,27 +108,27 @@ begin
 	)values(
 		'F' + cast(next value for FilmSeq as char(10)),
 		@nameFilm ,
-	@nameEngFilm,
-	@linkImgAvt ,
-	@linkImgDes,
-	@linkBgImage,
-	@linkTrailer ,
-	@desText ,
-	@contentText ,
-	@releaseFilm ,
-	@statusText ,
-	@releasedEpisodes ,
-	@totalEpisodes ,
-	@imdb ,
-	@quality ,
-	@star,
-	@nation ,
-	@actor,
-	@director ,
-	@genre ,
-	@createDate ,
-	@createBy 
-		);
+		@nameEngFilm,
+		@linkImgAvt ,
+		@linkImgDes,
+		@linkBgImage,
+		@linkTrailer ,
+		@desText ,
+		@contentText ,
+		@releaseFilm ,
+		@statusText ,
+		@releasedEpisodes ,
+		@totalEpisodes ,
+		@imdb ,
+		@quality ,
+		@star,
+		@nation ,
+		@actor,
+		@director ,
+		@genre ,
+		@createDate ,
+		@createBy 
+	);
 
 		if @@ROWCOUNT > 0 begin return 1 end
 		else begin return 0 end;

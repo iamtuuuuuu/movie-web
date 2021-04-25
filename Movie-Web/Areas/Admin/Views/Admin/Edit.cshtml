@@ -1,0 +1,123 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/Layout.cshtml";
+}
+
+
+<h2>@ViewBag.filmDetail.nameFilm</h2>
+<form method="post">
+    <div class="form-group">
+        <label for="filmID">ID phim</label>
+        <input type="text" class="form-control" id="filmID" name="filmID" placeholder="Nhập ID phim" value="@ViewBag.filmDetail.filmID">
+    </div>
+    <div class="form-group">
+        <label for="nameFilm">Tên phim</label>
+        <input type="text" class="form-control" id="nameFilm" name="nameFilm" placeholder="Nhập tên phim" value="@ViewBag.filmDetail.nameFilm">
+    </div>
+    <div class="form-group">
+        <label for="nameEngFilm">Tên tiếng Anh</label>
+        <input type="text" class="form-control" id="nameEngFilm" name="nameEngFilm" placeholder="Nhập tên Anh" value="@ViewBag.filmDetail.nameEngFilm">
+    </div>
+    <div class="form-group">
+        <label for="linkImgAvt">Link ảnh thẻ</label>
+        <input type="text" class="form-control" id="linkImgAvt" name="linkImgAvt" placeholder="Nhập link ảnh thẻ" value="@ViewBag.filmDetail.linkImgAvt">
+    </div>
+    <div class="form-group">
+        <label for="linkImgDes">Link ảnh mô tả</label>
+        <input type="text" class="form-control" id="linkImgDes" name="linkImgDes" placeholder="Nhập link ảnh mô tả" value="@ViewBag.filmDetail.linkImgDes">
+    </div>
+    <div class="form-group">
+        <label for="linkBgImage">Link ảnh bìa</label>
+        <input type="text" class="form-control" id="linkBgImage" name="linkBgImage" placeholder="Nhập link ảnh bìa" value="@ViewBag.filmDetail.linkBgImage">
+    </div>
+    <div class="form-group">
+        <label for="linkTrailer">Link trailer</label>
+        <input type="text" class="form-control" id="linkTrailer" name="linkTrailer" placeholder="Nhập link trailer" value="@ViewBag.filmDetail.linkTrailer">
+    </div>
+    <div class="form-group">
+        <label for="desText">Mô tả phim</label>
+        <input type="text" class="form-control" id="desText" name="desText" placeholder="Nhập mô tả phim" value="@ViewBag.filmDetail.desText">
+    </div>
+    <div class="form-group">
+        <label for="contentText">Nội dung phim</label>
+        <input type="text" class="form-control" id="contentText" name="contentText" placeholder="Nhập nội dung phim" value="@ViewBag.filmDetail.contentText">
+    </div>
+    <div class="form-group">
+        <label for="releaseFilm">Ngày công chiếu</label>
+        <input class="form-control" type="date" value="2011-08-19" id="releaseFilm" name="releaseFilm" value="@ViewBag.filmDetail.releaseFilm">
+    </div>
+    <div class="form-group">
+        <label for="statusText">Trạng thái phim</label>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="statusText" id="exampleRadios1" value="Đã phát hành" checked>
+            <label class="form-check-label" for="exampleRadios1">
+                Đã phát hành
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="statusText" id="exampleRadios2" value="Đang phát hành">
+            <label class="form-check-label" for="exampleRadios2">
+                Đang phát hành
+            </label>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="releasedEpisodes">Số tập đang phát</label>
+        <input type="number" class="form-control" id="releasedEpisodes" name="releasedEpisodes" placeholder="Nhập số tập đang phát" value="@ViewBag.filmDetail.releasedEpisodes">
+    </div>
+    <div class="form-group">
+        <label for="totalEpisodes">Tổng số tập</label>
+        <input type="number" class="form-control" id="totalEpisodes" name="totalEpisodes" placeholder="Nhập tổng số tập" value="@ViewBag.filmDetail.totalEpisodes">
+    </div>
+    <div class="form-group">
+        <label for="imdb">IMDB</label>
+        <input type="text" class="form-control" id="imdb" name="imdb" placeholder="Nhập IMDB" value="@ViewBag.filmDetail.imdb">
+    </div>
+    <div class="form-group">
+        <label for="quality">Chất lượng</label>
+        <select id="quality" name="quality" class="form-control">
+            <option selected>FullHD</option>
+            <option>2K</option>
+            <option>HD</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="star">Số sao</label>
+        <input type="text" min="1" max="10" class="form-control" id="star" name="star" placeholder="Số sao (1 - 10)" value="@ViewBag.filmDetail.star">
+    </div>
+    <div class="form-group">
+        <label for="nation">Quốc gia</label>
+        <input type="text" class="form-control" id="nation" name="nation" placeholder="Nhập tên quốc gia" value="@ViewBag.filmDetail.nation">
+    </div>
+    <div class="form-group">
+        <label for="actor">Diễn viên chính</label>
+        <input type="text" class="form-control" id="actor" name="actor" placeholder="Nhập tên diễn viên chính" value="@ViewBag.filmDetail.actor">
+    </div>
+    <div class="form-group">
+        <label for="director">Đạo diễn</label>
+        <input type="text" class="form-control" id="director" name="director" placeholder="Nhập tên đạo diễn" value="@ViewBag.filmDetail.director">
+    </div>
+    <div class="form-group">
+        <label for="genre">Thể loại</label>
+        <input type="text" class="form-control" id="genre" name="genre" placeholder="Nhập thể loại" value="@ViewBag.filmDetail.genre">
+    </div>
+
+    <div class="form-group">
+        <label for="createBy">Người tạo</label>
+        <input type="text" class="form-control" id="createBy" name="createBy" value="@ViewBag.filmDetail.createBy">
+    </div>
+    <div class="form-group ">
+        <label for="createDate">Ngày tạo</label>
+        <input type="text" class="form-control" id="createDate" name="createDate" value="@ViewBag.filmDetail.createDate">
+    </div>
+
+
+
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+    </div>
+</form>
+

@@ -1,0 +1,19 @@
+﻿.des-text p, .content-text p {
+    /* font-size: 1.6rem;
+    line-height: 2.5rem;
+    margin-bottom: 15px;
+    letter-spacing: .2px; */
+    --lineHeight: 1rem;
+    font-size: 1rem;
+    line-height: var(--lineHeight);
+    height: calc(var(--lineHeight)*5);
+    overflow: hidden;
+    display: block;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    text-overflow: ellipsis;
+    margin-bottom: 15px;
+}
+
+

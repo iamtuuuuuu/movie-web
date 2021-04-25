@@ -1,0 +1,510 @@
+﻿
+@{
+    ViewBag.Title = "Films";
+    Layout = "~/Areas/Admin/Views/Shared/Layout.cshtml";
+}
+
+<!-- Page Heading -->
+<h1 class="h3 mb-2 text-gray-800">Tables</h1>
+<p class="mb-4">
+
+</p>
+
+<!-- DataTales Example -->
+<div class="card shadow mb-4">
+
+
+    <div class="card-body">
+        <div class="table-responsive">
+            <div class="d-flex justify-content-end mb-3 mt-2">
+                <!-- Button trigger modal insert film-->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    Thêm phim
+                </button>
+                @*<div class="mt-4 d-flex">
+                        <div class="form-check" style="margin-top:10px;">
+                            <input class="form-check-input" type="checkbox" value="" id="checkbox-all">
+                            <label class="form-check-label" for="checkbox-all">
+                                Selected All
+                            </label>
+                        </div>
+
+                        <select class="form-select-sm ml-2 mr-2" aria-label="Default select example">
+                            <option selected>--- Chọn hành động ---</option>
+                            <option value="delete">Xóa</option>
+                        </select>
+
+                        <button class="btn btn-primary disabled ">
+                            Thực hiện
+                        </button>
+                    </div>*@
+            </div>
+
+            <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>ID</th>
+                        <th>Tên</th>
+                        <th>Mô tả phim</th>
+                        <th>Nội dung phim</th>
+                        <th>Ngày ra mắt</th>
+                        <th>Loại phim</th>
+                        <th>Số tập / Tổng Tập</th>
+                        <th>Chất lượng</th>
+                        <th>Quốc gia</th>
+                        <th>Thể loại</th>
+                        <th>Ngày tạo</th>
+                        <th>Người tạo</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                @*<tfoot>
+                        <tr>
+                            <th>#</th>
+                            <th>ID</th>
+                            <th>Tên</th>
+                            <th>Mô tả phim</th>
+                            <th>Nội dung phim</th>
+                            <th>Ngày ra mắt</th>
+                            <th>Loại phim</th>
+                            <th>Số tập / Tổng Tập</th>
+                            <th>Chất lượng</th>
+                            <th>Quốc gia</th>
+                            <th>Thể loại</th>
+                            <th>Ngày tạo</th>
+                            <th>Người tạo</th>
+                            <th>Actions</th>
+                        </tr>
+                    </tfoot>*@
+                <tbody>
+                    @foreach (var film in ViewBag.listFilm)
+                    {
+                        <tr>
+
+                            <td>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="filmIds[]" value="@film.filmID">
+                                </div>
+                            </td>
+                            <td>@film.filmID</td>
+                            <td><a href="/TuDetailFilm/Detail/@film.filmID">@film.nameFilm</a></td>
+                            <td class="des-text"><p>@film.desText</p></td>
+                            <td class="content-text"><p>@film.contentText</p></td>
+                            <td>@film.releaseFilm</td>
+                            <td>
+                                @if (@film.totalEpisodes == 1)
+                                {
+                                    <span>Phim lẻ</span>
+                                }
+                                else
+                                {
+                                    <span>Phim bộ</span>
+                                }
+                            </td>
+                            <td>@film.releasedEpisodes/@film.totalEpisodes</td>
+                            <td>@film.quality</td>
+                            <td>@film.nation</td>
+
+                            <td>@film.genre</td>
+                            <td>@film.createDate</td>
+                            <td>@film.createBy</td>
+                            <th style="display:flex;flex-direction:row;border-bottom:none">
+                                <a class="btn btn-link" href="/Admin/Admin/Edit/@film.filmID"><i class="fas fa-edit fs-3"></i></a>
+                                @*<a href="/Admin/Admin/Films" class="btn btn-link" data-id="@film.filmID" data-bs-toggle="modal" data-bs-target="#delete-course-modal"><i class="fas fa-trash fs-3"></i></a>*@
+                                <a id="delete-icon" class="btn btn-link text-danger" data-id="@film.filmID" data-toggle="modal" data-target="#exampleModal2"><i class="fas fa-trash fs-3"></i></a>
+                            </th>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@*Modal Them*@
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Insert Film</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form method="post">
+                    <div class="form-group">
+                        <label for="filmID">ID phim</label>
+                        <input type="text" class="form-control" id="filmID" name="filmID" placeholder="Nhập ID phim">
+                    </div>
+                    <div class="form-group">
+                        <label for="nameFilm">Tên phim</label>
+                        <input type="text" class="form-control" id="nameFilm" name="nameFilm" placeholder="Nhập tên phim">
+                    </div>
+                    <div class="form-group">
+                        <label for="nameEngFilm">Tên tiếng Anh</label>
+                        <input type="text" class="form-control" id="nameEngFilm" name="nameEngFilm" placeholder="Nhập tên Anh">
+                    </div>
+                    <div class="form-group">
+                        <label for="linkImgAvt">Link ảnh thẻ</label>
+                        <input type="text" class="form-control" id="linkImgAvt" name="linkImgAvt" placeholder="Nhập link ảnh thẻ">
+                    </div>
+                    <div class="form-group">
+                        <label for="linkImgDes">Link ảnh mô tả</label>
+                        <input type="text" class="form-control" id="linkImgDes" name="linkImgDes" placeholder="Nhập link ảnh mô tả">
+                    </div>
+                    <div class="form-group">
+                        <label for="linkBgImage">Link ảnh bìa</label>
+                        <input type="text" class="form-control" id="linkBgImage" name="linkBgImage" placeholder="Nhập link ảnh bìa">
+                    </div>
+                    <div class="form-group">
+                        <label for="linkTrailer">Link trailer</label>
+                        <input type="text" class="form-control" id="linkTrailer" name="linkTrailer" placeholder="Nhập link trailer">
+                    </div>
+                    <div class="form-group">
+                        <label for="desText">Mô tả phim</label>
+                        <input type="text" class="form-control" id="desText" name="desText" placeholder="Nhập mô tả phim">
+                    </div>
+                    <div class="form-group">
+                        <label for="contentText">Nội dung phim</label>
+                        <input type="text" class="form-control" id="contentText" name="contentText" placeholder="Nhập nội dung phim">
+                    </div>
+                    <div class="form-group">
+                        <label for="releaseFilm">Ngày công chiếu</label>
+                        <input class="form-control" type="date" value="2011-08-19" id="releaseFilm" name="releaseFilm">
+                    </div>
+                    <div class="form-group">
+                        <label for="statusText">Trạng thái phim</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="statusText" id="exampleRadios1" value="Đã phát hành" checked>
+                            <label class="form-check-label" for="exampleRadios1">
+                                Đã phát hành
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="statusText" id="exampleRadios2" value="Đang phát hành">
+                            <label class="form-check-label" for="exampleRadios2">
+                                Đang phát hành
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="releasedEpisodes">Số tập đang phát</label>
+                        <input type="number" class="form-control" id="releasedEpisodes" name="releasedEpisodes" placeholder="Nhập số tập đang phát">
+                    </div>
+                    <div class="form-group">
+                        <label for="totalEpisodes">Tổng số tập</label>
+                        <input type="number" class="form-control" id="totalEpisodes" name="totalEpisodes" placeholder="Nhập tổng số tập">
+                    </div>
+                    <div class="form-group">
+                        <label for="imdb">IMDB</label>
+                        <input type="text" class="form-control" id="imdb" name="imdb" placeholder="Nhập IMDB">
+                    </div>
+                    <div class="form-group">
+                        <label for="quality">Chất lượng</label>
+                        <select id="quality" name="quality" class="form-control">
+                            <option selected>FullHD</option>
+                            <option>2K</option>
+                            <option>HD</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="star">Số sao</label>
+                        <input type="number" min="1" max="10" class="form-control" id="star" name="star" placeholder="Số sao (1 - 10)">
+                    </div>
+                    <div class="form-group">
+                        <label for="nation">Quốc gia</label>
+                        <input type="text" class="form-control" id="nation" name="nation" placeholder="Nhập tên quốc gia">
+                    </div>
+                    <div class="form-group">
+                        <label for="actor">Diễn viên chính</label>
+                        <input type="text" class="form-control" id="actor" name="actor" placeholder="Nhập tên diễn viên chính">
+                    </div>
+                    <div class="form-group">
+                        <label for="director">Đạo diễn</label>
+                        <input type="text" class="form-control" id="director" name="director" placeholder="Nhập tên đạo diễn">
+                    </div>
+                    <div class="form-group">
+                        <label for="genre">Thể loại</label>
+                        <input type="text" class="form-control" id="genre" name="genre" placeholder="Nhập thể loại">
+                    </div>
+                    <div class="form-group invisible">
+                        <input type="text" class="form-control" id="createDate" name="createDate" value="">
+                    </div>
+                    <div class="form-group invisible">
+                        <input type="text" class="form-control" id="createBy" name="createBy" value="">
+                    </div>
+
+
+
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Modal delete -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Delete Film</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p class="font-weight-bold">Bạn có thực sự muốn xóa phim này?</p>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" id="btn-delete-film" class="btn btn-danger">Delete</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<form id="delete-film-form" action="" method="POST"></form>
+
+<script>
+    let today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+
+    today = yyyy + '-' + mm + '-' + dd
+    console.log(today)
+    document.getElementById('createDate').value = today.toString()
+    document.getElementById('createBy').value = 'tututu'
+
+    // delete
+
+    var filmID = document.querySelector('#delete-icon').getAttribute('data-id')
+    var deleteForm = document.forms['delete-film-form']
+    console.log(deleteForm)
+
+    var deleteFilmModal = document.getElementById('exampleModal2')
+    console.log(deleteFilmModal)
+
+
+
+    var btnDeleteFilm = document.querySelector('#btn-delete-film');
+    console.log(btnDeleteFilm)
+    btnDeleteFilm.onclick = () => {
+        console.log(filmID)
+
+        deleteForm.action = '/Admin/Admin/Delete/' + filmID
+        deleteForm.submit()
+    }
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*Bỏ phần select all*@
+
+<!--<div class="modal fade" id="delete-course-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Delete this course?</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Bạn chắc chắn muốn xóa khóa học này ?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button id="btn-delete-course" type="button" class="btn btn-danger">Confirm delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<form id="delete-course-form" action="" method="POST"></form>-->
+@*<script src="~/Scripts/jquery-3.4.1.min.js"></script>*@
+<!--<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var filmID;
+
+        var deleteForm = document.forms['delete-course-form'];
+        var deleteFilmModal = document.getElementById('delete-course-modal');
+
+        var checkboxAll = $('#checkbox-all');
+        console.log(checkboxAll);
+        var filmItemCheckbox = $('input[name="filmIds[]"]')
+        console.log(filmItemCheckbox)
+
+
+        deleteFilmModal.addEventListener('show.bs.modal', function (event) {
+            var button = event.relatedTarget
+            filmID = button.getAttribute('data-id')
+
+            var btnDeleteCourse = document.querySelector('#btn-delete-course');
+            btnDeleteCourse.onclick = () => {
+                deleteForm.action = '/courses/' + courseID + '?_method=DELETE'
+                deleteForm.submit()
+            }
+        })
+
+        // checkbox all change
+        checkboxAll.change(function () {
+            var isCheckedAll = $(this).prop('checked')
+            filmItemCheckbox.prop('checked', isCheckedAll)
+        })
+
+
+        //var checkboxAll = document.querySelector('#checkbox-all');
+        //console.log(checkboxAll);
+        //var filmItemCheckbox = document.querySelectorAll('input[name="filmIds"]')
+        //var SelectItem = ('select[name="dataTable_length"]');
+
+
+        //var checkboxAll = $('#checkbox-all');
+        //console.log(checkboxAll)
+        //var filmItemCheckbox = $('input[name="filmIds"]')
+        //var SelectItem = $('select[name="dataTable_length"]');
+        //console.log(SelectItem);
+        //item.change(function () {
+        //    //$(this).find(':selected').val;
+        //    console.log('Hello');
+        //})
+        //// check box all click
+        ////checkboxAll.on('change', function () {
+        ////    var isCheckedAll = $(this).prop('checked');
+        ////    console.log('Hello')
+        ////})
+        //checkboxAll.change(function () {
+        //    var isCheckedAll = $(this).prop('checked');
+        //    if (isCheckedAll) {
+
+        //    }
+        //    console.log(filmItemCheckbox);
+        //})
+    });
+</script>-->
+@*
+    <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var checkboxAll = $('#checkbox-all');
+                console.log(checkboxAll)
+                var filmItemCheckbox = $('input[name="filmIds"]')
+                var SelectItem = $('select[name="dataTable_length"]');
+                console.log(SelectItem);
+                item.change(function () {
+                    //$(this).find(':selected').val;
+                    console.log('Hello');
+                })
+                // check box all click
+                //checkboxAll.on('change', function () {
+                //    var isCheckedAll = $(this).prop('checked');
+                //    console.log('Hello')
+                //})
+                checkboxAll.change(function () {
+                    var isCheckedAll = $(this).prop('checked');
+                    if (isCheckedAll) {
+
+                    }
+                    console.log(filmItemCheckbox);
+                })
+            });
+        });
+
+
+
+    </script>*@
