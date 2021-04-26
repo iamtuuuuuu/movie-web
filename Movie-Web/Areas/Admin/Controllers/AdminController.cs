@@ -39,7 +39,6 @@ namespace Movie_Web.Areas.Admin.Controllers
 
         public ActionResult Edit(string id)
         {
-            Console.WriteLine(id);
             var filmDao = new FilmDAO();
             ViewBag.filmDetail = filmDao.getFilmByID(id);
             return View();
@@ -64,6 +63,11 @@ namespace Movie_Web.Areas.Admin.Controllers
             }
         }
 
+        //public ActionResult Delete()
+        //{
+        //    return View();
+        //}
+
         public ActionResult Summary()
         {
             return View();
@@ -83,8 +87,9 @@ namespace Movie_Web.Areas.Admin.Controllers
                 return View();
             }
         }
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
+
+
+        [HttpPost]
         public ActionResult Delete(string id)
         {
             try
@@ -95,6 +100,7 @@ namespace Movie_Web.Areas.Admin.Controllers
             }
             catch
             {
+
                 return View();
             }
         }

@@ -289,23 +289,43 @@
 
     // delete
 
-    var filmID = document.querySelector('#delete-icon').getAttribute('data-id')
-    var deleteForm = document.forms['delete-film-form']
-    console.log(deleteForm)
+    //var filmID = document.querySelector('#delete-icon').getAttribute('data-id')
+    //var deleteForm = document.forms['delete-film-form']
+    //console.log(deleteForm)
 
-    var deleteFilmModal = document.getElementById('exampleModal2')
-    console.log(deleteFilmModal)
+    //var deleteFilmModal = document.getElementById('exampleModal2')
+    //console.log(deleteFilmModal)
 
 
 
-    var btnDeleteFilm = document.querySelector('#btn-delete-film');
-    console.log(btnDeleteFilm)
-    btnDeleteFilm.onclick = () => {
-        console.log(filmID)
+    //var btnDeleteFilm = document.querySelector('#btn-delete-film');
+    //console.log(btnDeleteFilm)
+    //btnDeleteFilm.onclick = () => {
+    //    console.log(filmID)
 
-        deleteForm.action = '/Admin/Admin/Delete/' + filmID
-        deleteForm.submit()
-    }
+    //    //deleteForm.action = '/Admin/Admin/Delete/' + filmID
+    //    //deleteForm.submit()
+    //}
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var filmID;
+        var deleteForm = document.forms['delete-film-form']
+        console.log(deleteForm)
+        var btnDeleteFilm = document.querySelector('#btn-delete-film');
+        $('#exampleModal2').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget);
+            filmID = button.data('id')
+        });
+        console.log(filmID);
+
+        btnDeleteFilm.onclick = function () {
+            console.log(filmID);
+            deleteForm.action = '/Admin/Admin/Delete/' + filmID;
+            deleteForm.submit();
+        }
+    })
+
+    
 
 
 
