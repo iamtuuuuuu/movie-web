@@ -18,32 +18,23 @@
         <div class="table-responsive">
             <div class="d-flex justify-content-end mb-3 mt-2">
                 <!-- Button trigger modal insert film-->
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                <div class="form-group mr-3">
+                    <label for="movie">Phim</label>
+                    <select id="movie" name="movie" class="form-control">
+                        <option value="1" selected>--- Chọn ---</option>
+                        <option value="2">Phim lẻ</option>
+                        <option value="3">Phim bộ</option>
+                    </select>
+                </div>
+                <a href="#" class="btn btn-primary btn-sm " id="add__film" style="height: 40px;margin-top: 30px;">
                     Thêm phim
-                </button>
-                @*<div class="mt-4 d-flex">
-                        <div class="form-check" style="margin-top:10px;">
-                            <input class="form-check-input" type="checkbox" value="" id="checkbox-all">
-                            <label class="form-check-label" for="checkbox-all">
-                                Selected All
-                            </label>
-                        </div>
+                </a>
 
-                        <select class="form-select-sm ml-2 mr-2" aria-label="Default select example">
-                            <option selected>--- Chọn hành động ---</option>
-                            <option value="delete">Xóa</option>
-                        </select>
-
-                        <button class="btn btn-primary disabled ">
-                            Thực hiện
-                        </button>
-                    </div>*@
             </div>
 
             <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                     <tr>
-                        <th>#</th>
                         <th>ID</th>
                         <th>Tên</th>
                         <th>Mô tả phim</th>
@@ -59,34 +50,33 @@
                         <th>Actions</th>
                     </tr>
                 </thead>
-                @*<tfoot>
-                        <tr>
-                            <th>#</th>
-                            <th>ID</th>
-                            <th>Tên</th>
-                            <th>Mô tả phim</th>
-                            <th>Nội dung phim</th>
-                            <th>Ngày ra mắt</th>
-                            <th>Loại phim</th>
-                            <th>Số tập / Tổng Tập</th>
-                            <th>Chất lượng</th>
-                            <th>Quốc gia</th>
-                            <th>Thể loại</th>
-                            <th>Ngày tạo</th>
-                            <th>Người tạo</th>
-                            <th>Actions</th>
-                        </tr>
-                    </tfoot>*@
+                <tfoot>
+                    <tr>
+                        <th>ID</th>
+                        <th>Tên</th>
+                        <th>Mô tả phim</th>
+                        <th>Nội dung phim</th>
+                        <th>Ngày ra mắt</th>
+                        <th>Loại phim</th>
+                        <th>Số tập / Tổng Tập</th>
+                        <th>Chất lượng</th>
+                        <th>Quốc gia</th>
+                        <th>Thể loại</th>
+                        <th>Ngày tạo</th>
+                        <th>Người tạo</th>
+                        <th>Actions</th>
+                    </tr>
+                </tfoot>
                 <tbody>
                     @foreach (var film in ViewBag.listFilm)
                     {
                         <tr>
 
-                            <td>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="filmIds[]" value="@film.filmID">
-                                </div>
-                            </td>
+                            @*<td>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="filmIds[]" value="@film.filmID">
+                                    </div>
+                                </td>*@
                             <td>@film.filmID</td>
                             <td><a href="/TuDetailFilm/Detail/@film.filmID">@film.nameFilm</a></td>
                             <td class="des-text"><p>@film.desText</p></td>
@@ -122,134 +112,6 @@
     </div>
 </div>
 
-@*Modal Them*@
-
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Insert Film</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form method="post">
-                    <div class="form-group">
-                        <label for="filmID">ID phim</label>
-                        <input type="text" class="form-control" id="filmID" name="filmID" placeholder="Nhập ID phim">
-                    </div>
-                    <div class="form-group">
-                        <label for="nameFilm">Tên phim</label>
-                        <input type="text" class="form-control" id="nameFilm" name="nameFilm" placeholder="Nhập tên phim">
-                    </div>
-                    <div class="form-group">
-                        <label for="nameEngFilm">Tên tiếng Anh</label>
-                        <input type="text" class="form-control" id="nameEngFilm" name="nameEngFilm" placeholder="Nhập tên Anh">
-                    </div>
-                    <div class="form-group">
-                        <label for="linkImgAvt">Link ảnh thẻ</label>
-                        <input type="text" class="form-control" id="linkImgAvt" name="linkImgAvt" placeholder="Nhập link ảnh thẻ">
-                    </div>
-                    <div class="form-group">
-                        <label for="linkImgDes">Link ảnh mô tả</label>
-                        <input type="text" class="form-control" id="linkImgDes" name="linkImgDes" placeholder="Nhập link ảnh mô tả">
-                    </div>
-                    <div class="form-group">
-                        <label for="linkBgImage">Link ảnh bìa</label>
-                        <input type="text" class="form-control" id="linkBgImage" name="linkBgImage" placeholder="Nhập link ảnh bìa">
-                    </div>
-                    <div class="form-group">
-                        <label for="linkTrailer">Link trailer</label>
-                        <input type="text" class="form-control" id="linkTrailer" name="linkTrailer" placeholder="Nhập link trailer">
-                    </div>
-                    <div class="form-group">
-                        <label for="desText">Mô tả phim</label>
-                        <input type="text" class="form-control" id="desText" name="desText" placeholder="Nhập mô tả phim">
-                    </div>
-                    <div class="form-group">
-                        <label for="contentText">Nội dung phim</label>
-                        <input type="text" class="form-control" id="contentText" name="contentText" placeholder="Nhập nội dung phim">
-                    </div>
-                    <div class="form-group">
-                        <label for="releaseFilm">Ngày công chiếu</label>
-                        <input class="form-control" type="date" value="2011-08-19" id="releaseFilm" name="releaseFilm">
-                    </div>
-                    <div class="form-group">
-                        <label for="statusText">Trạng thái phim</label>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="statusText" id="exampleRadios1" value="Đã phát hành" checked>
-                            <label class="form-check-label" for="exampleRadios1">
-                                Đã phát hành
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="statusText" id="exampleRadios2" value="Đang phát hành">
-                            <label class="form-check-label" for="exampleRadios2">
-                                Đang phát hành
-                            </label>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="releasedEpisodes">Số tập đang phát</label>
-                        <input type="number" class="form-control" id="releasedEpisodes" name="releasedEpisodes" placeholder="Nhập số tập đang phát">
-                    </div>
-                    <div class="form-group">
-                        <label for="totalEpisodes">Tổng số tập</label>
-                        <input type="number" class="form-control" id="totalEpisodes" name="totalEpisodes" placeholder="Nhập tổng số tập">
-                    </div>
-                    <div class="form-group">
-                        <label for="imdb">IMDB</label>
-                        <input type="text" class="form-control" id="imdb" name="imdb" placeholder="Nhập IMDB">
-                    </div>
-                    <div class="form-group">
-                        <label for="quality">Chất lượng</label>
-                        <select id="quality" name="quality" class="form-control">
-                            <option selected>FullHD</option>
-                            <option>2K</option>
-                            <option>HD</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="star">Số sao</label>
-                        <input type="number" min="1" max="10" class="form-control" id="star" name="star" placeholder="Số sao (1 - 10)">
-                    </div>
-                    <div class="form-group">
-                        <label for="nation">Quốc gia</label>
-                        <input type="text" class="form-control" id="nation" name="nation" placeholder="Nhập tên quốc gia">
-                    </div>
-                    <div class="form-group">
-                        <label for="actor">Diễn viên chính</label>
-                        <input type="text" class="form-control" id="actor" name="actor" placeholder="Nhập tên diễn viên chính">
-                    </div>
-                    <div class="form-group">
-                        <label for="director">Đạo diễn</label>
-                        <input type="text" class="form-control" id="director" name="director" placeholder="Nhập tên đạo diễn">
-                    </div>
-                    <div class="form-group">
-                        <label for="genre">Thể loại</label>
-                        <input type="text" class="form-control" id="genre" name="genre" placeholder="Nhập thể loại">
-                    </div>
-                    <div class="form-group invisible">
-                        <input type="text" class="form-control" id="createDate" name="createDate" value="">
-                    </div>
-                    <div class="form-group invisible">
-                        <input type="text" class="form-control" id="createBy" name="createBy" value="">
-                    </div>
-
-
-
-
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Save changes</button>
-                    </div>
-                </form>
-            </div>
-
-        </div>
-    </div>
-</div>
 
 <!-- Modal delete -->
 <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -276,7 +138,10 @@
 
 <form id="delete-film-form" action="" method="POST"></form>
 
+
+
 <script>
+    // ADD
     let today = new Date();
     var dd = String(today.getDate()).padStart(2, '0');
     var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
@@ -284,40 +149,36 @@
 
     today = yyyy + '-' + mm + '-' + dd
     console.log(today)
-    document.getElementById('createDate').value = today.toString()
-    document.getElementById('createBy').value = 'tututu'
+    //document.getElementById('createDate').value = today.toString()
+    //document.getElementById('createBy').value = 'tututu'
+
 
     // delete
 
-    //var filmID = document.querySelector('#delete-icon').getAttribute('data-id')
-    //var deleteForm = document.forms['delete-film-form']
-    //console.log(deleteForm)
-
-    //var deleteFilmModal = document.getElementById('exampleModal2')
-    //console.log(deleteFilmModal)
-
-
-
-    //var btnDeleteFilm = document.querySelector('#btn-delete-film');
-    //console.log(btnDeleteFilm)
-    //btnDeleteFilm.onclick = () => {
-    //    console.log(filmID)
-
-    //    //deleteForm.action = '/Admin/Admin/Delete/' + filmID
-    //    //deleteForm.submit()
-    //}
 
     document.addEventListener('DOMContentLoaded', function () {
+        let ele = document.querySelector('#movie');
+        let item = document.querySelector('#add__film');
+        console.log(ele);
+        console.log(item);
+        ele.onchange = () => {
+            let val = ele.options[ele.selectedIndex].value;
+            let value = parseInt(val);
+            if (value === 1) {
+
+            } else if (value === 2) {
+                item.setAttribute('href', "/Admin/Admin/CreateFilmLe");
+            } else {
+                item.setAttribute('href', "/Admin/Admin/CreateFilmBo");
+            }
+        }
         var filmID;
         var deleteForm = document.forms['delete-film-form']
-        console.log(deleteForm)
         var btnDeleteFilm = document.querySelector('#btn-delete-film');
         $('#exampleModal2').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget);
             filmID = button.data('id')
         });
-        console.log(filmID);
-
         btnDeleteFilm.onclick = function () {
             console.log(filmID);
             deleteForm.action = '/Admin/Admin/Delete/' + filmID;
@@ -325,206 +186,9 @@
         }
     })
 
-    
+
 
 
 
 
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@*Bỏ phần select all*@
-
-<!--<div class="modal fade" id="delete-course-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Delete this course?</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                Bạn chắc chắn muốn xóa khóa học này ?
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                <button id="btn-delete-course" type="button" class="btn btn-danger">Confirm delete</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<form id="delete-course-form" action="" method="POST"></form>-->
-@*<script src="~/Scripts/jquery-3.4.1.min.js"></script>*@
-<!--<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var filmID;
-
-        var deleteForm = document.forms['delete-course-form'];
-        var deleteFilmModal = document.getElementById('delete-course-modal');
-
-        var checkboxAll = $('#checkbox-all');
-        console.log(checkboxAll);
-        var filmItemCheckbox = $('input[name="filmIds[]"]')
-        console.log(filmItemCheckbox)
-
-
-        deleteFilmModal.addEventListener('show.bs.modal', function (event) {
-            var button = event.relatedTarget
-            filmID = button.getAttribute('data-id')
-
-            var btnDeleteCourse = document.querySelector('#btn-delete-course');
-            btnDeleteCourse.onclick = () => {
-                deleteForm.action = '/courses/' + courseID + '?_method=DELETE'
-                deleteForm.submit()
-            }
-        })
-
-        // checkbox all change
-        checkboxAll.change(function () {
-            var isCheckedAll = $(this).prop('checked')
-            filmItemCheckbox.prop('checked', isCheckedAll)
-        })
-
-
-        //var checkboxAll = document.querySelector('#checkbox-all');
-        //console.log(checkboxAll);
-        //var filmItemCheckbox = document.querySelectorAll('input[name="filmIds"]')
-        //var SelectItem = ('select[name="dataTable_length"]');
-
-
-        //var checkboxAll = $('#checkbox-all');
-        //console.log(checkboxAll)
-        //var filmItemCheckbox = $('input[name="filmIds"]')
-        //var SelectItem = $('select[name="dataTable_length"]');
-        //console.log(SelectItem);
-        //item.change(function () {
-        //    //$(this).find(':selected').val;
-        //    console.log('Hello');
-        //})
-        //// check box all click
-        ////checkboxAll.on('change', function () {
-        ////    var isCheckedAll = $(this).prop('checked');
-        ////    console.log('Hello')
-        ////})
-        //checkboxAll.change(function () {
-        //    var isCheckedAll = $(this).prop('checked');
-        //    if (isCheckedAll) {
-
-        //    }
-        //    console.log(filmItemCheckbox);
-        //})
-    });
-</script>-->
-@*
-    <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                var checkboxAll = $('#checkbox-all');
-                console.log(checkboxAll)
-                var filmItemCheckbox = $('input[name="filmIds"]')
-                var SelectItem = $('select[name="dataTable_length"]');
-                console.log(SelectItem);
-                item.change(function () {
-                    //$(this).find(':selected').val;
-                    console.log('Hello');
-                })
-                // check box all click
-                //checkboxAll.on('change', function () {
-                //    var isCheckedAll = $(this).prop('checked');
-                //    console.log('Hello')
-                //})
-                checkboxAll.change(function () {
-                    var isCheckedAll = $(this).prop('checked');
-                    if (isCheckedAll) {
-
-                    }
-                    console.log(filmItemCheckbox);
-                })
-            });
-        });
-
-
-
-    </script>*@

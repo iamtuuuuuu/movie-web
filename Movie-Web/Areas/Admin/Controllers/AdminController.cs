@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Reflection;
 using System.Web;
@@ -63,31 +64,77 @@ namespace Movie_Web.Areas.Admin.Controllers
             }
         }
 
-        //public ActionResult Delete()
-        //{
-        //    return View();
-        //}
+        public ActionResult FeedBack(string id)
+        {
+            return View();
+        }
 
         public ActionResult Summary()
         {
             return View();
         }
 
+        public ActionResult CreateFilmLe()
+        {
+            //ViewBag.movive = value;
+            return View();
+        }
+
+        public ActionResult CreateFilmBo()
+        {
+            //ViewBag.movive = value;
+            return View();
+        }
+
         [HttpPost]
-        public ActionResult Films(Film newFilm)
+        //FormCollection formvalue
+        //public ActionResult CreateUser(FormCollection fc)
+        //{
+
+        //    UserModel usermodel = new UserModel();
+
+        //    if (TryUpdateModel(usermodel, fc.ToValueProvider()))
+
+        //        UpdateModel(usermodel, fc.ToValueProvider());
+
+        //    return View("UserView");
+        //}
+        public ActionResult CreateFilm()
         {
             try
             {
+                
+                var film = new Film();
+                UpdateModel<Film>(film);
+                var filmEp = new FilmEpisode();
+                UpdateModel<FilmEpisode>(filmEp);
+                film.createDate = DateTime.Now;
+                film.createBy = "Hung";
+                film.releasedEpisodes = 1;
+                film.totalEpisodes = 1;
                 var filmDao = new FilmDAO();
-                filmDao.insertFilm(newFilm);
-                return RedirectToAction("Films");
+                filmDao.insertFilm(film);
+                filmEp.Episode = 1;
+                int res = new FilmEpisodeDAO().CreateFilmLe(filmEp);
+                if (res > 0)
+                {
+                    return RedirectToAction("Films");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Thêm mới không thành công");
+                }
+                return View("CreateFilmLe");
             }
             catch
             {
+                //return View();
+                Console.WriteLine("Error");
                 return View();
             }
         }
 
+        
 
         [HttpPost]
         public ActionResult Delete(string id)

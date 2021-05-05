@@ -137,6 +137,7 @@ end
 
 
 
+
 create sequence FilmEpisodeSeq
 	start with 1000 --bat dau tu 1000
 	increment by 1; --moi lan tang 1 don vi
@@ -148,6 +149,18 @@ create table FilmEpisode(
 	Episode int,
 	linkEpisode varchar(500)
 )
+
+go 
+/*
+create procedure GetFilmEpisodeIfBo(
+	@filmID char(10)
+)
+as
+begin
+	
+end
+*/
+
 go
 create procedure AddFilmEpisode(
 	@filmID char(10),	
