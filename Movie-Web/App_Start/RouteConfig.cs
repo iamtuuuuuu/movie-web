@@ -30,8 +30,8 @@ namespace Movie_Web
             );
             routes.MapRoute(
                 name: "Loc",
-                url: "{controller}/{action}/{slug}",
-                defaults: new { controller = "Loc", action = "Index", slug = UrlParameter.Optional }
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "Loc", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

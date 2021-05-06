@@ -45,13 +45,13 @@
         </div>
     </div>
 
-    <!-- Phần phim mới nhất -->
+    <!-- Phần tim kiem -->
     <div class="content">
         <div class="content__head">
             <div class="grid wide">
                 <div class="row">
                     <div class="col l-12 m-12 c-12">
-                        <h2 class="content__head-title">Phim mới nhất</h2>
+                        <h2 class="content__head-title">Danh sách phim</h2>
                     </div>
                 </div>
             </div>
@@ -60,7 +60,7 @@
         <div class="content__body">
             <div class="grid wide">
                 <div class="row">
-                    @foreach (var itemFilm in ViewBag.listfilmSlide)
+                    @foreach (var itemFilm in ViewBag.listfilm)
                     {
                         <div class="col l-6 m-12 c-6">
                             <div class="card-full">
@@ -115,6 +115,8 @@
             </div>
         </div>
     </div>
+
+
 
     <!-- Các phần phim chia theo quốc gia -->
     <!-- Han -->
