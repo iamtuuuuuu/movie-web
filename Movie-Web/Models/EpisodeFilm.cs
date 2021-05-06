@@ -9,6 +9,7 @@ namespace Movie_Web.Models
     {
         public string filmID { get; set; }
         public int Episode { get; set; }
+
         public string linkEpisode { get; set; }
     }
 }

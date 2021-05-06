@@ -197,6 +197,7 @@
     <Content Include="Areas\Assets\css\sb-admin-2.css" />
     <Content Include="Areas\Assets\css\sb-admin-2.min.css" />
     <Content Include="Areas\Assets\Form\css\main.css" />
+    <Content Include="Areas\Assets\Form\css\phimle.css" />
     <Content Include="Areas\Assets\Form\css\util.css" />
     <Content Include="Areas\Assets\Form\fonts\font-awesome-4.7.0\css\font-awesome.css" />
     <Content Include="Areas\Assets\Form\fonts\font-awesome-4.7.0\css\font-awesome.min.css" />
@@ -3954,6 +3955,9 @@
     <Content Include="Areas\Assets\Form\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
     <Content Include="Areas\Assets\Form\vendor\bootstrap\css\bootstrap.css.map" />
     <Content Include="Areas\Assets\Form\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Areas\Admin\Views\Admin\FilmLeInformation.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\FilmBoInformation.cshtml" />
+    <Content Include="Areas\Admin\Views\Admin\addFilmEpisode.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

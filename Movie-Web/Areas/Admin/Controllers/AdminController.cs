@@ -99,11 +99,60 @@ namespace Movie_Web.Areas.Admin.Controllers
 
         //    return View("UserView");
         //}
+
+        public ActionResult addFilm(Film filmboInfor)
+        {
+            try
+            {
+                filmboInfor.createDate = DateTime.Now;
+                filmboInfor.createBy = "Hung";
+                filmboInfor.releasedEpisodes = 0;
+                var filmDao = new FilmDAO();
+                filmDao.insertFilm(filmboInfor);
+                return RedirectToAction("Films");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        public ActionResult addFilmEpisode(string id)
+        {
+            var filmDao = new FilmDAO();
+            ViewBag.filmBo = filmDao.getFilmByID(id);
+            ViewData["episodeNow"] = filmDao.getFilmByID(id).releasedEpisodes + 1;
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult addFilmEpisode(FilmEpisode ep)
+        {
+
+            int res = new FilmEpisodeDAO().CreateTapPhim(ep);
+
+            string message = "SUCCESS";
+            if (res > 0)
+            {
+                var filmBoID = ep.filmID;
+                var filmDao = new FilmDAO();
+                var inforFilm = filmDao.getFilmByID(filmBoID);
+                inforFilm.releasedEpisodes = inforFilm.releasedEpisodes + 1;
+                filmDao.dbFilmContext.SaveChanges();
+                return Json(new { Message = message, JsonRequestBehavior.AllowGet });
+            }
+            message = "Failed";
+            return Json(new { Message = message });
+        }
+
+        // 1 View khi an vao Film Bo se list dong film bo hien co cua no va cho sua
+        // 1 View se la khi an dau + se cho them tap them lan luot 
+
         public ActionResult CreateFilm()
         {
             try
             {
-                
+
                 var film = new Film();
                 UpdateModel<Film>(film);
                 var filmEp = new FilmEpisode();
@@ -129,12 +178,39 @@ namespace Movie_Web.Areas.Admin.Controllers
             catch
             {
                 //return View();
-                Console.WriteLine("Error");
+                //Console.WriteLine("Error");
                 return View();
             }
         }
 
-        
+        public ActionResult FilmBoInformation(string id)
+        {
+            //var filmDao = new FilmDAO();
+            //var feedbackDao = new FeedbackDAO();
+            //var filmEpDao = new FilmEpisodeDAO();
+            //var filmModel = filmDao.getFilmByID(id);
+            //var feedBackListModel = feedbackDao.listAll(filmModel.filmID);
+            //var FeedbackOfAcc = feedbackDao.listAccountFB(filmModel.filmID);
+            //ViewBag.filmDetail = filmModel;
+            //ViewBag.filmFeedBack = feedBackListModel;
+            //ViewBag.FeedBackOfAcc = FeedbackOfAcc;
+            return View();
+
+        }
+        // Hiện mô tả phim, nội dung phim, comment, Tên phim ở trên Text
+        public ActionResult FilmLeInformation(string id)
+        {
+            var filmDao = new FilmDAO();
+            var feedbackDao = new FeedbackDAO();
+            var filmModel = filmDao.getFilmByID(id);
+            var feedBackListModel = feedbackDao.listAll(filmModel.filmID);
+            var FeedbackOfAcc = feedbackDao.listAccountFB(filmModel.filmID);
+            ViewBag.filmDetail = filmModel;
+            ViewBag.filmFeedBack = feedBackListModel;
+            ViewBag.FeedBackOfAcc = FeedbackOfAcc;
+            return View();
+
+        }
 
         [HttpPost]
         public ActionResult Delete(string id)
@@ -147,7 +223,6 @@ namespace Movie_Web.Areas.Admin.Controllers
             }
             catch
             {
-
                 return View();
             }
         }

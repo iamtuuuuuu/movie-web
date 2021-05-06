@@ -34,7 +34,7 @@
 
     <div class="container-contact100">
         <div class="wrap-contact100">
-            <form class="contact100-form validate-form">
+            <form class="contact100-form validate-form" action="/Admin/Admin/addFilm" method="post">
                 <div class="form-group wrap-input100">
                     <label for="filmID" class="label-input100">ID phim</label>
                     <input type="text" class="form-control input100" id="filmID" name="filmID" placeholder="Nhập ID phim">
@@ -102,6 +102,10 @@
                     <span class="focus-input100"></span>
                 </div>
                 <div class="form-group wrap-input100">
+                    <label for="totalEpisodes">Tổng số tập</label>
+                    <input type="number" class="form-control input100" id="totalEpisodes" name="totalEpisodes" placeholder="Nhập tổng số tập">
+                </div>
+                <div class="form-group wrap-input100">
                     <label for="imdb">IMDB</label>
                     <input type="text" class="form-control input100" id="imdb" name="imdb" placeholder="Nhập IMDB">
                     <span class="focus-input100"></span>
@@ -140,22 +144,9 @@
                     <input type="text" class="form-control input100" id="genre" name="genre" placeholder="Nhập thể loại">
                     <span class="focus-input100"></span>
                 </div>
-                <div class="form-group wrap-input100">
-                    <label for="linkEpisode">Link Phim</label>
-                    <input type="text" class="form-control input100" id="linkEpisode" name="linkEpisode" placeholder="Nhập link phim">
-                    <span class="focus-input100"></span>
-                </div>
                 <div class="form-group wrap-input100 invisible d-none">
                     <label for="releasedEpisodes">Số tập đang phát</label>
                     <input type="number" class="form-control input100" id="releasedEpisodes" name="releasedEpisodes" placeholder="Nhập số tập đang phát">
-                </div>
-                <div class="form-group wrap-input100 invisible d-none">
-                    <label for="totalEpisodes">Tổng số tập</label>
-                    <input type="number" class="form-control input100" id="totalEpisodes" name="totalEpisodes" placeholder="Nhập tổng số tập">
-                </div>
-                <div class="form-group wrap-input100 invisible d-none">
-                    <label for="Episode">Tập</label>
-                    <input type="text" class="form-control input100" id="Episode" name="Episode" placeholder="Nhập tập phim">
                 </div>
                 <div class="form-group wrap-input100 invisible d-none">
                     <input type="text" class="form-control input100" id="createDate" name="createDate" value="">
@@ -164,8 +155,8 @@
                     <input type="text" class="form-control input100" id="createBy" name="createBy" value="">
                 </div>
                 <div class="form-group wrap-input100">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary">Save changes</button>
+                    <a href="/Admin/Admin/Films" class="btn btn-secondary">Close</a>
+                    <button type="submit" class="btn btn-primary">Save</button>
                 </div>
 
             </form>

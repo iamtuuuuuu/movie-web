@@ -1,0 +1,61 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="~/Areas/Assets/Form/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Areas/Assets/Form/css/util.css">
+    <link rel="stylesheet" type="text/css" href="~/Areas/Assets/Form/css/main.css">
+    <link rel="stylesheet" type="text/css" href="~/Areas/Assets/Form/css/phimle.css" />
+    <title>@ViewBag.filmDetail.nameFilm</title>
+</head>
+<body>
+    <div class="container-contact100">
+        <div class="wrap-contact100" style="width: 80%">
+            <div class="row">
+                <div class="infor">
+                    <div>
+                        <span>Mô tả phim</span>
+                        <p>
+                            @ViewBag.filmDetail.desText
+                        </p>
+                    </div>
+                    <div>
+                        <span>Nội dung phim</span>
+                        <p>
+                            @ViewBag.filmDetail.contentText
+                        </p>
+                    </div>
+                   
+                </div>
+                <table class="table table-bordered">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Account</th>
+                            <th>Comment</th>
+                            <th>Send Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in ViewBag.FeedBackOfAcc)
+                        {
+                            <tr>
+                                <td>@item.username</td>
+                                <td>@item.cmt</td>
+                                <td>@item.sentDate</td>
+                            </tr>
+
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

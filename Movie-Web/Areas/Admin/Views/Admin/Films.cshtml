@@ -78,7 +78,17 @@
                                     </div>
                                 </td>*@
                             <td>@film.filmID</td>
-                            <td><a href="/TuDetailFilm/Detail/@film.filmID">@film.nameFilm</a></td>
+                            <td>
+                                @if (@film.totalEpisodes == 1)
+                                {
+                                    <a href="/Admin/Admin/FilmLeInformation/@film.filmID">@film.nameFilm</a>
+                                }
+                                else
+                                {
+                                    <a href="/Admin/Admin/FilmBoInformation/@film.filmID">@film.nameFilm</a>
+                                }
+
+                            </td>
                             <td class="des-text"><p>@film.desText</p></td>
                             <td class="content-text"><p>@film.contentText</p></td>
                             <td>@film.releaseFilm</td>
@@ -99,11 +109,19 @@
                             <td>@film.genre</td>
                             <td>@film.createDate</td>
                             <td>@film.createBy</td>
-                            <th style="display:flex;flex-direction:row;border-bottom:none">
+                            <td style="display:flex;flex-direction:row;border-bottom:none">
+                                @if (@film.totalEpisodes != 1 && @film.releasedEpisodes < @film.totalEpisodes)
+                                {
+
+                                    <a class="btn btn-link" href="/Admin/Admin/addFilmEpisode/@film.filmID"><i class="fas fa-plus-square"></i></a>
+                                }
+                                else if (@film.totalEpisodes != 1 && @film.releasedEpisodes == @film.totalEpisodes)
+                                {
+
+                                }
                                 <a class="btn btn-link" href="/Admin/Admin/Edit/@film.filmID"><i class="fas fa-edit fs-3"></i></a>
-                                @*<a href="/Admin/Admin/Films" class="btn btn-link" data-id="@film.filmID" data-bs-toggle="modal" data-bs-target="#delete-course-modal"><i class="fas fa-trash fs-3"></i></a>*@
                                 <a id="delete-icon" class="btn btn-link text-danger" data-id="@film.filmID" data-toggle="modal" data-target="#exampleModal2"><i class="fas fa-trash fs-3"></i></a>
-                            </th>
+                            </td>
                         </tr>
                     }
                 </tbody>

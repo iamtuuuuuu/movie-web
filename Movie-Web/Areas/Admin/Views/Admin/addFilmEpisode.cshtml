@@ -1,0 +1,94 @@
+﻿
+@{
+    Layout = null;
+    var epNow = ViewData["episodeNow"];
+
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="~/Areas/Assets/Form/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Areas/Assets/Form/css/util.css">
+    <link rel="stylesheet" type="text/css" href="~/Areas/Assets/Form/css/main.css">
+    <title>add Film Episode</title>
+</head>
+<body>
+    <div class="container-contact100">
+        <div class="wrap-contact100">
+            <form class="contact100-form validate-form" action="/Admin/Admin/CreateFilm" method="post">
+                <div class="form-group wrap-input100 invisible d-none">
+                    <label for="filmID" class="label-input100">ID phim</label>
+                    <input type="text" class="form-control input100" id="filmID" name="filmID" placeholder="Nhập ID phim">
+                    <span class="focus-input100"></span>
+                </div>
+                <div class="form-group wrap-input100">
+                    <label for="Episode">Episode</label>
+                    <input type="number" class="form-control input100" id="Episode" name="Episode" placeholder="Nhập tập" value="@epNow" min="@epNow" max="@epNow">
+                    <span class="focus-input100"></span>
+                </div>
+                <div class="form-group wrap-input100">
+                    <label for="linkEpisode">Link Episode</label>
+                    <input type="text" class="form-control input100" id="linkEpisode" name="linkEpisode" placeholder="Nhập link tập">
+                    <span class="focus-input100"></span>
+                </div>
+                <div class="form-group wrap-input100">
+                    <a href="/Admin/Admin/Films" class="btn btn-secondary">Close</a>
+                    <input class="btn btn-primary" name="submitButton" id="btnSave" value="Save" type="button">
+                </div>
+
+            </form>
+        </div>
+    </div>
+</body>
+<script src="~/Content/js/jquery.js"></script>
+
+<script>
+    var EpCurrent = @epNow;
+    var TotalEp = @ViewBag.filmBo.totalEpisodes;
+    $(function () {
+        $('#btnSave').click(function () {
+            var res = {};
+            let filmID = `@ViewBag.filmBo.filmID`;
+            let Episode = $('#Episode').val();
+            let linkEpisode = $('#linkEpisode').val();
+            res.filmID = filmID;
+            res.Episode = Episode;
+            res.linkEpisode = linkEpisode;
+            console.log(res);
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("addFilmEpisode")',
+                dataType: 'json',
+                contentType: "application/json; charset=utf-8",
+                data: "{'ep':" + JSON.stringify(res) + "}",
+                success: function () {
+                    LoadData();
+                    alert("Data has been added successfully.");
+                },
+                error: function () {
+                    alert("Error while inserting data");
+                }
+            })
+        })
+    });
+    function LoadData() {
+        EpCurrent++;
+        if (EpCurrent > TotalEp) {
+            $('#Episode').val('');
+            $('#linkEpisode').val('');
+            alert(`The Episode is ${EpCurrent} > ${TotalEp}: You add full data. Please back`);
+        } else {
+            $('#Episode').val(`${EpCurrent}`);
+            $('#Episode').attr({
+                "max": EpCurrent,
+                "min" : EpCurrent
+            })
+            $('#linkEpisode').val('');
+        }
+       
+    }
+</script>
+</html>
