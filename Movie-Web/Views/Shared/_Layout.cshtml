@@ -1,5 +1,7 @@
 ﻿
-
+@{
+    var user = Session["USER_SESSION"] as Movie_Web.Common.UserSession;
+}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +28,7 @@
         @*@Html.Partial("Header", (string)ViewBag.acc.username)*@
         <header class="header">
             <nav class="header__content">
-                <a href="/TuHome/Index" class="header__logo">
+                <a href="/Home/Index" class="header__logo">
                     <img class="header__logo-img"
                          src="~/Content/assets/img/logo.png"
                          alt="Movie Web" />
@@ -147,12 +149,19 @@
                     <button class="header__notify-btn" type="button">
                         <i class="header__notify-icon fas fa-bell"></i>
                     </button>
+
+                    @if (user == null)
+                    {
                         <a href="/Login/Login" id="login_btn">
                             <button class="btn header__sign-in-btn">Đăng nhập</button>
                         </a>
-
-
-
+                    }
+                    else
+                    {
+                        <a href="/Login/Logout" id="login_btn">
+                            <button class="btn header__sign-in-btn">@user.UserName</button>
+                        </a>
+                    }
 
                 </div>
             </nav>
@@ -249,7 +258,7 @@
         </footer>
     </div>
 
-    
+
 
 
     <!-- JQuery -->
