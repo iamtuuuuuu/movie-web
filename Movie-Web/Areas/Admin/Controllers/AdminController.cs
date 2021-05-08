@@ -7,6 +7,9 @@ using System.Web;
 using System.Web.Mvc;
 using Movie_Web.DAO;
 using Movie_Web.Models;
+using Movie_Web.Helpers;
+using System.Globalization;
+
 namespace Movie_Web.Areas.Admin.Controllers
 {
     public class AdminController : Controller
@@ -38,10 +41,19 @@ namespace Movie_Web.Areas.Admin.Controllers
             return View();
         }
 
+        
         public ActionResult Edit(string id)
         {
             var filmDao = new FilmDAO();
-            ViewBag.filmDetail = filmDao.getFilmByID(id);
+            var filmDetail = filmDao.getFilmByID(id);
+            DateTime format = (DateTime)filmDetail.releaseFilm;
+            var formatDT = format.ToString("yyyy-MM-dd", CultureInfo.InvariantCulture);
+            //var dt = filmDetail.releaseFilm.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
+            ViewBag.filmDetail = filmDetail;
+            ViewBag.dt = formatDT;
+            //ViewBag.dt = formatDT;
+            //DateTime dt = (DateTime)filmDetail.releaseFilm;
+            //ViewBag.dateadd = convertToString(dt);
             return View();
         }
         [HttpPost]
@@ -76,13 +88,13 @@ namespace Movie_Web.Areas.Admin.Controllers
 
         public ActionResult CreateFilmLe()
         {
-            //ViewBag.movive = value;
+            
             return View();
         }
 
         public ActionResult CreateFilmBo()
         {
-            //ViewBag.movive = value;
+
             return View();
         }
 
@@ -144,10 +156,6 @@ namespace Movie_Web.Areas.Admin.Controllers
             message = "Failed";
             return Json(new { Message = message });
         }
-
-        // 1 View khi an vao Film Bo se list dong film bo hien co cua no va cho sua
-        // 1 View se la khi an dau + se cho them tap them lan luot 
-
         public ActionResult CreateFilm()
         {
             try
@@ -185,19 +193,39 @@ namespace Movie_Web.Areas.Admin.Controllers
 
         public ActionResult FilmBoInformation(string id)
         {
-            //var filmDao = new FilmDAO();
-            //var feedbackDao = new FeedbackDAO();
-            //var filmEpDao = new FilmEpisodeDAO();
-            //var filmModel = filmDao.getFilmByID(id);
-            //var feedBackListModel = feedbackDao.listAll(filmModel.filmID);
-            //var FeedbackOfAcc = feedbackDao.listAccountFB(filmModel.filmID);
-            //ViewBag.filmDetail = filmModel;
-            //ViewBag.filmFeedBack = feedBackListModel;
-            //ViewBag.FeedBackOfAcc = FeedbackOfAcc;
+            var filmDao = new FilmDAO();
+            var feedbackDao = new FeedbackDAO();
+            var filmEpDao = new FilmEpisodeDAO();
+            var filmModel = filmDao.getFilmByID(id);
+            var feedBackListModel = feedbackDao.listAll(filmModel.filmID);
+            var FeedbackOfAcc = feedbackDao.listAccountFB(filmModel.filmID);
+            ViewBag.filmDetail = filmModel;
+            ViewBag.filmFeedBack = feedBackListModel;
+            ViewBag.FeedBackOfAcc = FeedbackOfAcc;
+            ViewBag.filmEpisode = filmEpDao.ListAllEpisodeRelease(filmModel.filmID);
             return View();
 
         }
-        // Hiện mô tả phim, nội dung phim, comment, Tên phim ở trên Text
+        
+
+        [HttpPost]
+        public ActionResult UpdateEpisode(List <FilmEpisode> LFE)
+        {
+            foreach (var ep in LFE)
+            {
+                int res = new FilmEpisodeDAO().updateEpisode(ep);
+                if (res > 0)
+                {
+                    continue;
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Sửa không thành công");
+                }
+            }
+            return RedirectToAction("FilmBoInformation");
+        }
+
         public ActionResult FilmLeInformation(string id)
         {
             var filmDao = new FilmDAO();

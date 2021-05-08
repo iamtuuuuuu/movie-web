@@ -1,18 +1,151 @@
 ﻿
+
 @{
     Layout = null;
 }
+
 
 <!DOCTYPE html>
 
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>FilmBoInformation</title>
+    <link href="~/Areas/Assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="~/Areas/Assets/Form/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Areas/Assets/Form/css/util.css">
+    <link rel="stylesheet" type="text/css" href="~/Areas/Assets/Form/css/main.css">
+    <link rel="stylesheet" type="text/css" href="~/Areas/Assets/Form/css/phimle.css" />
+    <title>@ViewBag.filmDetail.nameFilm</title>
 </head>
 <body>
-    <div> 
-        Hello
+    <div class="container-contact100">
+        <div class="wrap-contact100" style="width: 80%">
+            <div class="row">
+                <div class="infor">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-id="@ViewBag.filmDetail.filmID">
+                        Edit Episodes
+                    </button>
+                    <div>
+                        <span>Mô tả phim</span>
+                        <p>
+                            @ViewBag.filmDetail.desText
+                        </p>
+                    </div>
+                    <div>
+                        <span>Nội dung phim</span>
+                        <p>
+                            @ViewBag.filmDetail.contentText
+                        </p>
+                    </div>
+                </div>
+                <table class="table table-bordered">
+                    List comments
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Account</th>
+                            <th>Comment</th>
+                            <th>Send Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in ViewBag.FeedBackOfAcc)
+                        {
+                            <tr>
+                                <td>@item.username</td>
+                                <td>@item.cmt</td>
+                                <td>@item.sentDate</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
     </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                   
+                    @for (var i = 0 ;i < ViewBag.filmEpisode.Count;i++)
+                    {
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <div class="form-group wrap-input100 invisible d-none">
+                                    <label for="filmID">filmID</label>
+                                    <input type="text" class="form-control input100" id="filmID" name="filmID" value="@ViewBag.filmEpisode[i].filmID">
+                                    <span class="focus-input100"></span>
+                                </div>
+                                <div class="form-group wrap-input100">
+                                    <label for="Episode">Episode</label>
+                                    <input type="number" class="form-control input100" id="Episode" name="Episode" value="@ViewBag.filmEpisode[i].Episode" min="@ViewBag.filmEpisode[i].Episode" max="@ViewBag.filmEpisode[i].Episode">
+                                    <span class="focus-input100"></span>
+                                </div>
+                                <div class="form-group wrap-input100">
+                                    <label for="linkEpisode">Link Episode</label>
+                                    <input type="text" class="form-control input100" id="linkEpisode" name="linkEpisode" value="@ViewBag.filmEpisode[i].linkEpisode">
+                                    <span class="focus-input100"></span>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" id="btn-update-film" class="btn btn-primary">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <form id="add-film-episode-form" action="" method="POST"></form>
 </body>
+
+
+
 </html>
+<script src="~/Areas/Assets/vendor/jquery/jquery.min.js"></script>
+<script src="~/Areas/Assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script>
+    // ADD
+    let today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+
+    today = yyyy + '-' + mm + '-' + dd
+    console.log(today)
+    //document.getElementById('createDate').value = today.toString()
+    //document.getElementById('createBy').value = 'tututu'
+
+
+    // delete
+
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var filmID;
+        var addForm = document.forms['add-film-episode-form']
+        var btnUpdateEpisode = document.querySelector('#btn-update-film');
+        $('#exampleModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget);
+            filmID = button.data('id')
+        });
+
+        btnUpdateEpisode.onclick = function () {
+            // chua lay duoc du lieu gui len. no dang bi null
+            addForm.action = '/Admin/Admin/UpdateEpisode';
+            addForm.submit();
+        }
+    })
+
+
+
+
+
+
+</script>

@@ -2,12 +2,13 @@
 @{
     ViewBag.Title = "Edit";
     Layout = "~/Areas/Admin/Views/Shared/Layout.cshtml";
+
 }
 
 
 <h2>@ViewBag.filmDetail.nameFilm</h2>
 <form method="post">
-    <div class="form-group">
+    <div class="form-group invisible d-none">
         <label for="filmID">ID phim</label>
         <input type="text" class="form-control" id="filmID" name="filmID" placeholder="Nhập ID phim" value="@ViewBag.filmDetail.filmID">
     </div>
@@ -45,7 +46,7 @@
     </div>
     <div class="form-group">
         <label for="releaseFilm">Ngày công chiếu</label>
-        <input class="form-control" type="date" value="2011-08-19" id="releaseFilm" name="releaseFilm" value="@ViewBag.filmDetail.releaseFilm">
+        <input class="form-control" type="date"  id="releaseFilm" name="releaseFilm" value="@ViewBag.dt">
     </div>
     <div class="form-group">
         <label for="statusText">Trạng thái phim</label>
@@ -62,11 +63,11 @@
             </label>
         </div>
     </div>
-    <div class="form-group">
+    <div class="form-group invisible d-none">
         <label for="releasedEpisodes">Số tập đang phát</label>
         <input type="number" class="form-control" id="releasedEpisodes" name="releasedEpisodes" placeholder="Nhập số tập đang phát" value="@ViewBag.filmDetail.releasedEpisodes">
     </div>
-    <div class="form-group">
+    <div class="form-group invisible d-none">
         <label for="totalEpisodes">Tổng số tập</label>
         <input type="number" class="form-control" id="totalEpisodes" name="totalEpisodes" placeholder="Nhập tổng số tập" value="@ViewBag.filmDetail.totalEpisodes">
     </div>
@@ -84,7 +85,7 @@
     </div>
     <div class="form-group">
         <label for="star">Số sao</label>
-        <input type="text" min="1" max="10" class="form-control" id="star" name="star" placeholder="Số sao (1 - 10)" value="@ViewBag.filmDetail.star">
+        <input type="number" min="1" max="10" class="form-control" id="star" name="star" value="@ViewBag.filmDetail.star">
     </div>
     <div class="form-group">
         <label for="nation">Quốc gia</label>
@@ -103,11 +104,11 @@
         <input type="text" class="form-control" id="genre" name="genre" placeholder="Nhập thể loại" value="@ViewBag.filmDetail.genre">
     </div>
 
-    <div class="form-group">
+    <div class="form-group invisible d-none">
         <label for="createBy">Người tạo</label>
         <input type="text" class="form-control" id="createBy" name="createBy" value="@ViewBag.filmDetail.createBy">
     </div>
-    <div class="form-group ">
+    <div class="form-group invisible d-none">
         <label for="createDate">Ngày tạo</label>
         <input type="text" class="form-control" id="createDate" name="createDate" value="@ViewBag.filmDetail.createDate">
     </div>
@@ -116,7 +117,7 @@
 
 
     <div class="modal-footer">
-        <a href="/Admin/Admin/Films" class="btn btn-secondary" data-dismiss="modal">Close</a>
+        <a class="btn btn-secondary" data-dismiss="modal" href="/Admin/Admin/Films">Close</a>
         <button type="submit" class="btn btn-primary">Save changes</button>
     </div>
 </form>

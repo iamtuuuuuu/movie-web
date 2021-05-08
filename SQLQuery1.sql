@@ -151,15 +151,19 @@ create table FilmEpisode(
 )
 
 go 
-/*
-create procedure GetFilmEpisodeIfBo(
-	@filmID char(10)
+
+create procedure UpdateFilmEpisode(
+	@filmID char(10),
+	@Episode int,
+	@linkEpisode varchar(500)
 )
 as
 begin
-	
+	update FilmEpisode
+	set linkEpisode = @linkEpisode
+	where filmID = @filmID and Episode = @Episode
 end
-*/
+
 
 go
 create procedure AddFilmEpisode(
