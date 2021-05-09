@@ -166,9 +166,8 @@
     <Compile Include="Common\Encryptor.cs" />
     <Compile Include="Common\SessionHelper.cs" />
     <Compile Include="Common\UserSession.cs" />
-    <Compile Include="Controllers\TuController.cs" />
-    <Compile Include="Controllers\TuDetailFilmController.cs" />
-    <Compile Include="Controllers\TuHomeController.cs" />
+    <Compile Include="Controllers\DetailFilmController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LocController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\WatchController.cs" />
@@ -3980,15 +3979,14 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\TuHome\Index.cshtml" />
-    <Content Include="Views\TuDetailFilm\Detail.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\DetailFilm\Detail.cshtml" />
     <Content Include="Views\Login\SignUp.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Watch\Watch.cshtml" />
     <Content Include="Views\Shared\Header.cshtml" />
     <Content Include="Views\Loc\Index.cshtml" />
-    <Content Include="Views\Tu\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

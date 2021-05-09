@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using Movie_Web.DAO;
 namespace Movie_Web.Controllers
 {
-    public class TuDetailFilmController : Controller
+    public class DetailFilmController : Controller
     {
         // GET: DetailFilm
         public ActionResult Detail(string id)
@@ -28,6 +28,28 @@ namespace Movie_Web.Controllers
             ViewBag.FeedBackOfAcc = FeedbackOfAcc;
 
             return View();
+        }
+
+        // Yeu cau login
+        [HttpPost]
+        public ActionResult addCmt(string cmt, string filmID, string accountID, string backUrl)
+        {
+            try
+            {
+                cmt = Request.Form["cmt"];
+                filmID = Request.Form["filmID"];
+                accountID = Request.Form["accountID"];
+                var feedbackDao = new FeedbackDAO();
+                feedbackDao.Insert(filmID, accountID, cmt, DateTime.Now);
+
+                backUrl = Request.Form["backUrl"];
+                return Redirect(backUrl.ToString());
+            }
+            catch
+            {
+                return Redirect("/Login/Login");
+            }
+
         }
 
 

@@ -8,7 +8,7 @@ using Movie_Web.Models;
 
 namespace Movie_Web.Controllers
 {
-    public class TuHomeController : Controller
+    public class HomeController : Controller
     {
         public ActionResult Index()
         {

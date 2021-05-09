@@ -24,6 +24,21 @@ namespace Movie_Web.DAO
             ).ToList();
         }
 
+        public void Insert(string filmID, string accountID, string cmt, DateTime sentDate)
+        {
+
+            object[] param =
+                {
+                new SqlParameter("@filmID", filmID),
+                new SqlParameter("@accountID", accountID),
+                new SqlParameter("@cmt", cmt),
+                new SqlParameter("@sentDate", sentDate)
+
+            };
+            dbFilmContext.Database.ExecuteSqlCommand("exec AddFeedback @filmID, @accountID, @cmt, @sentDate", param);
+
+        }
+
         public List<Comment> listAccountFB(string id)
         {
 

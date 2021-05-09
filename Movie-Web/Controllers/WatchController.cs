@@ -14,13 +14,19 @@ namespace Movie_Web.Controllers
         {
             var filmDao = new FilmDAO();
             var FilmEpDAO = new FilmEpisodeDAO();
-
+            var feedbackDao = new FeedbackDAO();
             var filmModel = FilmEpDAO.getEpisode(idFilm, Episode);
-            Console.WriteLine(filmModel);
+
+
+            var feedBackListModel = feedbackDao.listAll(filmModel.filmID);
+            var FeedbackOfAcc = feedbackDao.listAccountFB(filmModel.filmID);
+
 
             int numrecords = 10;
             ViewBag.listfilmDescendingbyCreateDate = filmDao.listFilmSlideDescendingbyCreateDate(numrecords);
             ViewBag.filmDetail = filmModel;
+            ViewBag.filmFeedBack = feedBackListModel;
+            ViewBag.FeedBackOfAcc = FeedbackOfAcc;
             return View();
         }
         
