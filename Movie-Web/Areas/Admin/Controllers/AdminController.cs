@@ -209,8 +209,9 @@ namespace Movie_Web.Areas.Admin.Controllers
         
 
         [HttpPost]
-        public ActionResult UpdateEpisode(List <FilmEpisode> LFE)
+        public ActionResult UpdateEpisode(IList <FilmEpisode> LFE)
         {
+            Console.WriteLine(LFE);
             foreach (var ep in LFE)
             {
                 int res = new FilmEpisodeDAO().updateEpisode(ep);
