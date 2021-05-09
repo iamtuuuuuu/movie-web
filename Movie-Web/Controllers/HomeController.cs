@@ -10,17 +10,19 @@ namespace Movie_Web.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        public ActionResult Index(string key)
         {
             var filmdao = new FilmDAO();
-            ViewBag.listfilm = filmdao.listAll();
+
             int numrecords = 10;
+            ViewBag.listfilm = filmdao.lstFilmSearch(key, numrecords);
+
             ViewBag.listfilmSlide = filmdao.listFilmSlideDescendingbyCreateDate(numrecords);
             return View();
         }
 
 
 
-        
+
     }
 }

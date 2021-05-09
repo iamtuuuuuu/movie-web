@@ -4,27 +4,78 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="section section__first bg_film">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="section__wrap">
-                    <h1 class="section__title">Phim bộ Hàn Quốc</h1>
-                    <ul class="section__breadcrumb">
-                        <li class="section__breadcrumb__item">
-                            <a href="#">
-                                Trang chủ
-                            </a>
-                        </li>
-                        <li class="section__breadcrumb__items section__breadcrumb__item__active">
-                            Phim Bộ Hàn Quốc
-                        </li>
-                    </ul>
+
+
+<div class="content__body">
+    <div class="content">
+
+        <div class="grid wide" style="padding-top:90px">
+            <div class="content__head">
+                <div class="grid wide">
+                    <div class="row">
+                        <div class="col l-12 m-12 c-12" style="padding-left:44px">
+                            <h2 class="content__head-title">Danh sách phim</h2>
+                        </div>
+                    </div>
                 </div>
+            </div>
+            <div class="row">
+                @foreach (var itemFilm in ViewBag.listfilm)
+                {
+                    <div class="col l-6 m-12 c-6">
+                        <div class="card-full">
+                            <div class="grid">
+                                <div class="row sm-gutter">
+                                    <div class="col l-4 m-4 c-12">
+                                        <div class="card__cover">
+                                            <img class="card__cover-img"
+                                                 src="@itemFilm.linkImgAvt"
+                                                 alt="" />
+                                            <a href="/TuDetailFilm/Detail/@itemFilm.filmID" class="card__play">
+                                                <i class="card__play-icon fas fa-play"></i>
+                                            </a>
+                                            <div class="movie_option">
+                                                <span class="movie_option__text">@itemFilm.quality</span>
+                                            </div>
+                                            <div class="runtime">
+                                                <span class="runtime__text">@itemFilm.releasedEpisodes/@itemFilm.totalEpisodes Tập</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col l-8 m-8">
+                                        <div class="card__content">
+                                            <h5 class="card__content-title">
+                                                <a href="/TuDetailFilm/Detail/@itemFilm.filmID"
+                                                   class="card__content-title-link"
+                                                   title="@itemFilm.nameFilm">@itemFilm.nameFilm</a>
+                                            </h5>
+                                            <span class="card__content-title-origin">@itemFilm.nameEngFilm</span>
+                                            <div class="card__category">
+                                                <span class="card__category-link">@itemFilm.genre</span>
+                                            </div>
+                                            <span class="card__country">
+                                                <a href="#" class="card__country-link">@itemFilm.nation</a>
+                                            </span>
+                                            <div class="card__imdb"><span>IMDb @itemFilm.imdb</span></div>
+                                            <div class="card__description">
+                                                <p>
+                                                    @itemFilm.desText
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+
             </div>
         </div>
     </div>
 </div>
+
 <div class="filter">
     <div class="container">
         <div class="row">

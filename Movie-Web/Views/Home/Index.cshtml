@@ -20,7 +20,7 @@
                             <img class="card__cover-img"
                                  src="@itemFilm.linkImgAvt"
                                  alt="" />
-                            <a href="/DetailFilm/Detail/@itemFilm.filmID" class="card__play">
+                            <a href="/TuDetailFilm/Detail/@itemFilm.filmID" class="card__play">
                                 <i class="card__play-icon fas fa-play"></i>
                             </a>
                             <div class="movie_option">
@@ -33,7 +33,7 @@
 
                         <div class="card__content--s">
                             <h5 class="card__content-title">
-                                <a href="/DetailFilm/Detail/@itemFilm.filmID"
+                                <a href="/TuDetailFilm/Detail/@itemFilm.filmID"
                                    class="card__content-title-link"
                                    title="@itemFilm.nameFilm">@itemFilm.nameFilm</a>
                             </h5>
@@ -45,13 +45,13 @@
         </div>
     </div>
 
-    <!-- Phần phim mới nhất -->
+    <!-- Phần tim kiem -->
     <div class="content">
         <div class="content__head">
             <div class="grid wide">
                 <div class="row">
                     <div class="col l-12 m-12 c-12">
-                        <h2 class="content__head-title">Phim mới nhất</h2>
+                        <h2 class="content__head-title">Danh sách phim</h2>
                     </div>
                 </div>
             </div>
@@ -60,7 +60,7 @@
         <div class="content__body">
             <div class="grid wide">
                 <div class="row">
-                    @foreach (var itemFilm in ViewBag.listfilmSlide)
+                    @foreach (var itemFilm in ViewBag.listfilm)
                     {
                         <div class="col l-6 m-12 c-6">
                             <div class="card-full">
@@ -71,7 +71,7 @@
                                                 <img class="card__cover-img"
                                                      src="@itemFilm.linkImgAvt"
                                                      alt="" />
-                                                <a href="/DetailFilm/Detail/@itemFilm.filmID" class="card__play">
+                                                <a href="/TuDetailFilm/Detail/@itemFilm.filmID" class="card__play">
                                                     <i class="card__play-icon fas fa-play"></i>
                                                 </a>
                                                 <div class="movie_option">
@@ -86,7 +86,7 @@
                                         <div class="col l-8 m-8">
                                             <div class="card__content">
                                                 <h5 class="card__content-title">
-                                                    <a href="/DetailFilm/Detail/@itemFilm.filmID"
+                                                    <a href="/TuDetailFilm/Detail/@itemFilm.filmID"
                                                        class="card__content-title-link"
                                                        title="@itemFilm.nameFilm">@itemFilm.nameFilm</a>
                                                 </h5>
@@ -115,6 +115,8 @@
             </div>
         </div>
     </div>
+
+
 
     <!-- Các phần phim chia theo quốc gia -->
     <!-- Han -->
