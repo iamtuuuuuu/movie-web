@@ -41,12 +41,30 @@ namespace Movie_Web.DAO
             return dbFilmContext.FilmEpisodes.Where(x => x.filmID == id).OrderBy(x => x.Episode).ToList();
         }
 
+        public FilmEpisode getEpFilmLeByFilmID(string id)
+        {
+            return dbFilmContext.FilmEpisodes.FirstOrDefault(x => x.filmID == id);
+        }
+
         public int updateEpisode(FilmEpisode filmEp)
         {
             var filmID = new SqlParameter("@filmID", filmEp.filmID);
             var Episode = new SqlParameter("@Episode", filmEp.Episode);
             var linkEpisode = new SqlParameter("@linkEpisode", filmEp.linkEpisode);
             int res = dbFilmContext.Database.ExecuteSqlCommand("exec UpdateFilmEpisode @filmID , @Episode , @linkEpisode", filmID, Episode, linkEpisode);
+            return res;
+        }
+
+        public int updateEpisode2(string filmEpID, string filmID, string linkEpisode, int Episode)
+        {
+
+            object[] param =
+                {
+                new SqlParameter("@filmID", filmID),
+                new SqlParameter("@Episode", Episode),
+                new SqlParameter("@linkEpisode", linkEpisode),
+            };
+            int res = dbFilmContext.Database.ExecuteSqlCommand("exec UpdateFilmEpisode @filmID , @Episode , @linkEpisode", param);
             return res;
         }
 

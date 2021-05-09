@@ -227,18 +227,38 @@ namespace Movie_Web.Areas.Admin.Controllers
             return RedirectToAction("FilmBoInformation");
         }
 
+        
+
         public ActionResult FilmLeInformation(string id)
         {
             var filmDao = new FilmDAO();
+            var epDao = new FilmEpisodeDAO();
             var feedbackDao = new FeedbackDAO();
             var filmModel = filmDao.getFilmByID(id);
+            var Epfilm = epDao.getEpFilmLeByFilmID(id);
             var feedBackListModel = feedbackDao.listAll(filmModel.filmID);
             var FeedbackOfAcc = feedbackDao.listAccountFB(filmModel.filmID);
             ViewBag.filmDetail = filmModel;
+            ViewBag.EpDetail = Epfilm;
             ViewBag.filmFeedBack = feedBackListModel;
             ViewBag.FeedBackOfAcc = FeedbackOfAcc;
             return View();
 
+        }
+
+        [HttpPost]
+        public ActionResult UpdateFilmLe(string filmEpID, string filmID, string linkEpisode)
+        {
+            filmEpID = Request.Form["filmEpID"];
+            filmID = Request.Form["filmID"];
+            linkEpisode = Request.Form["linkEpisode"];
+            int Episode = 1;
+            int res = new FilmEpisodeDAO().updateEpisode2(filmEpID, filmID, filmID, Episode) ;
+            if (res != 0)
+            {
+                ModelState.AddModelError("", "Sửa không thành công");
+            }
+            return RedirectToAction("FilmLeInformation");
         }
 
         [HttpPost]

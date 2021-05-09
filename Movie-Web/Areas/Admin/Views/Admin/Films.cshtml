@@ -70,59 +70,59 @@
                 <tbody>
                     @foreach (var film in ViewBag.listFilm)
                     {
-                    <tr>
+                        <tr>
 
-                        @*<td>
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="filmIds[]" value="@film.filmID">
-            </div>
-        </td>*@
-                        <td><a href="/DetailFilm/Detail/@film.filmID">@film.filmID</a></td>
-                        <td>
-                            @if (@film.totalEpisodes == 1)
-                            {
-                                <a href="/Admin/Admin/FilmLeInformation/@film.filmID">@film.nameFilm</a>
-                            }
-                            else
-                            {
-                                <a href="/Admin/Admin/FilmBoInformation/@film.filmID">@film.nameFilm</a>
-                            }
+                            @*<td>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="filmIds[]" value="@film.filmID">
+                                    </div>
+                                </td>*@
+                            <td><a href="/DetailFilm/Detail/@film.filmID">@film.filmID</a></td>
+                            <td>
+                                @if (@film.totalEpisodes == 1)
+                                {
+                                    <a href="/Admin/Admin/FilmLeInformation/@film.filmID">@film.nameFilm</a>
+                                }
+                                else
+                                {
+                                    <a href="/Admin/Admin/FilmBoInformation/@film.filmID">@film.nameFilm</a>
+                                }
 
-                        </td>
-                        <td class="des-text"><p>@film.desText</p></td>
-                        <td class="content-text"><p>@film.contentText</p></td>
-                        <td>@film.releaseFilm</td>
-                        <td>
-                            @if (@film.totalEpisodes == 1)
-                            {
-                                <span>Phim lẻ</span>
-                            }
-                            else
-                            {
-                                <span>Phim bộ</span>
-                            }
-                        </td>
-                        <td>@film.releasedEpisodes/@film.totalEpisodes</td>
-                        <td>@film.quality</td>
-                        <td>@film.nation</td>
+                            </td>
+                            <td class="des-text"><p>@film.desText</p></td>
+                            <td class="content-text"><p>@film.contentText</p></td>
+                            <td>@film.releaseFilm</td>
+                            <td>
+                                @if (@film.totalEpisodes == 1)
+                                {
+                                    <span>Phim lẻ</span>
+                                }
+                                else
+                                {
+                                    <span>Phim bộ</span>
+                                }
+                            </td>
+                            <td>@film.releasedEpisodes/@film.totalEpisodes</td>
+                            <td>@film.quality</td>
+                            <td>@film.nation</td>
 
-                        <td>@film.genre</td>
-                        <td>@film.createDate</td>
-                        <td>@film.createBy</td>
-                        <td style="display:flex;flex-direction:row;border-bottom:none">
-                            @if (@film.totalEpisodes != 1 && @film.releasedEpisodes < @film.totalEpisodes)
-                            {
+                            <td>@film.genre</td>
+                            <td>@film.createDate</td>
+                            <td>@film.createBy</td>
+                            <td style="display:flex;flex-direction:row;border-bottom:none">
+                                @if (@film.totalEpisodes != 1 && @film.releasedEpisodes < @film.totalEpisodes)
+                                {
 
-                                <a class="btn btn-link" href="/Admin/Admin/addFilmEpisode/@film.filmID"><i class="fas fa-plus-square"></i></a>
-                            }
-                            else if (@film.totalEpisodes != 1 && @film.releasedEpisodes == @film.totalEpisodes)
-                            {
+                                    <a class="btn btn-link" href="/Admin/Admin/addFilmEpisode/@film.filmID"><i class="fas fa-plus-square"></i></a>
+                                }
+                                else if (@film.totalEpisodes != 1 && @film.releasedEpisodes == @film.totalEpisodes)
+                                {
 
-                            }
-                            <a class="btn btn-link" href="/Admin/Admin/Edit/@film.filmID"><i class="fas fa-edit fs-3"></i></a>
-                            <a id="delete-icon" class="btn btn-link text-danger" data-id="@film.filmID" data-toggle="modal" data-target="#exampleModal2"><i class="fas fa-trash fs-3"></i></a>
-                        </td>
-                    </tr>
+                                }
+                                <a class="btn btn-link" href="/Admin/Admin/Edit/@film.filmID"><i class="fas fa-edit fs-3"></i></a>
+                                <a id="delete-icon" class="btn btn-link text-danger" data-id="@film.filmID" data-toggle="modal" data-target="#exampleModal2"><i class="fas fa-trash fs-3"></i></a>
+                            </td>
+                        </tr>
                     }
                 </tbody>
             </table>
