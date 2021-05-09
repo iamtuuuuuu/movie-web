@@ -19,6 +19,9 @@
         <div class="wrap-contact100" style="width: 80%">
             <div class="row">
                 <div class="infor">
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-id="@ViewBag.filmDetail.filmID">
+                        Edit Episodes
+                    </button>
                     <div>
                         <span>Mô tả phim</span>
                         <p>
@@ -31,7 +34,7 @@
                             @ViewBag.filmDetail.contentText
                         </p>
                     </div>
-                   
+
                 </div>
 
                 <table class="table table-bordered">
@@ -59,5 +62,52 @@
 
         </div>
     </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="/Admin/Admin/UpdateFilmLe" method="post">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <div class="form-group wrap-input100 invisible d-none">
+                                    <input type="text" class="form-control input100" id="filmEpID" name="filmEpID" value="@ViewBag.EpDetail.filmEpID">
+
+                                    <span class="focus-input100"></span>
+                                </div>
+                                <div class="form-group wrap-input100 invisible d-none">
+                                    <label for="filmID">filmID</label>
+                                    <input type="text" class="form-control input100" id="filmID" name="filmID" value="@ViewBag.EpDetail.filmID">
+
+                                    <span class="focus-input100"></span>
+                                </div>
+                                
+                                <div class="form-group wrap-input100">
+                                    <label for="linkEpisode">Link Episode</label>
+                                    <input type="text" class="form-control input100" id="linkEpisode" name="linkEpisode" value="@ViewBag.EpDetail.linkEpisode">
+
+
+                                    <span class="focus-input100"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" id="btn-update-film" class="btn btn-primary">Update</button>
+                        </div>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="~/Areas/Assets/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Areas/Assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
