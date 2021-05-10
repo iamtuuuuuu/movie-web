@@ -289,7 +289,7 @@ namespace Movie_Web.Areas.Admin.Controllers
             {
                 ModelState.AddModelError("", "Sửa không thành công");
             }
-            return RedirectToAction("FilmLeInformation");
+            return RedirectToAction("Films");
         }
 
         [HttpPost]
