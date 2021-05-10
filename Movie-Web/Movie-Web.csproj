@@ -163,6 +163,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\AdminController.cs" />
+    <Compile Include="Areas\Admin\Security\CustomRoleProvider.cs" />
     <Compile Include="Common\Encryptor.cs" />
     <Compile Include="Common\SessionHelper.cs" />
     <Compile Include="Common\UserSession.cs" />

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace Movie_Web.Controllers
 {
@@ -28,14 +29,25 @@ namespace Movie_Web.Controllers
                 if (result.Length != 0)
                 {
                     Account account = accountDao.GetAccountByID(result);
+                    FormsAuthentication.SetAuthCookie(account.email, false);
                     var userSession = new UserSession();
                     userSession.AccountID = account.accountID;
                     userSession.UserName = account.username;
                     Session.Add("USER_SESSION", userSession);
+
                     // return admin
                     //if (account.roleAcc)
                     ViewBag.acc = account;
-                    return RedirectToAction("Index", "Home");
+                    if (account.roleAcc == true)
+                    {
+                        return RedirectToAction("Index", "Admin", new { area = "Admin" });
+                    }
+                    else if (account.roleAcc == false)
+                    {
+                        return RedirectToAction("Index", "Home");
+
+                    }
+                    
                 }
                 else
                 {

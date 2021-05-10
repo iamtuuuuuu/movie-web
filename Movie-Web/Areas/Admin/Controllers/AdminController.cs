@@ -12,9 +12,12 @@ using System.Globalization;
 
 namespace Movie_Web.Areas.Admin.Controllers
 {
+    
     public class AdminController : Controller
     {
         // GET: Admin/Admin
+        [HttpGet]
+        [Authorize(Roles = "True")]
         public ActionResult Index()
         {
             return View();
