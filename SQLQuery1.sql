@@ -231,9 +231,32 @@ begin
 		else begin return 0 end;
 end
 
+create function getsquantityCM(
+	@fromYear datetime,@endYear datetime
+)
+returns int
+as
+begin
+declare @res int
+set @res =(
+select count(*)
+	from Feedback
+	where sentDate between @fromYear and @endYear)
+	return @res
+end
 
+select dbo.getsquantityCM ('2021-01-01', '2021-12-31')
 
+create procedure getQuantityCM (@fromYear datetime,@endYear datetime)
+as 
+begin
+select count(*)
+	from Feedback
+	where sentDate between @fromYear and @endYear)
 
+end
+
+exec getQuantityCM '2021-01-01', '2021-12-31'
 -----------------------------------------------------------------
 
 
@@ -813,7 +836,7 @@ values
 	'F0001',
 	'ACC001',
 	'chupamimonhanhooooooooooo',
-	'8/11/2020'
+	'8/11/2021'
 )
 
 insert into Feedback 
@@ -823,7 +846,7 @@ values
 	'F0001',
 	'ACC001',
 	'yamateeeeeeeeeeeeeeeeeeeeeeee',
-	'18/11/2020'
+	'18/11/2021'
 )
 
 insert into Feedback 
@@ -850,7 +873,7 @@ values
 	'F0005',
 	'ACC004',
 	'makiiaanhooooooooooo',
-	'8/11/2020'
+	'8/11/2019'
 )
 
 insert into Feedback 
@@ -859,12 +882,12 @@ values
 	'F0011',
 	'ACC001',
 	'skanawwacc',
-	'8/11/2020'
+	'8/11/2021'
 )
 
 insert into Feedback 
 values 
-(	'FB0007',
+(	'FB0097',
 	'F0012',
 	'ACC002',
 	'skrrrrrrrrrrrrrrrrr',
@@ -877,7 +900,7 @@ values
 	'F0015',
 	'ACC003',
 	'lolaaaaaaaaaaa',
-	'8/11/2020'
+	'8/11/2019'
 )
 
 insert into Feedback 
@@ -904,7 +927,7 @@ values
 	'F0007',
 	'ACC003',
 	'qua da',
-	'8/11/2020'
+	'8/11/2021'
 )
 
 insert into Feedback 
@@ -913,7 +936,7 @@ values
 	'F0011',
 	'ACC002',
 	'chu choa',
-	'8/11/2020'
+	'8/11/2021'
 )
 
 insert into Feedback 
@@ -922,7 +945,7 @@ values
 	'F0005',
 	'ACC003',
 	'cha ra gi',
-	'8/11/2020'
+	'8/11/2021'
 )
 
 insert into Feedback 
@@ -931,7 +954,7 @@ values
 	'F0004',
 	'ACC001',
 	'chat',
-	'8/11/2020'
+	'8/11/2021'
 )
 
 insert into Feedback 
@@ -949,7 +972,7 @@ values
 	'F0013',
 	'ACC003',
 	'lolaaaaaaaaaaa',
-	'8/11/2020'
+	'8/11/2019'
 )
 
 go

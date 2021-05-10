@@ -12,7 +12,7 @@ using System.Globalization;
 
 namespace Movie_Web.Areas.Admin.Controllers
 {
-    
+
     public class AdminController : Controller
     {
         // GET: Admin/Admin
@@ -20,7 +20,37 @@ namespace Movie_Web.Areas.Admin.Controllers
         [Authorize(Roles = "True")]
         public ActionResult Index()
         {
+            // fill bar chart model
+            var barchartData = getBarChartData();
+            ViewBag.barData = barchartData;
             return View();
+        }
+
+        public BarChartCM getBarChartData()
+        {
+            var modelChart = new BarChartCM();
+            var labels = new List<string>();
+            labels.Add("2019");
+            labels.Add("2020");
+            labels.Add("2021");
+            
+            var datasets = new List<BarChartChildCM>();
+            var childModel = new BarChartChildCM();
+
+            childModel.label = "Comments";
+            childModel.backgroundColor = @"#4e73df";
+            childModel.hoverBackgroundColor = @"#2e59d9";
+            childModel.borderColor = @"#4e73df";
+            var feedbackdao = new FeedbackDAO();
+            List<int> dataList = new List<int>();
+            //var abc= feedbackdao.getQuantityCommentTK("2019-01-01", "2019-12-31");
+
+            //List<int> dataList = feedbackdao.getQuantityCommentOfYears();
+            childModel.data = dataList;
+            datasets.Add(childModel);
+            modelChart.labels = labels;
+            modelChart.datasets = datasets;
+            return modelChart;
         }
 
         public ActionResult Accounts()
@@ -44,7 +74,7 @@ namespace Movie_Web.Areas.Admin.Controllers
             return View();
         }
 
-        
+
         public ActionResult Edit(string id)
         {
             var filmDao = new FilmDAO();
@@ -84,14 +114,9 @@ namespace Movie_Web.Areas.Admin.Controllers
             return View();
         }
 
-        public ActionResult Summary()
-        {
-            return View();
-        }
-
         public ActionResult CreateFilmLe()
         {
-            
+
             return View();
         }
 
@@ -209,10 +234,10 @@ namespace Movie_Web.Areas.Admin.Controllers
             return View();
 
         }
-        
+
 
         [HttpPost]
-        public ActionResult UpdateEpisode(IList <FilmEpisode> LFE)
+        public ActionResult UpdateEpisode(IList<FilmEpisode> LFE)
         {
             Console.WriteLine(LFE);
             foreach (var ep in LFE)
@@ -230,7 +255,7 @@ namespace Movie_Web.Areas.Admin.Controllers
             return RedirectToAction("FilmBoInformation");
         }
 
-        
+
 
         public ActionResult FilmLeInformation(string id)
         {
@@ -256,7 +281,7 @@ namespace Movie_Web.Areas.Admin.Controllers
             filmID = Request.Form["filmID"];
             linkEpisode = Request.Form["linkEpisode"];
             int Episode = 1;
-            int res = new FilmEpisodeDAO().updateEpisode2(filmEpID, filmID, filmID, Episode) ;
+            int res = new FilmEpisodeDAO().updateEpisode2(filmEpID, filmID, filmID, Episode);
             if (res != 0)
             {
                 ModelState.AddModelError("", "Sửa không thành công");

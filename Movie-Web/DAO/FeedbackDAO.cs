@@ -6,7 +6,6 @@ using System.Configuration;
 using Movie_Web.Models;
 using System.Data.SqlClient;
 using System.Data;
-
 namespace Movie_Web.DAO
 {
     public class FeedbackDAO
@@ -39,6 +38,26 @@ namespace Movie_Web.DAO
 
         }
 
+        public List<int> getQuantityCommentOfYears()
+        {
+            List<int> res = new List<int>();
+            var Fromyear1 = new SqlParameter("@fromYear", "2019-01-01");
+            var Toyear1 = new SqlParameter("@endYear", "2019-12-31");
+            var Fromyear2 = new SqlParameter("@fromYear", "2020-01-01");
+            var Toyear2 = new SqlParameter("@endYear", "2020-12-31");
+            var Fromyear3 = new SqlParameter("@fromYear", "2021-01-01");
+            var Toyear3 = new SqlParameter("@endYear", "2021-12-31");
+            var quantity1 = dbFilmContext.Database.ExecuteSqlCommand("exec getQuantityCM @FromYear, @EndYear ", Fromyear1, Toyear1);
+            var quantity2 = dbFilmContext.Database.ExecuteSqlCommand("exec getQuantityCM @fromYear, @endYear ", Fromyear2, Toyear2);
+            var quantity3 = dbFilmContext.Database.ExecuteSqlCommand("exec getQuantityCM @fromYear, @endYear ", Fromyear3, Toyear3);
+            res.Add(quantity1);
+            res.Add(quantity2);
+            res.Add(quantity3);
+            return res;
+        }
+
+       
+
         public List<Comment> listAccountFB(string id)
         {
 
@@ -49,6 +68,7 @@ namespace Movie_Web.DAO
                 SqlCommand cmd = new SqlCommand("exec selectFBACOfFilm \'" + id + "\'", con);
                 cmd.CommandType = CommandType.Text;
                 con.Open();
+                // dung cai nay dc k
 
                 SqlDataReader rdr = cmd.ExecuteReader();
                 while (rdr.Read())

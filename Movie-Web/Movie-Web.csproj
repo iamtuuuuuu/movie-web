@@ -181,6 +181,7 @@
     </Compile>
     <Compile Include="Helpers\GenSlug.cs" />
     <Compile Include="Models\Account.cs" />
+    <Compile Include="Models\ChartCM.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\EpisodeFilm.cs" />
     <Compile Include="Models\EpisodeFilmCreateByProc.cs" />
@@ -190,6 +191,7 @@
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\ModelFilm.cs" />
     <Compile Include="Models\PhimLe.cs" />
+    <Compile Include="Models\BarChartCM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -3720,7 +3722,6 @@
     <Content Include="Areas\Admin\Views\Admin\Accounts.cshtml" />
     <Content Include="Areas\Admin\Views\Admin\Films.cshtml" />
     <Content Include="Areas\Admin\Views\Admin\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\Admin\Summary.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\Layout.cshtml" />
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Assets\scss\navs\_global.scss" />
