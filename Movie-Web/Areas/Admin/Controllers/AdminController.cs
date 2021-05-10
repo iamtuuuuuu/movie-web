@@ -12,12 +12,12 @@ using System.Globalization;
 
 namespace Movie_Web.Areas.Admin.Controllers
 {
-
+    [Authorize(Roles = "True")]
     public class AdminController : Controller
     {
         // GET: Admin/Admin
         [HttpGet]
-        [Authorize(Roles = "True")]
+        
         public ActionResult Index()
         {
             // fill bar chart model
@@ -144,8 +144,10 @@ namespace Movie_Web.Areas.Admin.Controllers
         {
             try
             {
+                var user = Session["USER_SESSION"] as Movie_Web.Common.UserSession;
+                filmboInfor.createBy = user.UserName;
+
                 filmboInfor.createDate = DateTime.Now;
-                filmboInfor.createBy = "Hung";
                 filmboInfor.releasedEpisodes = 0;
                 var filmDao = new FilmDAO();
                 filmDao.insertFilm(filmboInfor);
@@ -194,7 +196,8 @@ namespace Movie_Web.Areas.Admin.Controllers
                 var filmEp = new FilmEpisode();
                 UpdateModel<FilmEpisode>(filmEp);
                 film.createDate = DateTime.Now;
-                film.createBy = "Hung";
+                var user = Session["USER_SESSION"] as Movie_Web.Common.UserSession;
+                film.createBy = user.UserName;
                 film.releasedEpisodes = 1;
                 film.totalEpisodes = 1;
                 var filmDao = new FilmDAO();
