@@ -1023,3 +1023,7 @@ select * from getEpisodeFilm(@id, @Episode)
 end
 go
 exec selectEpisodeFilm 'F0005', 1
+
+select datepart(yyyy,[sentDate])as [year], count(cmt) as SoLuong
+from Feedback
+group by datepart(yyyy, [sentDate])
