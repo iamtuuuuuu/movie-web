@@ -255,7 +255,7 @@ namespace Movie_Web.Areas.Admin.Controllers
                     ModelState.AddModelError("", "Sửa không thành công");
                 }
             }
-            return RedirectToAction("FilmBoInformation");
+            return RedirectToAction("Films");
         }
 
 
