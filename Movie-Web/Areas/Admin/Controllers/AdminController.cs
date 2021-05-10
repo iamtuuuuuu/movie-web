@@ -30,9 +30,6 @@ namespace Movie_Web.Areas.Admin.Controllers
         {
             var modelChart = new BarChartCM();
             var labels = new List<string>();
-            labels.Add("2019");
-            labels.Add("2020");
-            labels.Add("2021");
             
             var datasets = new List<BarChartChildCM>();
             var childModel = new BarChartChildCM();
@@ -43,9 +40,12 @@ namespace Movie_Web.Areas.Admin.Controllers
             childModel.borderColor = @"#4e73df";
             var feedbackdao = new FeedbackDAO();
             List<int> dataList = new List<int>();
-            //var abc= feedbackdao.getQuantityCommentTK("2019-01-01", "2019-12-31");
-
-            //List<int> dataList = feedbackdao.getQuantityCommentOfYears();
+            List<ChartCM> res = feedbackdao.getQuantityCommentOfYears();
+            for (var i = 0; i < res.Count; i++)
+            {
+                labels.Add(res[i].year);
+                dataList.Add(res[i].quantityCM);
+            }
             childModel.data = dataList;
             datasets.Add(childModel);
             modelChart.labels = labels;

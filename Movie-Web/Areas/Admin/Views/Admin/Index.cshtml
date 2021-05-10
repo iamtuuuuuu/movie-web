@@ -25,7 +25,7 @@
     <div class="col-xl-8 col-lg-7">
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Bar Chart Comment</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Bar Chart Comments</h6>
             </div>
             <div class="card-body">
                 <div class="chart-bar">
@@ -48,7 +48,14 @@
             var ctx = document.getElementById("myBarChartComments");
             var myBarChartComments = new Chart(ctx, {
                 type: 'bar',
-                data: @Html.Raw(Json.Encode(ViewBag.barData))
+                data: @Html.Raw(Json.Encode(ViewBag.barData)),
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
             });
         })
     </script>

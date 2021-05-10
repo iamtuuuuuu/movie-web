@@ -257,6 +257,10 @@ select count(*)
 end
 
 exec getQuantityCM '2021-01-01', '2021-12-31'
+
+select datepart (yyyy,[sentDate]) as[year],count(cmt) as SoLuong
+from Feedback
+group by DATEPART(yyyy,[sentDate])
 -----------------------------------------------------------------
 
 

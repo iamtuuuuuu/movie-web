@@ -7,7 +7,7 @@ namespace Movie_Web.Models
 {
     public class ChartCM
     {
-        public int year { get; set; }
+        public string year { get; set; }
         public int quantityCM { get; set; }
     }
 }
