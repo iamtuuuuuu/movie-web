@@ -3,6 +3,8 @@
     var user = Session["USER_SESSION"] as Movie_Web.Common.UserSession;
 }
 
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,17 +37,15 @@
                 </a>
                 <ul class="header__nav-list">
                     <li class="header__nav-item">
-                        <a class="header__nav-link" href="#">Phim mới</a>
+                        <a class="header__nav-link" href="/Loc/Index/phim-moi">Phim mới</a>
                     </li>
                     <li class="header__nav-item">
-                        <a href="#" class="header__nav-link">Phim bộ</a>
+                        <a href="/Loc/Index/type-bo" class="header__nav-link">Phim bộ</a>
                     </li>
                     <li class="header__nav-item">
-                        <a href="#" class="header__nav-link">Phim lẻ</a>
+                        <a href="/Loc/Index/type-le" class="header__nav-link">Phim lẻ</a>
                     </li>
-                    <li class="header__nav-item">
-                        <a href="#" class="header__nav-link">Phim chiếu rạp</a>
-                    </li>
+
                     <li class="header__nav-item header__nav-item-genre">
                         <a href="#" class="header__nav-link">Thể loại</a>
                         <div class="header__nav--drop-genre">
@@ -54,39 +54,39 @@
                                     <a href="/Loc/Index/hanh-dong">Hành động</a>
                                 </li>
                                 <li>
-                                    <a href="#">Khoa học</a>
+                                    <a href="/Loc/Index/khoa-hoc">Khoa học</a>
                                 </li>
                                 <li>
-                                    <a href="#">Kinh dị</a>
+                                    <a href="/Loc/Index/kinh-di">Kinh dị</a>
                                 </li>
                                 <li>
-                                    <a href="#">Tình cảm</a>
+                                    <a href="/Loc/Index/tinh-cam">Tình cảm</a>
                                 </li>
                                 <li>
-                                    <a href="#">Anime</a>
+                                    <a href="/Loc/Index/anime">Anime</a>
                                 </li>
                                 <li>
-                                    <a href="#">Cổ trang</a>
+                                    <a href="/Loc/Index/co-trang">Cổ trang</a>
                                 </li>
                             </ul>
                             <ul class="drop__col">
                                 <li>
-                                    <a href="#">Lịch sử</a>
+                                    <a href="/Loc/Index/lich-su">Lịch sử</a>
                                 </li>
                                 <li>
-                                    <a href="#">Chiến tranh</a>
+                                    <a href="/Loc/Index/chien-tranh">Chiến tranh</a>
                                 </li>
                                 <li>
-                                    <a href="#">Hài hước</a>
+                                    <a href="/Loc/Index/hai-huoc">Hài hước</a>
                                 </li>
                                 <li>
-                                    <a href="#">Kịch tính</a>
+                                    <a href="/Loc/Index/kich-tinh">Kịch tính</a>
                                 </li>
                                 <li>
-                                    <a href="#">Hình sự</a>
+                                    <a href="/Loc/Index/hinh-su">Hình sự</a>
                                 </li>
                                 <li>
-                                    <a href="#">Thể thao</a>
+                                    <a href="/Loc/Index/the-thao">Thể thao</a>
                                 </li>
                             </ul>
                         </div>
@@ -96,49 +96,42 @@
                         <div class="header__nav--drop-nation">
                             <ul class="drop__col">
                                 <li>
-                                    <a href="#">Trung Quốc</a>
+                                    <a href="/Loc/Index/trung-quoc">Trung Quốc</a>
                                 </li>
                                 <li>
-                                    <a href="#">Mỹ</a>
+                                    <a href="/Loc/Index/my">Mỹ</a>
                                 </li>
                                 <li>
-                                    <a href="#">Việt Nam</a>
+                                    <a href="/Loc/Index/viet-nam">Việt Nam</a>
                                 </li>
                                 <li>
-                                    <a href="#">Nga</a>
+                                    <a href="/Loc/Index/nga">Nga</a>
                                 </li>
                                 <li>
-                                    <a href="#">Nhật Bản</a>
+                                    <a href="/Loc/Index/nhat">Nhật Bản</a>
                                 </li>
                                 <li>
-                                    <a href="#">Hàn Quốc</a>
+                                    <a href="/Loc/Index/han">Hàn Quốc</a>
                                 </li>
                             </ul>
                             <ul class="drop__col">
                                 <li>
-                                    <a href="#">Ấn Độ</a>
+                                    <a href="/Loc/Index/an-do">Ấn Độ</a>
                                 </li>
                                 <li>
-                                    <a href="#">Châu Âu</a>
+                                    <a href="/Loc/Index/chau-au">Châu Âu</a>
                                 </li>
                                 <li>
-                                    <a href="#">Thái Lan</a>
+                                    <a href="/Loc/Index/thai-lan">Thái Lan</a>
                                 </li>
                                 <li>
-                                    <a href="#">Hồng Kông</a>
+                                    <a href="/Loc/Index/hong-kong">Hồng Kông</a>
                                 </li>
-                                <li>
-                                    <a href="#">Lào</a>
-                                </li>
-                                <li>
-                                    <a href="#">Campuchia</a>
-                                </li>
+
                             </ul>
                         </div>
                     </li>
-                    <li class="header__nav-item">
-                        <a href="#" class="header__nav-link">Sắp chiếu</a>
-                    </li>
+
                 </ul>
 
                 <div class="header__auth">
@@ -149,19 +142,12 @@
                     <button class="header__notify-btn" type="button">
                         <i class="header__notify-icon fas fa-bell"></i>
                     </button>
+                    <a href="/Login/Login" id="login_btn">
+                        <button class="btn header__sign-in-btn">Đăng nhập</button>
+                    </a>
 
-                    @if (user == null)
-                    {
-                        <a href="/Login/Login" id="login_btn">
-                            <button class="btn header__sign-in-btn">Đăng nhập</button>
-                        </a>
-                    }
-                    else
-                    {
-                        <a href="/Login/Logout" id="login_btn">
-                            <button class="btn header__sign-in-btn">@user.UserName</button>
-                        </a>
-                    }
+
+
 
                 </div>
             </nav>
@@ -170,7 +156,7 @@
                     <div class="row">
                         <div class="col l-12">
                             <div class="header__search-content">
-                                <input type="text" name="key" placeholder="Tìm kiếm phim theo tên, diễn viên, đạo diễn, thể loại, ...">
+                                <input type="text" name="key" placeholder="Tìm kiếm phim theo tên phim">
                                 <button class="btn btn-search " type="submit">Tìm kiếm</button>
                             </div>
                         </div>

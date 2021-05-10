@@ -994,3 +994,14 @@ D:\CN_WEB\merge\movie-web\Movie-Web\obj\Debug\Movie-Web.csproj.CoreCompileInputs
 D:\CN_WEB\merge\movie-web\Movie-Web\obj\Debug\Movie-Web.csproj.CopyComplete
 D:\CN_WEB\merge\movie-web\Movie-Web\obj\Debug\Movie-Web.dll
 D:\CN_WEB\merge\movie-web\Movie-Web\obj\Debug\Movie-Web.pdb
+F:\cong nghe ưeb\New folder\movie-web\Movie-Web\bin\Slugify.Core.dll
+F:\cong nghe ưeb\New folder\movie-web\Movie-Web\bin\System.Buffers.dll
+F:\cong nghe ưeb\New folder\movie-web\Movie-Web\bin\System.Memory.dll
+F:\cong nghe ưeb\New folder\movie-web\Movie-Web\bin\System.Numerics.Vectors.dll
+F:\cong nghe ưeb\New folder\movie-web\Movie-Web\bin\System.Runtime.CompilerServices.Unsafe.dll
+F:\cong nghe ưeb\New folder\movie-web\Movie-Web\bin\System.Text.Encoding.CodePages.dll
+F:\cong nghe ưeb\New folder\movie-web\Movie-Web\bin\System.Buffers.xml
+F:\cong nghe ưeb\New folder\movie-web\Movie-Web\bin\System.Memory.xml
+F:\cong nghe ưeb\New folder\movie-web\Movie-Web\bin\System.Numerics.Vectors.xml
+F:\cong nghe ưeb\New folder\movie-web\Movie-Web\bin\System.Runtime.CompilerServices.Unsafe.xml
+F:\cong nghe ưeb\New folder\movie-web\Movie-Web\bin\System.Text.Encoding.CodePages.xml
