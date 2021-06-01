@@ -1105,3 +1105,14 @@ D:\IDE\source\repos\Movie-web-origin version\movie-web\Movie-Web\obj\Debug\Movie
 D:\IDE\source\repos\Movie-web-origin version\movie-web\Movie-Web\obj\Debug\Movie-Web.csproj.CopyComplete
 D:\IDE\source\repos\Movie-web-origin version\movie-web\Movie-Web\obj\Debug\Movie-Web.dll
 D:\IDE\source\repos\Movie-web-origin version\movie-web\Movie-Web\obj\Debug\Movie-Web.pdb
+D:\CN_WEB\movie-web\Movie-Web\bin\Slugify.Core.dll
+D:\CN_WEB\movie-web\Movie-Web\bin\System.Buffers.dll
+D:\CN_WEB\movie-web\Movie-Web\bin\System.Memory.dll
+D:\CN_WEB\movie-web\Movie-Web\bin\System.Numerics.Vectors.dll
+D:\CN_WEB\movie-web\Movie-Web\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\CN_WEB\movie-web\Movie-Web\bin\System.Text.Encoding.CodePages.dll
+D:\CN_WEB\movie-web\Movie-Web\bin\System.Buffers.xml
+D:\CN_WEB\movie-web\Movie-Web\bin\System.Memory.xml
+D:\CN_WEB\movie-web\Movie-Web\bin\System.Numerics.Vectors.xml
+D:\CN_WEB\movie-web\Movie-Web\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\CN_WEB\movie-web\Movie-Web\bin\System.Text.Encoding.CodePages.xml

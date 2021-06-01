@@ -142,9 +142,18 @@
                     <button class="header__notify-btn" type="button">
                         <i class="header__notify-icon fas fa-bell"></i>
                     </button>
-                    <a href="/Login/Login" id="login_btn">
-                        <button class="btn header__sign-in-btn">Đăng nhập</button>
-                    </a>
+                    @if (user == null)
+                    {
+                        <a href="/Login/Login" id="login_btn">
+                            <button class="btn header__sign-in-btn">Đăng nhập</button>
+                        </a>
+                    }
+                    else
+                    {
+                        <a href="/Login/Logout" id="login_btn">
+                            <button class="btn header__sign-in-btn">@user.UserName</button>
+                        </a>
+                    }
 
 
 

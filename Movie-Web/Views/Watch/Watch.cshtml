@@ -2,6 +2,7 @@
 @{
     ViewBag.Title = "Watch";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var user = Session["USER_SESSION"] as Movie_Web.Common.UserSession;
 }
 <section class="section player-section">
     <div class="section__background"></div>
@@ -289,16 +290,76 @@
     <div class="form__body">
         <div class="grid wide">
             <div class="row">
-                <div class="col c-8">
-                    <div class="row">
-                        <div class="col c-12">
-                            <form action="#" id="comment-form" class="comment-form">
-                                <textarea name="content"
-                                          required=""
-                                          class="form__textarea"
-                                          placeholder="Để lại bình luận của bạn"></textarea>
-                                <button type="submit" class="btn submit-btn">Gửi</button>
-                            </form>
+                <div class="col l-8">
+                    <div class="grid">
+                        <div class="row">
+                            <div class="col l-12">
+                                <div class="tab-content" id="myTabContent">
+                                    <div class="tab-pane fade show active" id="tab-1" role="tabpanel" aria-labelledby="1-tab">
+
+                                        <div class="col l-12">
+                                            <div class="comments">
+
+                                                <div id="comment-form">
+                                                    <form action="/DetailFilm/addCmt" class="form form-comment" method="post">
+                                                        <div class="content-quote"></div>
+
+                                                        @if (user == null)
+                                                        {
+
+                                                        }
+                                                        else
+                                                        {
+                                                            <input type="hidden" name="accountID" value="@user.AccountID">
+                                                        }
+                                                        <input type="hidden" name="filmID" value="@ViewBag.filmDetail.filmID">
+                                                        <input type="hidden" name="backUrl" value="@Context.Request.Path">
+
+                                                        <textarea name="cmt" required="" class="form__textarea" placeholder="Để lại bình luận của bạn"></textarea>
+
+                                                        <button type="submit" class="form__btn">Gửi</button>
+                                                    </form>
+                                                </div>
+
+
+
+                                                <div class="comment-content">
+                                                    <div class="comments__list" id="comment-content">
+                                                        @foreach (var item in ViewBag.FeedBackOfAcc)
+                                                        {
+                                                            <div class="comment" id="comment-32512">
+                                                                <div class="comments__item">
+                                                                    <div class="comments__autor">
+                                                                        <a>
+                                                                            <img class="comments__avatar" src="https://lh3.googleusercontent.com/a-/AOh14GgFqN_enMc41tuvAe1KSCsl1pJA4k3nwR0q38Xh=s96-c" alt="Maria sajah">
+                                                                            <span class="comments__name">@item.username</span>
+                                                                        </a>
+                                                                        <span class="comments__time">@item.sentDate</span>
+                                                                    </div>
+                                                                    <div class="comments__text">
+                                                                        <div class="content_of_comment">
+                                                                            @item.cmt
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+
+                                                            </div>
+                                                        }
+
+
+
+
+                                                    </div>
+                                                    <div class="see-more-comments"></div>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -1,4 +1,9 @@
-﻿@model String
+﻿@{
+    Layout = null;
+    var user = Session["USER_SESSION"] as Movie_Web.Common.UserSession;
+}
+@model String
+
 <header class="header">
     <nav class="header__content">
         <a href="#" class="header__logo">
@@ -38,7 +43,7 @@
             <button class="header__notify-btn" type="button">
                 <i class="header__notify-icon fas fa-bell"></i>
             </button>
-            @if (@Model.Length == 0)
+            @if (user == null)
             {
                 <a href="/Login/Login" id="login_btn">
                     <button class="btn header__sign-in-btn">Đăng nhập</button>
@@ -46,16 +51,9 @@
             }
             else
             {
-                <ul class="navbar-nav mr-auto me-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            @Model
-                        </a>
-                        <button type="button" class="btn btn-primary dropdown-menu" data-toggle="modal" data-target="#logout-modal">
-                            Logout
-                        </button>
-                    </li>
-                </ul>
+                <a href="/Login/Logout" id="login_btn">
+                    <button class="btn header__sign-in-btn">@user.UserName</button>
+                </a>
             }
 
 
