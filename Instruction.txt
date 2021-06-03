@@ -1,0 +1,5 @@
+--------------Welcome to  Movie Web Instruction -------------
+Step 1 : Restore DB with the backup file in folder database
+Step 2 : Open Movie-Web.sln in Visual Studio
+Step 3 : Open web.config file and change the connection string with your own datasource
+Step 4 : Run and Build
