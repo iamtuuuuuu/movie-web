@@ -177,8 +177,6 @@
     document.addEventListener('DOMContentLoaded', function () {
         let ele = document.querySelector('#movie');
         let item = document.querySelector('#add__film');
-        console.log(ele);
-        console.log(item);
         ele.onchange = () => {
             let val = ele.options[ele.selectedIndex].value;
             let value = parseInt(val);

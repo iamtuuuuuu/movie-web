@@ -74,7 +74,7 @@ namespace Movie_Web.Areas.Admin.Controllers
             return View();
         }
 
-
+        [HttpGet]
         public ActionResult Edit(string id)
         {
             var filmDao = new FilmDAO();
@@ -186,6 +186,7 @@ namespace Movie_Web.Areas.Admin.Controllers
             message = "Failed";
             return Json(new { Message = message });
         }
+        [HttpPost]
         public ActionResult CreateFilm()
         {
             try
@@ -284,7 +285,7 @@ namespace Movie_Web.Areas.Admin.Controllers
             filmID = Request.Form["filmID"];
             linkEpisode = Request.Form["linkEpisode"];
             int Episode = 1;
-            int res = new FilmEpisodeDAO().updateEpisode2(filmEpID, filmID, filmID, Episode);
+            int res = new FilmEpisodeDAO().updateEpisode2(filmEpID, filmID, linkEpisode, Episode);
             if (res != 0)
             {
                 ModelState.AddModelError("", "Sửa không thành công");
