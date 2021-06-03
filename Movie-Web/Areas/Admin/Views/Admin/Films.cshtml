@@ -191,6 +191,7 @@
         var filmID;
         var deleteForm = document.forms['delete-film-form']
         var btnDeleteFilm = document.querySelector('#btn-delete-film');
+        console.log(deleteForm);
         $('#exampleModal2').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget);
             filmID = button.data('id')

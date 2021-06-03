@@ -92,7 +92,6 @@ namespace Movie_Web.DAO
             Film deleteFilm = dbFilmContext.Films.Find(id);
             if (deleteFilm != null)
             {
-
                 dbFilmContext.Films.Remove(deleteFilm);
                 dbFilmContext.SaveChanges();
             }
