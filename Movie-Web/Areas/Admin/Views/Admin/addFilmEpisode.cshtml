@@ -79,6 +79,8 @@
         if (EpCurrent > TotalEp) {
             $('#Episode').val('');
             $('#linkEpisode').val('');
+            $("#linkEpisode").attr('disabled', 'disabled');
+            $("#Episode").attr('disabled', 'disabled');
             alert(`The Episode is ${EpCurrent} > ${TotalEp}: You add full data. Please back`);
         } else {
             $('#Episode').val(`${EpCurrent}`);
@@ -87,6 +89,7 @@
                 "min" : EpCurrent
             })
             $('#linkEpisode').val('');
+            
         }
        
     }
