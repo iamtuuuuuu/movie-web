@@ -27,6 +27,7 @@
                         <th>ID</th>
                         <th>Email</th>
                         <th>Tên người dùng</th>
+                        <th>Vai trò</th>
                         <th>Ngày tạo</th>
                         <th>Người tạo</th>
                     </tr>
@@ -36,6 +37,7 @@
                         <th>ID</th>
                         <th>Email</th>
                         <th>Tên người dùng</th>
+                        <th>Vai trò</th>
                         <th>Ngày tạo</th>
                         <th>Người tạo</th>
                     </tr>
@@ -47,6 +49,14 @@
                         <th>@account.accountID</th>
                         <th>@account.email</th>
                         <th>@account.username</th>
+                        @if (@account.roleAcc == true)
+                        {
+                            <th>Admin</th>
+                        }
+                        else
+                        {
+                            <th>User</th>
+                        }
                         <th>@account.createDate</th>
                         <th>@account.createBy</th>
                     </tr>
